@@ -151,14 +151,14 @@ What follows is that structure.
 >
 > Where:
 >
-> - **L** = Licensing and platform fees over the evaluation period
-> - **V** = Volume of transactions over the evaluation period
-> - **C_t** = Per-transaction cognitive cost (token usage at provider rates; zero for pure-workflow steps)
-> - **H** = Per-transaction human handling time, converted to dollars at fully loaded labor cost
-> - **D** = Development effort to reach production (engineer-hours × loaded rate)
-> - **Q** = Testing and validation effort (including security, compliance, and adversarial testing)
-> - **M** = Maintenance effort over the evaluation period (including model drift remediation, prompt revisions, and connector updates)
-> - **A** = Audit effort over the evaluation period (including log review, regulatory inquiry response, and external audit support)
+> - $L$ — Licensing and platform fees over the evaluation period
+> - $V$ — Volume of transactions over the evaluation period
+> - $C_t$ — Per-transaction cognitive cost (token usage at provider rates; zero for pure-workflow steps)
+> - $H$ — Per-transaction human handling time, converted to dollars at fully loaded labor cost
+> - $D$ — Development effort to reach production (engineer-hours × loaded rate)
+> - $Q$ — Testing and validation effort (including security, compliance, and adversarial testing)
+> - $M$ — Maintenance effort over the evaluation period (including model drift remediation, prompt revisions, and connector updates)
+> - $A$ — Audit effort over the evaluation period (including log review, regulatory inquiry response, and external audit support)
 >
 > The relative cost of two architectures, then, is:
 >
@@ -166,11 +166,11 @@ What follows is that structure.
 >
 > A few practical notes on applying the formula.
 >
-> **Volume changes everything.** At low volume, agentic systems are cheaper because L_workflow dominates and fixed development cost is amortized over few transactions. At high volume, the per-transaction terms (V × C_t and V × H) dominate, and the picture inverts. The crossover point is the number a buyer most needs to compute and most often refuses to.
+> **Volume changes everything.** At low volume, agentic systems are cheaper because $L_\text{workflow}$ dominates and fixed development cost is amortized over few transactions. At high volume, the per-transaction terms ($V \times C_t$ and $V \times H$) dominate, and the picture inverts. The crossover point is the number a buyer most needs to compute and most often refuses to.
 >
-> **Cognitive cost is not just tokens.** Agentic patterns multiply token consumption. Reflection (Pattern 6 in this document) and parallel fan-out (Pattern 7) can multiply per-transaction token cost several times over. The honest input for C_t is the realistic pattern budget, not the cost of a single LLM call.
+> **Cognitive cost is not just tokens.** Agentic patterns multiply token consumption. Reflection (Pattern 6 in this document) and parallel fan-out (Pattern 7) can multiply per-transaction token cost several times over. The honest input for $C_t$ is the realistic pattern budget, not the cost of a single LLM call.
 >
-> **Audit effort is the term most often understated.** A workflow with a visual lineage produces an audit response in hours. A pure-agentic system without that lineage can produce one in weeks — assuming the relevant logs were retained. In regulated environments, A is frequently the term that flips R.
+> **Audit effort is the term most often understated.** A workflow with a visual lineage produces an audit response in hours. A pure-agentic system without that lineage can produce one in weeks — assuming the relevant logs were retained. In regulated environments, $A$ is frequently the term that flips $R$.
 >
 > **Maintenance is also asymmetric.** Workflow logic, expressed as versioned rules and decision tables, is updated by changing the rule. Agentic logic, expressed as prompts, is updated by retesting the prompt against every prior failure mode. The first scales. The second compounds.
 >
