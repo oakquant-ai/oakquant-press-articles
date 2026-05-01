@@ -30,13 +30,13 @@ Every high-functioning agentic system is a composition of three forces in consta
 
 The first is **Agentic Autonomy** — the model's ability to decide the next best action based on context. It is what makes an agent feel useful instead of mechanical. It is also what makes an agent feel unpredictable instead of trustworthy.
 
-The second is **Probabilistic Reasoning** — the model's capacity to produce outputs based on confidence and patterns rather than rigid certainty. This is the source of the model's gift and the source of its liability. It is why an LLM can summarize a fifty-page medical history in seconds, and why it occasionally invents a drug allergy that does not exist.
+The second is **Probabilistic Reasoning** — the model's capacity to produce outputs based on confidence and patterns rather than rigid certainty. This force has two distinct expressions in enterprise systems, and conflating them is a category error worth naming early. *Statistical prediction* — classical machine learning models that emit a propensity, a class, or a score from structured features — is one expression. *Generative cognition* — large language models that emit narrative, synthesis, and tool-calling reasoning from unstructured input — is the other. They share probabilistic foundations and they share nothing else. They have different governance models, different update cadences, different failure modes, and different proper places in the architecture. Section 7 treats this distinction in detail.
 
 The third is **Deterministic Logic** — the immutable rules, policies, and workflows that behave identically every single time. Determinism is unfashionable. It is also what regulators trust, what ledgers require, and what makes a system insurable.
 
 The discipline of agentic architecture is the discipline of placing each of these forces where it belongs. Autonomy at the boundary of ambiguity. Probability at the moment of synthesis. Determinism at the moment of consequence.
 
-A system that lets autonomy decide where the money moves is a system that has confused force with function. A system that lets determinism decide what a tax return means is a system that will fail the first time someone uploads a JPEG instead of a PDF.
+A system that lets autonomy decide where the money moves is a system that has confused force with function. A system that lets determinism decide what a tax return means is a system that will fail the first time someone uploads a JPEG instead of a PDF. A system that lets a generative model do the work of statistical prediction — scoring credit risk, scoring fraud likelihood, scoring next-best-action — is a system that has chosen the wrong probabilism for the job.
 
 The composition matters more than any one of the three.
 
@@ -46,15 +46,22 @@ The composition matters more than any one of the three.
 
 To choose the right tool, the requirement has to be classified by what it actually is. Most architectural mistakes happen because a probabilistic problem gets a deterministic solution, or a deterministic problem gets handed to a probabilistic system that does not know it is supposed to be exact.
 
-| Category | Component Type | Primary Function | Proper Tooling |
-| -------------- | -------------- | ------------------------------------------------------ | -------------------------------- |
-| Generative | Probabilistic | Ideation, drafting, synthesis | Foundation Models / LLMs |
-| Predictive | Probabilistic | Pattern matching and confidence scoring | Classical ML / Predictive Models |
-| Deterministic | Rules-Based | Policy enforcement, sequencing, math | Workflow Engines (e.g., Pega) |
-| Agentic | Autonomous | Orchestrating tools and specialist handoffs | Agent Frameworks / Control Plane |
-| Human | Accountable | Validation, ethical oversight, exception handling | Human-in-the-Loop (HITL) Gates |
+| Category | Component Type | Primary Function | Governance Model | Proper Tooling |
+| -------------- | --------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------- | -------------------------------- |
+| Generative | Probabilistic (unstructured) | Ideation, drafting, synthesis, tool-calling reasoning | HITL gates, design-time / runtime split, guardrails, prompt versioning | Foundation Models / LLMs |
+| Predictive | Probabilistic (structured) | Pattern matching, confidence scoring, propensity, risk | Model risk management, lineage, drift monitoring, controlled retraining | Classical ML / Predictive Models |
+| Adaptive | Probabilistic (learning) | Real-time optimization from interaction outcomes | Bounded learning rates, controlled exploration, drift detection within a designed envelope | Adaptive ML engines |
+| Deterministic | Rules-Based | Policy enforcement, sequencing, math | Rule versioning, change control, audit | Workflow Engines |
+| Agentic | Autonomous | Orchestrating tools and specialist handoffs | Tool catalogs, capability bounds, traceability | Agent Frameworks / Control Plane |
+| Human | Accountable | Validation, ethical oversight, exception handling | Audit logging, sign-off authority, separation of duties | Human-in-the-Loop (HITL) Gates |
 
 The matrix is not a menu. It is a triage. Every requirement in an enterprise AI program needs to be sorted into one of these categories before tooling is selected. The temptation to skip this step — to pick the tool first and decide what the requirement is later — is the single most common reason enterprise AI projects produce systems that work in narrow demos and collapse in production.
+
+Two notes on reading the matrix.
+
+First, *generative* and *predictive* are both probabilistic, but they are not interchangeable. Asking a generative model to produce a propensity score is asking it to do a job a credit-risk model does better, faster, and more cheaply. Asking a predictive model to draft a narrative is asking it to do a job an LLM does better. Section 7 develops this distinction; the matrix names it.
+
+Second, *adaptive* is treated as a distinct row because its governance model is materially different from offline-trained predictive models. An adaptive model updates continuously in production. The discipline that makes that safe — bounded learning rates, controlled exploration budgets, drift detection within a designed envelope — is not the same discipline that governs an offline-trained credit risk score. Treating them as the same is a common source of architectural confusion.
 
 ---
 
@@ -137,7 +144,35 @@ Cognition is what agents are for. Coordination is what workflows are for. Confus
 
 ---
 
-## 7. Economics: A Formula, Not a Number
+## 7. Three Probabilisms, Three Governance Models
+
+The cognition-versus-coordination split is the load-bearing distinction. There is a second distinction, sitting inside *cognition*, that is equally load-bearing once a program moves past the first prototype.
+
+The probabilistic side of an enterprise AI architecture has three distinct expressions. Treating them as one is the next most common architectural mistake after confusing cognition with coordination.
+
+**Generative cognition** is the work LLMs do. Reading a fifty-page medical record. Drafting a SAR narrative an examiner can defend. Reviewing a contract against playbook and surfacing a non-standard indemnity clause. The input is unstructured. The output is narrative or tool-calling reasoning. The governance model is HITL gates, the design-time / runtime split, guardrails on input and output, evaluator-optimizer reflection where it earns its place, and prompt versioning. The update cadence is on prompt and policy revisions. *Cleanest commercial articulation: the Predictable AI doctrine — creative reasoning at design-time, governed execution at runtime — operationalized through Pega Blueprint at design-time and the family of runtime agents (Design, Conversation, Automation, Knowledge, Coach) at runtime.*
+
+**Statistical prediction** is the work classical machine learning does. Scoring a credit risk. Scoring a fraud likelihood. Predicting an SLA breach. Predicting churn. The input is structured features. The output is a propensity, a class, or a score. The governance model is model risk management — SR 11-7 in U.S. banking, equivalent regimes elsewhere — combined with lineage tracking, drift monitoring, challenger models, and a controlled retraining cadence on the order of weeks or months rather than continuously. The update cadence is governed and discrete. *Cleanest commercial articulation: Pega Predictive Analytics, with models authored and managed in Prediction Studio, embedded into case workflows through Process AI to drive intelligent routing, SLA prediction, and case-level fraud scoring.*
+
+**Adaptive learning** is the work online-learning models do. Recommending a next-best-action. Updating a propensity score from the customer's response in the last interaction. Optimizing an offer mix in real time. The input is a stream of interaction outcomes. The output is a continuously updated prediction. The governance model is the most distinctive of the three: the model itself updates in production, which means the discipline is in *bounding the envelope* of what can update. Bounded learning rates. Controlled exploration budgets. Drift detection against a defined operating range. Designed-in fallback paths when drift exceeds tolerance. The update cadence is continuous, but the envelope is design-time. *Cleanest commercial articulation: Adaptive Decision Manager inside Customer Decision Hub, where adaptive models drive next-best-action while operating inside a governed strategy framework.*
+
+The three probabilisms are not interchangeable. The most common architectural mistake at this layer is asking a generative model to do statistical prediction — asking an LLM to score credit risk by reading the application as text — when a predictive model trained on structured features will be more accurate, faster, cheaper, and far easier to defend in front of a model risk committee. The reverse mistake is asking a predictive model to do generative work, which is rarer because predictive models cannot draft narrative and the limitation is obvious.
+
+The summary table:
+
+| Probabilism | Input | Output | Governance | Update Cadence |
+| ---- | ---- | ---- | ---- | ---- |
+| Generative | Unstructured (text, image, document) | Narrative, synthesis, tool-calling | HITL, design-time / runtime split, guardrails, prompt versioning | On prompt or policy revision |
+| Predictive | Structured features | Propensity, class, score | Model risk management, lineage, drift monitoring, controlled retraining | Discrete, governed (weeks to months) |
+| Adaptive | Stream of interaction outcomes | Continuously updated prediction | Bounded learning rate, controlled exploration, drift envelope, designed fallback | Continuous, within a design-time envelope |
+
+Three probabilisms. Three governance models. Each with a proper place in the architecture. The discipline is in not letting one of them do the work of another.
+
+This distinction also resolves an ambiguity that surfaces in the Pattern 11 (Design-Time / Runtime) discussion later in the document. Pattern 11 says the workflow is not rewritten at runtime. It does *not* say that no model can update at runtime. An adaptive model that updates continuously inside a designed envelope is operating exactly as intended; it is not a violation of Pattern 11. The pattern protects the *process*, not the model. Models can learn at runtime. The orchestration around the model cannot.
+
+---
+
+## 8. Economics: A Formula, Not a Number
 
 The case for the workflow is not only a safety case. It is also an economic one. The honest way to make that case is not with a price tag — vendor pricing varies by deal, by region, by deployment model, and by negotiation — but with a structure that lets a buyer plug in their own numbers and arrive at a defensible relative cost.
 
@@ -151,14 +186,14 @@ What follows is that structure.
 >
 > Where:
 >
-> - $L$ — Licensing and platform fees over the evaluation period
-> - $V$ — Volume of transactions over the evaluation period
-> - $C_t$ — Per-transaction cognitive cost (token usage at provider rates; zero for pure-workflow steps)
-> - $H$ — Per-transaction human handling time, converted to dollars at fully loaded labor cost
-> - $D$ — Development effort to reach production (engineer-hours × loaded rate)
-> - $Q$ — Testing and validation effort (including security, compliance, and adversarial testing)
-> - $M$ — Maintenance effort over the evaluation period (including model drift remediation, prompt revisions, and connector updates)
-> - $A$ — Audit effort over the evaluation period (including log review, regulatory inquiry response, and external audit support)
+> - **L** = Licensing and platform fees over the evaluation period
+> - **V** = Volume of transactions over the evaluation period
+> - $C_t$ = Per-transaction cognitive cost (token usage at provider rates; zero for pure-workflow steps)
+> - **H** = Per-transaction human handling time, converted to dollars at fully loaded labor cost
+> - **D** = Development effort to reach production (engineer-hours × loaded rate)
+> - **Q** = Testing and validation effort (including security, compliance, and adversarial testing)
+> - **M** = Maintenance effort over the evaluation period (including model drift remediation, prompt revisions, and connector updates)
+> - **A** = Audit effort over the evaluation period (including log review, regulatory inquiry response, and external audit support)
 >
 > The relative cost of two architectures, then, is:
 >
@@ -170,7 +205,7 @@ What follows is that structure.
 >
 > **Cognitive cost is not just tokens.** Agentic patterns multiply token consumption. Reflection (Pattern 6 in this document) and parallel fan-out (Pattern 7) can multiply per-transaction token cost several times over. The honest input for $C_t$ is the realistic pattern budget, not the cost of a single LLM call.
 >
-> **Audit effort is the term most often understated.** A workflow with a visual lineage produces an audit response in hours. A pure-agentic system without that lineage can produce one in weeks — assuming the relevant logs were retained. In regulated environments, $A$ is frequently the term that flips $R$.
+> **Audit effort is the term most often understated.** A workflow with a visual lineage produces an audit response in hours. A pure-agentic system without that lineage can produce one in weeks — assuming the relevant logs were retained. In regulated environments, A is frequently the term that flips R.
 >
 > **Maintenance is also asymmetric.** Workflow logic, expressed as versioned rules and decision tables, is updated by changing the rule. Agentic logic, expressed as prompts, is updated by retesting the prompt against every prior failure mode. The first scales. The second compounds.
 >
@@ -188,7 +223,7 @@ The economics flip the moment a program moves from prototype to production. The 
 
 ---
 
-## 8. The Authoring Environment and the Protocol Layer
+## 9. The Authoring Environment and the Protocol Layer
 
 The authoring environment is the most underrated factor in enterprise AI. Most architectural conversations focus on what the system can *do*. The harder question is what the system *cannot* be made to do, by accident, in production.
 
@@ -215,11 +250,13 @@ The third is **the protocol layer**, which is what changed most in the last twel
 
 The two protocols solve different problems. MCP is how an agent calls a tool. A2A is how an agent calls another agent. Together, they push the integration layer below the framework, which means the choice of framework matters less than it did a year ago, and the choice of *governance environment* matters more.
 
+The protocol layer is also showing up in enterprise workflow platforms, not just in pure-agentic frameworks. Pega Agentic Process Fabric, launched in Q3 2025 as part of Infinity '25, supports both MCP and A2A natively — making it one of the first enterprise workflow platforms to ship the protocol layer rather than wrap it. The architectural significance is that an enterprise can now orchestrate agents across MCP-compliant tools and A2A-compliant peers without leaving the governed workflow environment, which is the move that makes the protocol layer enterprise-deployable rather than experiment-deployable.
+
 The implication for enterprise architecture is straightforward. The protocol layer is converging. The governance layer is not. A bank that builds on MCP-compliant tools can swap underlying models more easily than it could in 2024. The bank cannot, however, swap out the question of who approved the tool, who logged the call, and who is accountable when the tool moves money. That question is still answered by the workflow engine and the control plane — and it is still the question regulators ask first.
 
 ---
 
-## 9. The Pressure Curve: Why Frameworks Converge
+## 10. The Pressure Curve: Why Frameworks Converge
 
 This is my framing, not an industry-recognized taxonomy. I find it useful because it explains why frameworks that started in different places have been racing toward similar architectures.
 
@@ -265,11 +302,11 @@ Never ask a framework to be the final word on state. That is still the workflow'
 
 ---
 
-## 10. Things to Watch Out For: The Comparison Layer
+## 11. Things to Watch Out For: The Comparison Layer
 
 Three traps are worth flagging at this layer.
 
-The first is the **demo economics fallacy**. An agentic prototype that runs ten transactions in a sandbox costs almost nothing. The same architecture, scaled to the volume of a real bank — millions of cases per year, with reflection and parallel fan-out applied to each — produces a token bill that arrives like a surprise tax assessment. The economics that matter are the production economics. The TCO formula in §7 exists to make the surprise visible while it is still a planning question, not a board question.
+The first is the **demo economics fallacy**. An agentic prototype that runs ten transactions in a sandbox costs almost nothing. The same architecture, scaled to the volume of a real bank — millions of cases per year, with reflection and parallel fan-out applied to each — produces a token bill that arrives like a surprise tax assessment. The economics that matter are the production economics. The TCO formula in §8 exists to make the surprise visible while it is still a planning question, not a board question.
 
 The second is the **frameworks have caught up dismissal**. It is true that LangGraph, the OpenAI Agents SDK, and the rest have shipped checkpointing, persistence, and HITL. It is also true that they have not closed the gap on SLA management, regulator-grade audit lineage, or saga-based rollback. The catch-up is real on questions one through three of the pressure curve. It is incomplete on question four. Treating *partial parity* as *full parity* is how programs end up with a system that handles the cognitive lift well and fails the audit anyway.
 
@@ -287,7 +324,7 @@ The patterns are organized in three tiers. Tier 1 is the foundational five — p
 
 ---
 
-## 11. Tier 1: The Foundational Five
+## 12. Tier 1: The Foundational Five
 
 **1. Prompt Chaining (Decomposition).** A sequence of LLM calls where the output of one feeds the next, separated by deterministic checks. Functional lane: cognitive synthesis. Decomposition is the primary antidote to hallucination. By breaking a complex task into verifiable sub-steps, you move from one big guess to a series of small, verifiable thoughts. The tradeoff is latency: a five-step chain can multiply total response time by the number of round-trips.
 
@@ -301,7 +338,7 @@ The patterns are organized in three tiers. Tier 1 is the foundational five — p
 
 ---
 
-## 12. Tier 2: The Quality Five
+## 13. Tier 2: The Quality Five
 
 **6. Evaluator-Optimizer (Reflection).** One model generates a candidate, another critiques it against a rubric, the first revises. Functional lane: cognitive quality control. Automated self-correction significantly improves output quality. It is also the most expensive pattern in the library — a budget multiplier rather than a budget addition. Use it where the cost of a wrong answer dwarfs the cost of an extra inference. Avoid it where a deterministic check would do the same job for a fraction of the price.
 
@@ -315,9 +352,11 @@ The patterns are organized in three tiers. Tier 1 is the foundational five — p
 
 ---
 
-## 13. Tier 3: The Enterprise Three
+## 14. Tier 3: The Enterprise Three
 
-**11. Design-Time Generation → Runtime Execution.** Using AI to generate and review workflows at design-time but executing them deterministically at runtime. Functional lane: sovereign governance. This is the most critical split for banks. It ensures all creative reasoning is vetted before it touches real money. Runtime execution becomes boring and predictable, which is exactly what runtime execution should be. Pega Blueprint is the epitome of this concept: a domain expert narrates the process in natural language, an AI drafts the workflow on enterprise rails, and the resulting artifact — not the model — runs in production.
+**11. Design-Time Generation → Runtime Execution.** Using AI to generate and review workflows at design-time but executing them deterministically at runtime. Functional lane: sovereign governance. This is the most critical split for banks. It ensures all creative reasoning is vetted before it touches real money. Runtime execution becomes boring and predictable, which is exactly what runtime execution should be. The cleanest commercial articulation of this pattern is the Predictable AI doctrine — creative reasoning at design time, governed execution at runtime — operationalized through Pega Blueprint at design-time and a family of runtime agents (Design, Conversation, Automation, Knowledge, and Coach) at runtime. A domain expert narrates the process in natural language, AI drafts the workflow on enterprise rails, and the resulting artifact — not the model — runs in production.
+
+A precise note on the pattern's scope. *Pattern 11 protects the workflow, not the model.* A model that updates at runtime — an adaptive next-best-action model, a Process AI prediction that retrains on case outcomes — is not a violation of Pattern 11. It is the third probabilism described in Section 7, operating exactly as intended. The pattern protects the *process*, not the model. Models can learn at runtime. The orchestration around the model cannot.
 
 **12. Saga with Compensating Actions.** Declaring an undo action for every forward action with a side effect. Functional lane: deterministic rollback. Reversibility is the default. Sagas ensure that if a complex agentic process fails at step seven, the bank's ledger is automatically and perfectly offset back to step one. The pattern is treated in detail in Part V; for now, it is sufficient to note that sagas are the architectural mechanism that turns *undo* from a luxury into a guarantee.
 
@@ -325,7 +364,7 @@ The patterns are organized in three tiers. Tier 1 is the foundational five — p
 
 ---
 
-## 14. Things to Watch Out For: The Pattern Layer
+## 15. Things to Watch Out For: The Pattern Layer
 
 There are three patterns that, badly applied, become anti-patterns.
 
@@ -347,9 +386,9 @@ For each use case, the optimal pattern is described first, followed by the failu
 
 ---
 
-## 15. Mortgage Underwriting (Financial Services)
+## 16. Mortgage Underwriting (Financial Services)
 
-**The optimal pattern.** An agent reads messy bank statements, tax returns, and self-employment income narratives — cognitive synthesis. The workflow manages the regulatory clock under TILA-RESPA Integrated Disclosure (TRID) timing rules, enforces ECOA fair lending requirements at every decision point, prepares the loan-level data for HMDA reporting, runs the deterministic debt-to-income and loan-to-value calculations, and routes to a Senior Underwriter when ratios cross thresholds — coordination.
+**The optimal pattern.** All three probabilisms cooperate. An agent reads messy bank statements, tax returns, and self-employment income narratives — *generative cognition*. A predictive model trained on historical loan performance scores credit risk and likelihood of default from structured features — *statistical prediction*. The workflow manages the regulatory clock under TILA-RESPA Integrated Disclosure (TRID) timing rules, enforces ECOA fair lending requirements at every decision point, prepares the loan-level data for HMDA reporting, runs the deterministic debt-to-income and loan-to-value calculations, and routes to a Senior Underwriter when ratios cross thresholds — *coordination*. The cleanest implementation has the agent reading the documents, a predictive model authored in Prediction Studio scoring the credit risk, and the workflow orchestrating the whole sequence with the regulatory clock and audit lineage built in.
 
 | Architecture | Pros | Cons |
 | ------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
@@ -362,9 +401,9 @@ This use case is treated as the deep-dive walkthrough in Part V, including the f
 
 ---
 
-## 16. Complex Claims Adjudication (Insurance)
+## 17. Complex Claims Adjudication (Insurance)
 
-**The optimal pattern.** An agent analyzes photos of vehicle or property damage, summarizes police reports, and flags fraud signals across unstructured notes — cognition. A workflow checks policy coverage limits and deductibles against the contract, enforces the timelines required by state Unfair Claims Settlement Practices Acts (which typically mandate acknowledgment of a claim within fifteen to thirty days and a coverage decision within thirty to sixty days, depending on jurisdiction), reserves capital against the claim, and executes the payout via a saga with compensating actions if the bank transfer fails — coordination.
+**The optimal pattern.** An agent analyzes photos of vehicle or property damage, summarizes police reports, and flags fraud signals across unstructured notes — *generative cognition*. An adaptive fraud model — updating continuously as new fraud patterns surface from SIU investigations — produces a real-time fraud-likelihood score on the structured claim features, escalating high-score claims for closer review — *adaptive learning, governed inside a designed envelope*. A workflow checks policy coverage limits and deductibles against the contract, enforces the timelines required by state Unfair Claims Settlement Practices Acts (which typically mandate acknowledgment of a claim within fifteen to thirty days and a coverage decision within thirty to sixty days, depending on jurisdiction), reserves capital against the claim, and executes the payout via a saga with compensating actions if the bank transfer fails — *coordination*.
 
 | Architecture | Pros | Cons |
 | ------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -375,9 +414,9 @@ The agent's gift is reading a hand-written police report and noticing the incons
 
 ---
 
-## 17. Prior Authorization (Healthcare)
+## 18. Prior Authorization (Healthcare)
 
-**The optimal pattern.** An agent synthesizes fifty-plus pages of medical history to identify medical necessity for a procedure against payer guidelines — cognition. A workflow manages the HIPAA-compliant data flows, enforces the CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F) turnaround mandates that took effect January 1, 2026 — seventy-two hours for expedited (urgent) requests and seven calendar days for standard requests, applicable to Medicare Advantage organizations, Medicaid and CHIP programs, and Qualified Health Plan issuers on the federally-facilitated exchanges — and triggers a HITL gate for nurse review when the model's confidence score falls below a defined threshold — coordination.
+**The optimal pattern.** An agent synthesizes fifty-plus pages of medical history to identify medical necessity for a procedure against payer guidelines — *generative cognition*. A predictive model scores expected length-of-stay and readmission risk from structured clinical features, informing the medical necessity determination with a quantitative signal the LLM cannot produce — *statistical prediction*. A workflow manages the HIPAA-compliant data flows, enforces the CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F) turnaround mandates that took effect January 1, 2026 — seventy-two hours for expedited (urgent) requests and seven calendar days for standard requests, applicable to Medicare Advantage organizations, Medicaid and CHIP programs, and Qualified Health Plan issuers on the federally-facilitated exchanges — and triggers a HITL gate for nurse review when the model's confidence score falls below a defined threshold — *coordination*.
 
 | Architecture | Pros | Cons |
 | ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -388,9 +427,9 @@ The negative-constraint failure is the one that haunts every healthcare AI progr
 
 ---
 
-## 18. AML/KYC Investigation (Banking)
+## 19. AML/KYC Investigation (Banking)
 
-**The optimal pattern.** An agent triages alerts from the bank's transaction monitoring system, performs cognitive analysis across counterparty relationships and unstructured news sources, drafts the narrative for the Suspicious Activity Report (SAR), and synthesizes evidence for the investigator — cognition. A workflow enforces the Bank Secrecy Act timing requirements (a SAR must be filed within thirty calendar days of initial detection, extendable to sixty days only if no suspect has been identified), runs deterministic OFAC sanctions screening, manages the case lifecycle including continuing-activity reviews, files the SAR through FinCEN's BSA E-Filing System with the required structure, and maintains the audit lineage required by examiners — coordination.
+**The optimal pattern.** An adaptive alert prioritization model — updating from investigator dispositions on prior alerts — produces a real-time priority score on each alert from the bank's transaction monitoring system, focusing investigator attention where the precision is highest — *adaptive learning*. An agent triages the prioritized alerts, performs cognitive analysis across counterparty relationships and unstructured news sources, drafts the narrative for the Suspicious Activity Report (SAR), and synthesizes evidence for the investigator — *generative cognition*. A workflow enforces the Bank Secrecy Act timing requirements (a SAR must be filed within thirty calendar days of initial detection, extendable to sixty days only if no suspect has been identified), runs deterministic OFAC sanctions screening, manages the case lifecycle including continuing-activity reviews, files the SAR through FinCEN's BSA E-Filing System with the required structure, and maintains the audit lineage required by examiners — *coordination*.
 
 | Architecture | Pros | Cons |
 | ------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -401,9 +440,9 @@ The synergy is unusually clean here. The cognitive work — reading news, synthe
 
 ---
 
-## 19. Contract Lifecycle Management
+## 20. Contract Lifecycle Management
 
-**The optimal pattern.** An agent reviews third-party contracts against the corporate playbook, extracts obligations and deviations, drafts redline suggestions, and surfaces risk language a reviewer would otherwise miss — cognition. A workflow routes contracts through approval hierarchies, enforces signature authority, manages renewal and breach-notification dates, integrates with the contract repository, and maintains the audit trail required by internal controls and (in regulated industries) by third-party risk management frameworks such as the OCC's guidance on third-party relationships in banking or the EU's Digital Operational Resilience Act (DORA) for financial entities — coordination.
+**The optimal pattern.** An agent reviews third-party contracts against the corporate playbook, extracts obligations and deviations, drafts redline suggestions, and surfaces risk language a reviewer would otherwise miss — *generative cognition*. A predictive vendor-risk model scores each counterparty from structured features — financial health, geographic concentration, operational dependency, prior incident history — producing a quantitative risk signal that the obligation review can be prioritized against — *statistical prediction*. A workflow routes contracts through approval hierarchies, enforces signature authority, manages renewal and breach-notification dates, integrates with the contract repository, and maintains the audit trail required by internal controls and (in regulated industries) by third-party risk management frameworks such as the OCC's guidance on third-party relationships in banking or the EU's Digital Operational Resilience Act (DORA) for financial entities — *coordination*.
 
 | Architecture | Pros | Cons |
 | ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
@@ -434,34 +473,38 @@ Three scenarios are described. The first is the optimal hybrid. The second is th
 
 ---
 
-## 20. Scenario A: The Optimal Hybrid
+## 21. Scenario A: The Optimal Hybrid
 
-In this version, the principle holds: cognition belongs to the agent, coordination belongs to the workflow.
+In this version, the principle holds: cognition belongs to the agent, coordination belongs to the workflow, and statistical prediction sits between them — scoring what the agent reads and feeding what the workflow decides.
 
 | Step | Primary Tool | Pattern & Rationale |
-| ---------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. Application Intake | Workflow | Activation. The workflow engine receives the payload, assigns a unique Case ID, and enforces RBAC to ensure only authorized users can view the data. The TRID disclosure clock starts here. |
 | 2. Document Triage | Agent | Routing (Pattern 2). An agent classifies messy uploads — PDFs, JPEGs of paystubs — to identify what is a tax return vs. a bank statement. |
 | 3. Data Extraction | Agent | RAG (Pattern 3). The agent extracts specific line items (Gross Income, Deductions) and provides citations back to the source document for auditor review. |
 | 4. Calculation & Logic | Workflow | Deterministic Logic. Debt-to-Income (DTI) and Loan-to-Value (LTV) ratios are calculated by a math engine. This is too high-stakes for a probabilistic LLM. |
 | 5. Policy Validation | Workflow | Guardrail Wrap (Pattern 10). The system checks the calculated ratios against current federal and bank-specific lending policies, ECOA fair lending requirements, and HMDA data capture rules. |
-| 6. Risk Synthesis | Agent | Evaluator-Optimizer (Pattern 6). An agent identifies discrepancies — *Income on tax return doesn't match bank deposits* — and drafts a narrative for the underwriter. |
-| 7. Final Decision | Human | HITL Gate (Pattern 5). The workflow pauses. A human reviews the agent's synthesis and the workflow's math, then provides the final Approve or Deny signature. ECOA adverse-action timing starts here if denied. |
-| 8. Funding/Closing | Workflow | Saga (Pattern 12). The workflow triggers the wire transfer. If the external bank rejects the wire, the workflow automatically releases the hold on the funds. |
+| 6. Predictive Risk Scoring | Predictive Model | Statistical Prediction. A credit-risk model — trained offline on historical loan performance, governed under model risk management, lineage-tracked, drift-monitored — scores probability of default from the structured features the workflow has computed. The score is a quantitative input the agent and the human will both see, not a decision in itself. *Cleanest commercial articulation: a model authored in Prediction Studio, embedded into the case workflow through Process AI.* |
+| 7. SLA Breach Prediction | Predictive Model | Adaptive / Process AI. A second model continuously predicts whether the case will hit the TRID disclosure deadline given current queue depth, document complexity, and underwriter workload. If breach probability exceeds threshold, the workflow proactively escalates rather than waiting for the deadline to slip. The model retrains on outcomes from prior cases. |
+| 8. Risk Synthesis | Agent | Evaluator-Optimizer (Pattern 6). An agent identifies discrepancies — *Income on tax return doesn't match bank deposits* — and drafts a narrative for the underwriter. The narrative explicitly references the credit-risk score from Step 6 and the rationale for any divergence between the model's score and the agent's qualitative read. |
+| 9. Final Decision | Human | HITL Gate (Pattern 5). The workflow pauses. A human reviews the agent's synthesis, the workflow's math, and the predictive model's score, then provides the final Approve or Deny signature. ECOA adverse-action timing starts here if denied. |
+| 10. Funding/Closing | Workflow | Saga (Pattern 12). The workflow triggers the wire transfer. If the external bank rejects the wire, the workflow automatically releases the hold on the funds. |
 
-The pattern repeats: the agent reads, classifies, and drafts; the workflow calculates, validates, and executes; the human signs.
+The pattern is now visible across three layers, not two. The agent reads, classifies, and drafts. The predictive layer scores risk and predicts SLA breach — quantitative signals from structured features that the agent cannot produce and the workflow alone cannot infer. The workflow calculates, validates, orchestrates, and executes. The human signs.
 
-What makes this design defensible is not that it includes AI. It is that it includes AI in exactly the steps where probabilistic reasoning is the right tool — reading messy documents, drafting underwriter narratives — and excludes AI from exactly the steps where determinism is the only acceptable design — calculating ratios, enforcing policy, executing the wire, capturing HMDA data points, and producing the ECOA-compliant adverse action notice.
+What makes this design defensible is not that it includes AI. It is that it includes the *right kind* of AI in each step. Generative cognition where ambiguity is the work — reading messy documents, drafting underwriter narratives. Statistical prediction where calibration is the work — credit risk, SLA breach probability. Determinism where consequence is the work — calculating ratios, enforcing policy, executing the wire, capturing HMDA data points, producing the ECOA-compliant adverse action notice. Each probabilism in its proper governance regime, each deterministic step with a deterministic guarantee.
 
 ---
 
-## 21. Scenario B: Agent-Only and the Probabilistic Coordination Risk
+## 22. Scenario B: Agent-Only and the Probabilistic Coordination Risk
 
-In this version, an LLM-based agent — using a modern framework with the checkpointing and HITL primitives that have shipped over the past eighteen months — is asked to manage the entire process. Steps 1 through 3 perform reasonably, with the caveat that token costs are high because the agent is reasoning about every document at every stage. The framework will save state. It will resume after a failure. It will pause for human review.
+In this version, an LLM-based agent — using a modern framework with the checkpointing and HITL primitives that have shipped over the past eighteen months — is asked to manage the entire process. Step 1 (Intake), Step 2 (Document Triage), and Step 3 (Data Extraction) perform reasonably, with the caveat that token costs are high because the agent is reasoning about every document at every stage. The framework will save state. It will resume after a failure. It will pause for human review.
 
-The breakdown begins at step 4.
+The breakdown begins at Step 4.
 
 **Math and Policy.** Agents are probabilistic. A model asked to compute a debt-to-income ratio may round it. A model asked to check a policy may hallucinate an exception because the prompt was slightly ambiguous. Modern frameworks have not changed this. They have made the surrounding state machine more reliable; they have not made the model deterministic. Neither failure is detectable without a separate deterministic check — at which point the deterministic check is doing the work that should have been done deterministically in the first place.
+
+**Statistical Calibration.** The agent-only design has no calibrated credit-risk score. Asking a generative model to produce a probability of default by reading the application as text produces a number that *sounds* confident, but it is not a number that has been trained on historical loan performance, validated against challenger models, or governed under a model risk management framework. The first time the bank's MRM committee asks for the score's lineage, the program discovers it does not have an answer that survives the meeting. The same holds for SLA breach prediction: the framework can detect that a deadline has passed; it cannot, in the absence of a predictive model trained on prior cases, predict that a breach is likely four hours from now.
 
 **SLA and Decision.** Frameworks have begun shipping timer primitives. They are not yet equivalent to native workflow SLA management, particularly around tiered escalation, urgency-based routing, and the automatic adverse-action timing required under ECOA. The TRID three-day disclosure window is not a primitive any framework ships natively. It is a regulatory clock that has to be coded against.
 
@@ -475,17 +518,19 @@ The first one is annoying. The second is bad. The third is what ends programs.
 
 ---
 
-## 22. Scenario C: Workflow-Only and the Rigid Automation Friction
+## 23. Scenario C: Workflow-Only and the Rigid Automation Friction
 
-In this version, a traditional deterministic engine is used without any AI or agentic capabilities.
+In this version, a traditional deterministic engine is used without any AI or agentic capabilities — and, in the most stripped-down version, without statistical models either.
 
-Steps 1 and 4 through 8 execute well. Intake is efficient and secure. Calculations are perfect. SLAs are tracked. ECOA adverse-action notices are generated correctly. HMDA data is captured cleanly. Funding is precise.
+Step 1 (Intake), Step 4 (Calculation), Step 5 (Policy Validation), Step 9 (Final Decision), and Step 10 (Funding/Closing) execute well. Intake is efficient and secure. Calculations are perfect. SLAs are tracked. ECOA adverse-action notices are generated correctly. HMDA data is captured cleanly. Funding is precise.
 
-The breakdown is at the front of the process.
+The breakdown is at Step 2, Step 3, Step 6, Step 7, and Step 8.
 
-**Triage and Extraction.** The system cannot read unstructured documents. The customer or a bank employee has to manually type every line item from their tax returns into a web form. Straight-Through Processing collapses. Every case requires heavy human lifting. A high-quality JPEG of a paystub is a failed case.
+**Triage (Step 2) and Extraction (Step 3).** The system cannot read unstructured documents. The customer or a bank employee has to manually type every line item from their tax returns into a web form. Straight-Through Processing collapses. Every case requires heavy human lifting. A high-quality JPEG of a paystub is a failed case.
 
-**Risk Synthesis.** A human has to manually compare the tax returns to the bank records to find discrepancies. The system can only flag what is in the structured database. The agent's gift — noticing that the income on the tax return does not match the bank deposits — is unavailable.
+**Predictive Risk Scoring (Step 6) and SLA Breach Prediction (Step 7).** Without predictive ML, the underwriter has the calculated DTI and LTV but no calibrated probability of default and no forward-looking SLA breach prediction. Decisions are made on policy thresholds and human judgment alone. The bank's risk team cannot point to a model-driven score in the case file. The operations team cannot pre-empt SLA breaches; they can only react to them after the deadline has slipped. Both gaps are survivable in a low-volume program. Neither is acceptable at the volume of a regulated lender that has to defend its risk discipline to examiners.
+
+**Risk Synthesis (Step 8).** A human has to manually compare the tax returns to the bank records to find discrepancies. The system can only flag what is in the structured database. The agent's gift — noticing that the income on the tax return does not match the bank deposits — is unavailable.
 
 **Development Speed.** Any change to how a document is *read* requires a developer to write new code rather than just updating an agent's prompt. The system is correct, complete, and slow to evolve.
 
@@ -493,7 +538,7 @@ The workflow-only architecture is the safest of the three. It is also the most e
 
 ---
 
-## 23. The Mortgage Funding Saga: When the Wire Fails
+## 24. The Mortgage Funding Saga: When the Wire Fails
 
 In a high-stakes financial services environment, a saga is the architectural mechanism that ensures *undo* is not a luxury but a deterministic guarantee. While an agent might initiate a transaction based on a cognitive insight, the workflow engine manages the *compensating actions* — the sequence of reversals required to walk a process backward when something goes wrong.
 
@@ -550,7 +595,7 @@ This is what *Accountability Infrastructure* actually means. It is not a slogan.
 
 ---
 
-## 24. Things to Watch Out For: The Saga Layer
+## 25. Things to Watch Out For: The Saga Layer
 
 There are four traps in saga design that consistently produce production incidents.
 
@@ -574,7 +619,7 @@ For a bank, the challenge is ensuring that *Agent Sprawl* does not become *Gover
 
 ---
 
-## 25. The Intake Gate: A Triage Matrix
+## 26. The Intake Gate: A Triage Matrix
 
 To prevent the misuse of tools — *a hammer for a screw* — every business request should pass through a triage that evaluates two dimensions: *ambiguity* (how messy is the data?) and *statefulness* (how many rules and steps are involved?).
 
@@ -589,7 +634,7 @@ The triage is the front door of the ecosystem. Skipping it is how an organizatio
 
 ---
 
-## 26. Managing the Population: The Control Plane
+## 27. Managing the Population: The Control Plane
 
 To solve agent sprawl, the bank must implement a centralized control plane. This is not a repository. It is the system of record for the agentic workforce. Note a centralized control plane can and likely should consist of network of federated control planes that account for all agentic capabilities, but allows management grouped by capability categories.
 
@@ -605,7 +650,7 @@ The control plane is the bank's defense against scale becoming chaos.
 
 ---
 
-## 27. The Quality and Safety Mesh
+## 28. The Quality and Safety Mesh
 
 Quality management at the ecosystem level moves from *prompt tuning* to *systemic monitoring*.
 
@@ -613,13 +658,13 @@ A **global guardrail service** (Pattern 10) sits in front of all model interacti
 
 **Diagnostic disagreement** (Pattern 7) is used at high-stakes decision points. Three models score a risk. They disagree. The system does not average them. It trips a HITL gate. Disagreement is a signal that the case is hard. Hard cases deserve human attention.
 
-The **token tax audit** is the ongoing review of cost-to-value ratios. The TCO formula in §7 is the discipline. If an agentic chain costs orders of magnitude more than a deterministic rule and produces only marginally better accuracy, the chain is a candidate for *agent-offloading* — moving the work back to the workflow. The point is not that agents are too expensive. The point is that agents must be priced honestly against the deterministic alternatives. Without that audit, the bank is paying *cognitive tax* on routing decisions that a rule could have made for fractions of a cent.
+The **token tax audit** is the ongoing review of cost-to-value ratios. The TCO formula in §8 is the discipline. If an agentic chain costs orders of magnitude more than a deterministic rule and produces only marginally better accuracy, the chain is a candidate for *agent-offloading* — moving the work back to the workflow. The point is not that agents are too expensive. The point is that agents must be priced honestly against the deterministic alternatives. Without that audit, the bank is paying *cognitive tax* on routing decisions that a rule could have made for fractions of a cent.
 
 The mesh is the difference between *operating* the system and *running* it.
 
 ---
 
-## 28. Governance: The Design-Time / Runtime Split at Scale
+## 29. Governance: The Design-Time / Runtime Split at Scale
 
 Pattern 11 was introduced earlier as the most critical architectural split for a single system. At the ecosystem level, it becomes the governance constitution.
 
@@ -631,7 +676,7 @@ The **saga registry** is the ecosystem-level artifact that makes reversibility a
 
 ---
 
-## 29. The Five Ecosystem Mandates
+## 30. The Five Ecosystem Mandates
 
 The full ecosystem framework reduces to five mandates. They are listed not as a checklist but as a set of architectural commitments that, taken together, define what *production-grade* means for agentic AI.
 
@@ -647,7 +692,7 @@ The full ecosystem framework reduces to five mandates. They are listed not as a 
 
 ---
 
-## 30. Things to Watch Out For: The Ecosystem Layer
+## 31. Things to Watch Out For: The Ecosystem Layer
 
 Three failures are common when programs scale past their first three production agents.
 
@@ -667,12 +712,40 @@ That sentence contains a philosophy, a comparison, a pattern library, five use c
 
 The case is not that agents are dangerous. Agents are extraordinary. They read messy documents, summarize fifty-page medical histories, draft underwriter narratives, draft SAR narratives a BSA examiner can defend, and surface contract risk language a reviewer would otherwise miss. The cognitive layer they unlock has no precedent in enterprise software. To exclude them from the architecture is to leave that capability on the table.
 
-The case is also not that workflows are old-fashioned. Workflow engines have been the backbone of regulated enterprises for two decades for a reason. They handle SLAs in milliseconds, route a thousand-branch decision without losing the thread, enforce RBAC at every step, and produce an audit trail a regulator can read. Modern workflow platforms let domain experts narrate a process in plain English while the system enforces enterprise standards on the resulting design— Pega Blueprint is the cleanest example. The historical complaint that workflow platforms were *hard* belongs to the architectural era they outgrew.
+The case is also not that workflows are old-fashioned. Workflow engines have been the backbone of regulated enterprises for two decades for a reason. They handle SLAs in milliseconds, route a thousand-branch decision without losing the thread, enforce RBAC at every step, and produce an audit trail a regulator can read. Modern workflow platforms let domain experts narrate a process in plain English while the system enforces enterprise standards on the resulting design — and the same platforms have already absorbed predictive and adaptive machine learning as governed first-class citizens, which is the infrastructure most agentic-only programs are still building. The historical complaint that workflow platforms were *hard* belongs to the architectural era they outgrew.
 
-The case is that the two tools are complementary. The agent provides the brain. The workflow provides the rails. Together, they produce systems that are *smart enough to understand the customer and disciplined enough to pass an audit*. Either tool alone produces a system that fails one of those tests.
+The case is that the three layers are complementary. The agent provides the brain. Statistical AI sits between them — scoring what the agent reads and feeding what the workflow decides. The workflow provides the rails. Together, they produce systems that are *smart enough to understand the customer, calibrated enough to score the risk, and disciplined enough to pass an audit*. Any of the three alone produces a system that fails one of those tests.
 
 The architectural discipline is to know which is which.
 
 I started this document with a wire that bounced at 4:47 PM Eastern on a Friday, an attorney on the phone, and an applicant an hour from being a homeowner. The reason that story has resonated with me is that nobody in the situation had to be a hero. The system did not need a phone call to a developer. It did not need a manual ledger correction. It did not need a regulator to be told, weeks later, what had happened. It did the right thing, in the right order, in eleven seconds, and presented the next decision to the right person on a screen. That is what an agent and a workflow look like when they have been put in their proper lanes.
 
 Insight belongs to the machine. Decisions belong to the human. The workflow is what makes that arrangement enforceable on the worst Friday afternoon of the year.
+
+---
+
+# Appendix: Products and Trademarks Referenced
+
+This document references commercial products and open standards to illustrate architectural patterns. Inclusion of any product name is for architectural illustration and does not constitute endorsement. Product names are the trademarks of their respective owners.
+
+## A note on the document's vantage point
+
+The author's professional work is concentrated in the Pega ecosystem, which is why the Pega portfolio is the most extensively referenced commercial example in this document. The architectural patterns described, however, apply across the workflow and BPM platform category. Other enterprise platforms have introduced relevant agentic, predictive, adaptive, and workflow capabilities — see *Other Workflow and BPM Platforms* below. Where Pega is named in the prose, it is because it is the platform the author works in most closely, not because it is the only platform with the relevant capability.
+
+## Pegasystems products referenced
+
+The following Pegasystems Inc. trademarks are referenced in this document: Pega®, Pega Infinity™, Pega Blueprint™, Pega Predictable AI™, Pega Predictable AI Agents™ (including Design Agents, Conversation Agents, Automation Agents, Knowledge Agents, and Coach Agents), Pega GenAI™, Pega GenAI Knowledge Buddy™, Pega Customer Decision Hub™, Adaptive Decision Manager™, Pega Process AI™, Pega Agentic Process Fabric™, Prediction Studio™, and Pega Coach™. Pega is a registered trademark of Pegasystems Inc. Additional Pegasystems trademarks may apply.
+
+## Other workflow and BPM platforms
+
+Several enterprise workflow, business process management, and AI platforms have introduced capabilities relevant to the architectural patterns discussed in this document. The list below is not exhaustive and is intended as a neutral acknowledgment of the broader landscape: Appian, Camunda, IBM (including Watsonx Orchestrate and Cloud Pak for Business Automation), Microsoft (including Power Automate and Copilot Studio), Salesforce (including Agentforce and Flow), and ServiceNow (including Now Assist and AI Agents). Each of these platforms has introduced AI-augmented workflow capabilities in 2025-2026 that intersect with the patterns in this document. Their respective product names are the trademarks of their respective owners.
+
+## AI frameworks and standards referenced
+
+The following frameworks, SDKs, and protocols are referenced in this document and are the trademarks of their respective owners: LangGraph (LangChain, Inc.), OpenAI Agents SDK (OpenAI), Claude Agent SDK (Anthropic), CrewAI (CrewAI Inc.), AWS Strands Agents (Amazon Web Services), Google Agent Development Kit / ADK (Google).
+
+The Model Context Protocol (MCP) is governed by the Linux Foundation's Agentic AI Foundation. The Agent2Agent Protocol (A2A) is an open protocol with multi-vendor governance under the Linux Foundation.
+
+## Regulatory and standards references
+
+References to specific regulations and standards in this document — including but not limited to TILA-RESPA Integrated Disclosure (TRID), Equal Credit Opportunity Act (ECOA), Home Mortgage Disclosure Act (HMDA), Bank Secrecy Act (BSA), FinCEN reporting requirements, Office of Foreign Assets Control (OFAC) sanctions screening, NAIC Unfair Claims Settlement Practices Acts, CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F), FHIR, OCC third-party risk management guidance, and the EU Digital Operational Resilience Act (DORA) — are intended for architectural illustration. Specific regulatory requirements, effective dates, thresholds, and applicability vary by jurisdiction, institution type, and program. Readers should consult primary regulatory sources and qualified legal counsel for any application of these regulations to their own programs.
