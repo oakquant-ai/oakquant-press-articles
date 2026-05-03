@@ -40,7 +40,7 @@ The analyst community has been writing about this gap for two years and the appl
 
 ### Gartner: the steepest enterprise adoption curve being measured anywhere
 
-Gartner's 2026 CIO and Technology Executive Survey found that only seventeen percent of organizations have deployed AI agents to date, while more than sixty percent expect to do so within the next two years. *CIO* refers to the senior executive responsible for the technology systems an enterprise runs on, the role that owns the budget and the accountability for whether agentic AI deployment actually works.
+Gartner's 2026 CIO and Technology Executive Survey found that only seventeen percent of organizations have deployed AI agents to date, while more than sixty percent expect to do so within the next two years. The survey was conducted with the role that owns the budget and the accountability for whether agentic AI deployment actually works. This is what gives the observation its credibility. This group is uniquely positioned to plan and set the direction we are assuming in the article.
 
 Roughly one in six enterprises has deployed today. Roughly six in ten plan to deploy in the next twenty-four months. The gap between those two figures is the steepest enterprise adoption curve being measured anywhere in the technology stack, more aggressive than the comparable curves for cloud, mobile, or SaaS adoption at their respective inflection points.
 
@@ -104,7 +104,7 @@ In 2024, this was contrarian. In 2026, it is recognizable across multiple analys
 
 ### BCG: combine predictive, generative, and agentic AI
 
-The cleanest articulation comes from BCG's *How Agents Are Accelerating the Next Wave of AI Value Creation*, published December 2025. BCG's prescriptive guidance to CEOs explicitly names the composition: *combine predictive, generative, and agentic AI for impact.* *CEO* refers to the senior executive accountable to the board and the shareholders for the entire performance of the enterprise, the role at which strategic technology decisions stop being delegated and start being owned.
+The cleanest articulation comes from BCG's *How Agents Are Accelerating the Next Wave of AI Value Creation*, published December 2025. BCG's prescriptive guidance to CEOs explicitly names the composition: *combine predictive, generative, and agentic AI for impact.* This advice to the role at which strategic technology decisions stop being delegated and start being owned is evidence of how strongly BCG feels about this vision.
 
 The framing assumes the three capabilities are distinct and complementary, which is precisely the architecture the main article develops in its seventh part.
 
@@ -120,9 +120,9 @@ Air Canada had components. It did not have composition.
 
 Forrester, in its 2026 Customer Service Solutions Wave, is more pointed. Principal Analyst Kate Leggett's recommendation to enterprises: *Look for vendors that offer tightly blended AI and CSR experiences and measurement and optimization frameworks for AI.* *CSR* refers to the *customer service representative*, the human agent who handles inquiries the automated system cannot resolve, with the architectural question being how the AI agent and the human agent share work.
 
-The phrase *tightly blended* is doing a lot of work in that sentence. Forrester is naming the same brain-and-rails composition the main article describes, in vocabulary calibrated for customer service buyers.
+The phrase *tightly blended* is the key thing to focus on. Forrester is highlighting the same brain-and-rails composition the main article describes, in vocabulary calibrated for customer service buyers.
 
-Klarna is what *not tightly blended* looked like. The model handled volume; the company assumed it had handled service. Volume and service are different things, governed by different rules, and that is what *blended* means in operational practice.
+Klarna showcases what occurs when an agentic solution is not tightly blended. It highlights the danger of an application pivoted fully to AI that eliminated the CSR. The model handled volume; the company assumed it had handled service. Volume and service are different things, governed by different rules, and that is what *blended* means in operational practice.
 
 ### The argument has not changed. The reception has.
 
