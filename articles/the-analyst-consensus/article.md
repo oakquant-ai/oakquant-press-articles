@@ -44,7 +44,15 @@ Gartner's 2026 CIO and Technology Executive Survey found that only seventeen per
 
 Roughly one in six enterprises has deployed today. Roughly six in ten plan to deploy in the next twenty-four months. The gap between those two figures is the steepest enterprise adoption curve being measured anywhere in the technology stack, more aggressive than the comparable curves for cloud, mobile, or SaaS adoption at their respective inflection points.
 
-Gartner places agentic AI at the Peak of Inflated Expectations on its 2026 Hype Cycle. The *Hype Cycle* is a Gartner framework that traces an emerging technology across five stages from Innovation Trigger through Peak of Inflated Expectations, Trough of Disillusionment, Slope of Enlightenment, and Plateau of Productivity. The Peak position indicates extraordinary market attention running ahead of operational maturity.
+Gartner places agentic AI at the Peak of Inflated Expectations on its 2026 Hype Cycle. The *Hype Cycle* is a Gartner framework that traces an emerging technology across five stages:
+
+1. Innovation Trigger
+2. **Peak of Inflated Expectations *(we are here in 2026)***
+3. Trough of Disillusionment
+4. Slope of Enlightenment
+5. Plateau of Productivity
+
+The Peak position indicates extraordinary market attention running ahead of operational maturity.
 
 Translation: the bot demos are at their most enthusiastic moment in the cycle. The bills haven't come due yet.
 
