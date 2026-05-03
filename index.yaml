@@ -1,4 +1,20 @@
 articles:
+- slug: the-multipolar-agentic-era
+  title: The Multipolar Agentic Era
+  summary: Who is actually building this, and what they are actually saying. A global
+    voice survey across the foundation labs, the platform vendors, the bank CIOs,
+    the sovereign capital pools, and the political leaders shaping the agentic transition.
+  tags:
+  - agentic-ai
+  - geopolitics
+  - sovereign-ai
+  - foundation-models
+  - multipolar
+  cover: ''
+  author: Pumulo Sikaneta
+  category: ''
+  published_at: '2026-05-03T09:18:12+00:00'
+  updated_at: '2026-05-03T09:18:12+00:00'
 - slug: following-the-money
   title: Following the Money
   summary: "What investors are actually betting on, and what they are hedging against.\
