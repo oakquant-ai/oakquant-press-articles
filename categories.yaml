@@ -11,7 +11,7 @@ categories:
 - slug: current-events
   name: Current Events
   description: "Where the headlines actually go \u2014 context, not coverage."
-  order: 2
+  order: 3
 - slug: philosophy
   name: Philosophy
   description: How to think about what we are doing, and why.
