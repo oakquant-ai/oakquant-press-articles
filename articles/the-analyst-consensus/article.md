@@ -38,19 +38,47 @@ These are not technology problems. They are operational and architectural proble
 
 The analyst community has been writing about this gap for two years and the applicability of these five observations has stayed remarkably consistent.
 
-Gartner's 2026 CIO and Technology Executive Survey, the CIO being the senior executive responsible for the technology systems an enterprise runs on, the role that owns the budget and the accountability for whether agentic AI deployment actually works, found that only seventeen percent of organizations have deployed AI agents to date, while more than sixty percent expect to do so within the next two years. Roughly one in six enterprises has deployed today; roughly six in ten plan to deploy in the next twenty-four months. The gap between those two figures is the steepest enterprise adoption curve being measured anywhere in the technology stack, more aggressive than the comparable curves for cloud, mobile, or SaaS adoption at their respective inflection points. Gartner places agentic AI at the Peak of Inflated Expectations on its 2026 Hype Cycle. The *Hype Cycle* is a Gartner framework that traces an emerging technology across five stages from Innovation Trigger through Peak of Inflated Expectations, Trough of Disillusionment, Slope of Enlightenment, and Plateau of Productivity. The Peak position indicates extraordinary market attention running ahead of operational maturity. Translation: the bot demos are at their most enthusiastic moment in the cycle. The bills haven't come due yet.
+### Gartner: the steepest enterprise adoption curve being measured anywhere
 
-McKinsey's State of AI survey from late 2025 gives the picture from a different angle. Sixty-two percent of organizations reported experimenting with or piloting AI agents, and yet, in any given business function, no more than ten percent of respondents said their organizations had reached scale. Six in ten organizations are stuck in pilot. One in ten has reached scale. The remaining gap is the entire competitive opportunity for the next twenty-four months.
+Gartner's 2026 CIO and Technology Executive Survey found that only seventeen percent of organizations have deployed AI agents to date, while more than sixty percent expect to do so within the next two years. *CIO* refers to the senior executive responsible for the technology systems an enterprise runs on, the role that owns the budget and the accountability for whether agentic AI deployment actually works.
 
-BCG's December 2025 research adds the human dimension. Three in four employees believe AI agents will matter for future success. Only thirteen percent say their companies have broadly integrated them into workflows. Only one-third say they understand how the agents work. Most workers are operating in environments where the agentic future is real to them as an idea but invisible to them as a working tool.
+Roughly one in six enterprises has deployed today. Roughly six in ten plan to deploy in the next twenty-four months. The gap between those two figures is the steepest enterprise adoption curve being measured anywhere in the technology stack, more aggressive than the comparable curves for cloud, mobile, or SaaS adoption at their respective inflection points.
+
+Gartner places agentic AI at the Peak of Inflated Expectations on its 2026 Hype Cycle. The *Hype Cycle* is a Gartner framework that traces an emerging technology across five stages from Innovation Trigger through Peak of Inflated Expectations, Trough of Disillusionment, Slope of Enlightenment, and Plateau of Productivity. The Peak position indicates extraordinary market attention running ahead of operational maturity.
+
+Translation: the bot demos are at their most enthusiastic moment in the cycle. The bills haven't come due yet.
+
+### McKinsey: six in ten stuck, one in ten at scale
+
+McKinsey's State of AI survey from late 2025 gives the picture from a different angle. Sixty-two percent of organizations reported experimenting with or piloting AI agents. In any given business function, no more than ten percent of respondents said their organizations had reached scale.
+
+Six in ten organizations are stuck in pilot. One in ten has reached scale. The remaining gap is the entire competitive opportunity for the next twenty-four months.
+
+### BCG: workers see the future but cannot use it
+
+BCG's December 2025 research adds the human dimension. Three in four employees believe AI agents will matter for future success. Only thirteen percent say their companies have broadly integrated them into workflows. Only one-third say they understand how the agents work.
+
+Most workers are operating in environments where the agentic future is real to them as an idea but invisible to them as a working tool.
+
+### Deloitte: only one in five has the governance to operate
 
 Deloitte's 2026 State of AI in the Enterprise report, surveying more than 3,200 business and IT leaders, contributes the most quotable governance number in the landscape: only twenty-one percent of companies have a mature governance model for autonomous agents.
 
-That is a lot of statistics in four paragraphs, and the numbers tell a story that is not always intuitive to see when they sit next to each other. They align more closely than they appear. Roughly two-thirds to three-quarters of enterprises have a pilot running. Somewhere between ten and twenty-one percent have actually deployed at scale or built the governance to operate the deployment safely, depending on which dimension the survey is measuring. The honest math, taken across the four major analysts, is that *between one in ten and one in five enterprises have crossed the line from pilot to scaled production with the discipline to keep the deployment running*.
+### What the four numbers say together
+
+That is a lot of statistics in four subsections, and the numbers tell a story that is not always intuitive to see when they sit next to each other. They align more closely than they appear.
+
+Roughly two-thirds to three-quarters of enterprises have a pilot running. Somewhere between ten and twenty-one percent have actually deployed at scale or built the governance to operate the deployment safely, depending on which dimension the survey is measuring.
+
+The honest math, taken across the four major analysts, is that *between one in ten and one in five enterprises have crossed the line from pilot to scaled production with the discipline to keep the deployment running*.
 
 Stated in the language of a board meeting: *who would sign up for a project with a one-in-ten-to-one-in-five chance of reaching scale?* Two-thirds to three-quarters of large enterprises, that's who, because they have judged the risk of not trying to be larger than the risk of trying and stalling. The competitive imperative is real. The execution discipline that turns the pilot into the production deployment is not yet broadly built.
 
-What the data also says, more quietly, is that the sixty-or-seventy percent in the middle are not Klarnas. They are not loud failures. They are silent stalls. Their pilots worked in the sandbox. They never got to find out whether the theory would survive contact with production data, real volume, real edge cases, real audit pressure. Everyone in that middle wants to be the next COiN, the system that runs invisibly and saves 360,000 hours a year. Almost everyone in that middle is terrified of becoming the next Klarna, the system that ran loudly and had to be quietly rebuilt. That fear is rational. The discipline that distinguishes the COiN outcome from the Klarna outcome is the architectural and governance work the analyst data is describing in aggregate and the main article is describing in detail.
+What the data also says, more quietly, is that the sixty-or-seventy percent in the middle are not Klarnas. They are not loud failures. They are silent stalls. Their pilots worked in the sandbox. They never got to find out whether the theory would survive contact with production data, real volume, real edge cases, real audit pressure.
+
+Everyone in that middle wants to be the next COiN, the system that runs invisibly and saves 360,000 hours a year. Almost everyone in that middle is terrified of becoming the next Klarna, the system that ran loudly and had to be quietly rebuilt.
+
+That fear is rational. The discipline that distinguishes the COiN outcome from the Klarna outcome is the architectural and governance work the analyst data is describing in aggregate and the main article is describing in detail.
 
 ---
 
@@ -66,11 +94,29 @@ That divergence between what generative cognition produces and what the determin
 
 In 2024, this was contrarian. In 2026, it is recognizable across multiple analyst frames.
 
-The cleanest articulation comes from BCG's *How Agents Are Accelerating the Next Wave of AI Value Creation*, published December 2025. BCG's prescriptive guidance to CEOs, the senior executives accountable to the board and the shareholders for the entire performance of the enterprise, the role at which strategic technology decisions stop being delegated and start being owned, explicitly names the composition: *combine predictive, generative, and agentic AI for impact.* The framing assumes the three capabilities are distinct and complementary, which is precisely the architecture the main article develops in its seventh part.
+### BCG: combine predictive, generative, and agentic AI
 
-Gartner published the inaugural Magic Quadrant for Decision Intelligence Platforms in January 2026, defining the category as *software to create decision-centric solutions that support, augment and automate decision making of humans or machines, powered by the composition of data, analytics, knowledge and AI.* Two structural observations matter. First, the category is named *decision intelligence*, not *AI*. Gartner is signaling that the sophistication of the system is in how decisions are composed, not in how impressive any single model is. Second, the definition explicitly invokes *composition*, which is the core architectural move. Air Canada had components. It did not have composition.
+The cleanest articulation comes from BCG's *How Agents Are Accelerating the Next Wave of AI Value Creation*, published December 2025. BCG's prescriptive guidance to CEOs explicitly names the composition: *combine predictive, generative, and agentic AI for impact.* *CEO* refers to the senior executive accountable to the board and the shareholders for the entire performance of the enterprise, the role at which strategic technology decisions stop being delegated and start being owned.
 
-Forrester, in its 2026 Customer Service Solutions Wave, is more pointed. Principal Analyst Kate Leggett's recommendation to enterprises: *Look for vendors that offer tightly blended AI and CSR experiences and measurement and optimization frameworks for AI.* CSR meaning *customer service representative*, the human agent who handles inquiries the automated system cannot resolve, with the architectural question being how the AI agent and the human agent share work. The phrase *tightly blended* is doing a lot of work in that sentence. Forrester is naming the same brain-and-rails composition the main article describes, in vocabulary calibrated for customer service buyers. Klarna is what *not tightly blended* looked like. The model handled volume; the company assumed it had handled service. Volume and service are different things, governed by different rules, and that is what *blended* means in operational practice.
+The framing assumes the three capabilities are distinct and complementary, which is precisely the architecture the main article develops in its seventh part.
+
+### Gartner: composition is the core architectural move
+
+Gartner published the inaugural Magic Quadrant for Decision Intelligence Platforms in January 2026, defining the category as *software to create decision-centric solutions that support, augment and automate decision making of humans or machines, powered by the composition of data, analytics, knowledge and AI.*
+
+Two structural observations matter. First, the category is named *decision intelligence*, not *AI*. Gartner is signaling that the sophistication of the system is in how decisions are composed, not in how impressive any single model is. Second, the definition explicitly invokes *composition*, which is the core architectural move.
+
+Air Canada had components. It did not have composition.
+
+### Forrester: tightly blended AI and CSR experiences
+
+Forrester, in its 2026 Customer Service Solutions Wave, is more pointed. Principal Analyst Kate Leggett's recommendation to enterprises: *Look for vendors that offer tightly blended AI and CSR experiences and measurement and optimization frameworks for AI.* *CSR* refers to the *customer service representative*, the human agent who handles inquiries the automated system cannot resolve, with the architectural question being how the AI agent and the human agent share work.
+
+The phrase *tightly blended* is doing a lot of work in that sentence. Forrester is naming the same brain-and-rails composition the main article describes, in vocabulary calibrated for customer service buyers.
+
+Klarna is what *not tightly blended* looked like. The model handled volume; the company assumed it had handled service. Volume and service are different things, governed by different rules, and that is what *blended* means in operational practice.
+
+### The argument has not changed. The reception has.
 
 The convergence matters because it changes what a credible architectural conversation sounds like. In 2024, an architect proposing a three-layer composition with distinct governance regimes for each layer was making a contrarian claim. In 2026, the same architect is making a claim that aligns with the explicit guidance of all three major industry analysts. The argument has not changed. The reception has.
 
@@ -80,19 +126,55 @@ The convergence matters because it changes what a credible architectural convers
 
 In 2023, McDonald's was running an AI-powered drive-thru pilot in partnership with IBM at more than a hundred US restaurants. The system was supposed to take orders by voice and pass them to the kitchen with fewer errors than a human cashier. By June 2024, McDonald's discontinued the program. Customer videos had gone viral showing the AI adding hundreds of chicken nuggets to a single order, misinterpreting requests, and assigning items the customer had explicitly declined. The technology worked in the demo. It did not survive contact with how people actually order food in cars at midnight. Beyond the operational failure, there was a governance failure: nobody had defined what the system was allowed to do unsupervised, what triggered escalation, or how the brand experience was protected when it failed. The agent was not properly governed.
 
-Eighteen months later, the analyst community has formally recognized this as a distinct category problem. Gartner's 2026 Hype Cycle for Agentic AI is the most consequential signal. The Hype Cycle places *agentic AI governance*, *agentic AI security*, and *FinOps for agentic AI* as distinct profiles alongside core agentic AI technologies. *FinOps* is the cloud cost management discipline that emerged when enterprises started running production workloads on metered cloud infrastructure and discovered that engineering decisions were directly driving operating expense, now extending to the metered consumption of AI inference. Gartner's framing: these supporting profiles indicate *rising enterprise concern about accountability, control and economic sustainability as agentic systems become more autonomous and interconnected*. Their placement on the curve *highlights that the need for oversight and discipline is becoming evident early in the adoption cycle, not only after large-scale deployment*.
+Eighteen months later, the analyst community has formally recognized this as a distinct category problem.
 
-That last sentence is worth re-reading. The 2024 narrative around AI governance was that governance follows deployment, first the pilots, then the audit. The 2026 narrative, per Gartner, is that governance must be designed in alongside the agents, not retrofitted afterward. McDonald's is what retrofitting looks like. By the time the chicken nugget videos were on social media, the governance question was downstream of a brand crisis. The 2026 architectural argument is that the governance question has to be upstream of the deployment, not downstream of the embarrassment.
+### Gartner: governance designed in alongside the agents, not retrofitted afterward
 
-Forrester's AI Governance Wave Q3 2025 named **Credo AI** a Leader. The naming formally established the AI governance platform as a recognized vendor category alongside the workflow platforms and the agent frameworks. Credo AI's positioning, which covers registry, policy enforcement, evidence aggregation, and audit-ready documentation, is structurally adjacent to but distinct from the workflow layer. The architectural implication is that a sophisticated 2026 enterprise AI program now has at least three distinct technology layers: the agent framework, the workflow platform, and the AI governance platform. Each governs different things. Each is a separate procurement decision. Each is a separate competency to build.
+Gartner's 2026 Hype Cycle for Agentic AI is the most consequential signal. The Hype Cycle places *agentic AI governance*, *agentic AI security*, and *FinOps for agentic AI* as distinct profiles alongside core agentic AI technologies.
 
-JPMorgan's COiN is, in this light, an instructive case in what early-baked governance looks like. The platform was scoped narrowly from the start: extracting structured meaning from a specific class of legal documents, classifying clauses into roughly 150 attributes, with human lawyers reviewing the outputs at launch and gradually being moved to higher-judgment work as the error rate proved durably low. The governance was not a layer added after the model worked. It was the constraint that defined what the model was allowed to do in the first place. That is what *designed in alongside* means in operational practice.
+*FinOps* is the cloud cost management discipline that emerged when enterprises started running production workloads on metered cloud infrastructure and discovered that engineering decisions were directly driving operating expense, now extending to the metered consumption of AI inference.
 
-Gartner's 2026 Magic Quadrant for Data and Analytics Governance Platforms identifies five trends that compound the picture: agentic governance enforcement (governance shifting from AI-assisted recommendations to fully automated, agent-driven policy enforcement), trust models over control models, AI governance convergence (data and analytics governance platforms becoming the primary foundation for operationalizing AI governance), horizontal market consolidation, and ecosystem-led innovation. The fourth, horizontal market consolidation, is what enterprise architects increasingly mean when they talk about *titan convergence*. The market is consolidating siloed governance tools into unified platforms, and the platforms that win that consolidation will define how enterprise AI operates for the rest of the decade.
+Gartner's framing: these supporting profiles indicate *rising enterprise concern about accountability, control and economic sustainability as agentic systems become more autonomous and interconnected*. Their placement on the curve *highlights that the need for oversight and discipline is becoming evident early in the adoption cycle, not only after large-scale deployment*.
+
+That last sentence is worth re-reading. The 2024 narrative around AI governance was that governance follows deployment, first the pilots, then the audit. The 2026 narrative, per Gartner, is that governance must be designed in alongside the agents, not retrofitted afterward.
+
+McDonald's is what retrofitting looks like. By the time the chicken nugget videos were on social media, the governance question was downstream of a brand crisis. The 2026 architectural argument is that the governance question has to be upstream of the deployment, not downstream of the embarrassment.
+
+### Forrester: AI governance is now its own vendor category
+
+Forrester's AI Governance Wave Q3 2025 named **Credo AI** a Leader. The naming formally established the AI governance platform as a recognized vendor category alongside the workflow platforms and the agent frameworks.
+
+Credo AI's positioning, which covers registry, policy enforcement, evidence aggregation, and audit-ready documentation, is structurally adjacent to but distinct from the workflow layer.
+
+The architectural implication is that a sophisticated 2026 enterprise AI program now has at least three distinct technology layers: the agent framework, the workflow platform, and the AI governance platform. Each governs different things. Each is a separate procurement decision. Each is a separate competency to build.
+
+### COiN: what designed-in alongside actually looks like
+
+JPMorgan's COiN is, in this light, an instructive case in what early-baked governance looks like. The platform was scoped narrowly from the start: extracting structured meaning from a specific class of legal documents, classifying clauses into roughly 150 attributes, with human lawyers reviewing the outputs at launch and gradually being moved to higher-judgment work as the error rate proved durably low.
+
+The governance was not a layer added after the model worked. It was the constraint that defined what the model was allowed to do in the first place. That is what *designed in alongside* means in operational practice.
+
+### Gartner: five trends in agentic governance enforcement
+
+Gartner's 2026 Magic Quadrant for Data and Analytics Governance Platforms identifies five trends that compound the picture:
+
+1. **Agentic governance enforcement.** Governance shifting from AI-assisted recommendations to fully automated, agent-driven policy enforcement.
+2. **Trust models over control models.**
+3. **AI governance convergence.** Data and analytics governance platforms becoming the primary foundation for operationalizing AI governance.
+4. **Horizontal market consolidation.**
+5. **Ecosystem-led innovation.**
+
+The fourth, horizontal market consolidation, is what enterprise architects increasingly mean when they talk about *titan convergence*. The market is consolidating siloed governance tools into unified platforms, and the platforms that win that consolidation will define how enterprise AI operates for the rest of the decade.
+
+### Where the main article touches this layer, and where it does not
 
 The main article touches the AI governance platform layer in Part VI but does not develop it as a distinct category. The reason for the lighter touch is that the architecture stands on its own without it; the reason it deserves a fuller treatment in future work is that the analyst data, and the McDonald's-and-Klarna-and-Air-Canada landscape it summarizes, now positions it as a first-class concern.
 
-A useful way to read the analyst signal in plain terms: in 2024, fewer than one in three enterprises had a deliberate governance model for AI agents in place at the design phase. In 2026, the analyst consensus is that running an agentic system without one is reckless, and the Deloitte twenty-one percent number is the count of enterprises that have actually built the discipline. The remaining seventy-nine percent are operating with governance retrofitted onto deployments that already exist or that are already being scoped without governance in the room. The McDonald's drive-thru pilot, the Air Canada chatbot, the Klarna customer service rollout. These are not exotic edge cases. They are the modal failure pattern when governance arrives downstream of deployment. COiN is the modal success pattern when governance arrives upstream. Most enterprises in 2026 know they want the second pattern. Most are still operating in the first.
+A useful way to read the analyst signal in plain terms: in 2024, fewer than one in three enterprises had a deliberate governance model for AI agents in place at the design phase. In 2026, the analyst consensus is that running an agentic system without one is reckless, and the Deloitte twenty-one percent number is the count of enterprises that have actually built the discipline.
+
+The remaining seventy-nine percent are operating with governance retrofitted onto deployments that already exist or that are already being scoped without governance in the room. The McDonald's drive-thru pilot, the Air Canada chatbot, the Klarna customer service rollout. These are not exotic edge cases. They are the modal failure pattern when governance arrives downstream of deployment.
+
+COiN is the modal success pattern when governance arrives upstream. Most enterprises in 2026 know they want the second pattern. Most are still operating in the first.
 
 ---
 
