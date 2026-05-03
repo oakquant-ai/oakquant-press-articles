@@ -1,0 +1,26 @@
+categories:
+- slug: current-events
+  name: Current Events
+  description: "Where the headlines actually go \u2014 context, not coverage."
+  order: 1
+- slug: technology
+  name: Technology
+  description: Systems, software, and the seams where they meet people.
+  order: 2
+- slug: philosophy
+  name: Philosophy
+  description: How to think about what we are doing, and why.
+  order: 3
+- slug: architecture-and-design
+  name: Architecture & Design
+  description: "How systems are shaped \u2014 software, organisations, and the world\
+    \ they make."
+  order: 4
+- slug: inspirational
+  name: Inspirational
+  description: Stories and ideas worth carrying with you.
+  order: 5
+- slug: personal
+  name: Personal
+  description: Notes from the studio. Less argument, more witness.
+  order: 6
