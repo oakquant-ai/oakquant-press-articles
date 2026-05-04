@@ -132,7 +132,7 @@ The convergence matters because it changes what a credible architectural convers
 
 ## 3. Has the analyst community recognized agentic governance as a distinct category?
 
-In 2023, McDonald's was running an AI-powered drive-thru pilot in partnership with IBM at more than a hundred US restaurants. The system was supposed to take orders by voice and pass them to the kitchen with fewer errors than a human cashier. By June 2024, McDonald's discontinued the program. Customer videos had gone viral showing the AI adding hundreds of chicken nuggets to a single order, misinterpreting requests, and assigning items the customer had explicitly declined. The technology worked in the demo. It did not survive contact with how people actually order food in cars at midnight. Beyond the operational failure, there was a governance failure: nobody had defined what the system was allowed to do unsupervised, what triggered escalation, or how the brand experience was protected when it failed. The agent was not properly governed.
+In 2023, McDonald's was running an AI-powered drive-thru pilot in partnership with IBM at more than a hundred US restaurants. The system was supposed to take orders by voice and pass them to the kitchen with fewer errors than a human cashier. By June 2024, McDonald's discontinued the program. Customer videos had gone viral showing the AI adding hundreds of chicken nuggets to a single order, misinterpreting requests, and assigning items the customer had explicitly declined. The technology worked in the demo. It fell apart when it had to deal with how people actually order food in cars at midnight. Beyond the operational failure, there was a governance failure: nobody had defined what the system was allowed to do unsupervised, what triggered escalation, or how the brand experience was protected when it failed. The agent was not properly governed.
 
 Eighteen months later, the analyst community has formally recognized this as a distinct category problem.
 
@@ -140,7 +140,7 @@ Eighteen months later, the analyst community has formally recognized this as a d
 
 Gartner's 2026 Hype Cycle for Agentic AI is the most consequential signal. The Hype Cycle places *agentic AI governance*, *agentic AI security*, and *FinOps for agentic AI* as distinct profiles alongside core agentic AI technologies.
 
-*FinOps* is the cloud cost management discipline that emerged when enterprises started running production workloads on metered cloud infrastructure and discovered that engineering decisions were directly driving operating expense, now extending to the metered consumption of AI inference.
+*FinOps* is the discipline that emerged a decade ago when companies moved their software systems into the cloud and started paying for computing power by the hour, the gigabyte, and the transaction rather than buying servers up front. Once the bill arrived monthly instead of annually, finance teams discovered something engineers already knew: a single careless design choice could quietly multiply costs by ten or a hundred. FinOps is the practice of managing those choices deliberately. The same discipline is now extending to AI, because every question asked of a model carries a real cost, and those costs add up fast at enterprise scale.
 
 Gartner's framing: these supporting profiles indicate *rising enterprise concern about accountability, control and economic sustainability as agentic systems become more autonomous and interconnected*. Their placement on the curve *highlights that the need for oversight and discipline is becoming evident early in the adoption cycle, not only after large-scale deployment*.
 
@@ -150,9 +150,14 @@ McDonald's is what retrofitting looks like. By the time the chicken nugget video
 
 ### Forrester: AI governance is now its own vendor category
 
-Forrester's AI Governance Wave Q3 2025 named **Credo AI** a Leader. The naming formally established the AI governance platform as a recognized vendor category alongside the workflow platforms and the agent frameworks.
+Forrester's AI Governance Wave Q3 2025 formally established AI governance as a recognized vendor category alongside the workflow platforms and the agent frameworks. **Credo AI** was named the Leader of that inaugural Wave. The capabilities Forrester evaluated against define what an AI governance platform is supposed to be:
 
-Credo AI's positioning, which covers registry, policy enforcement, evidence aggregation, and audit-ready documentation, is structurally adjacent to but distinct from the workflow layer.
+- *Registry*, a catalog of every AI system the enterprise operates and what it is allowed to do.
+- *Policy enforcement*, the mechanism that prevents an AI system from taking actions outside its approved scope.
+- *Evidence aggregation*, the collection and storage of records that demonstrate the system did what it was supposed to do.
+- *Audit-ready documentation*, the artifacts a regulator or internal auditor can ask for at any moment without the team scrambling to assemble them.
+
+These capabilities sit structurally adjacent to but distinct from the workflow layer, which is why Forrester treats them as their own vendor category.
 
 The architectural implication is that a sophisticated 2026 enterprise AI program now has at least three distinct technology layers: the agent framework, the workflow platform, and the AI governance platform. Each governs different things. Each is a separate procurement decision. Each is a separate competency to build.
 
