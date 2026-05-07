@@ -1,3 +1,5 @@
+![A keyboard at twilight on a wooden desk, lit by a brass lamp, with a coffee cup and an open notebook nearby](images/IMG_0014.jpeg)
+
 ## Overture: The Window That Rewrote Software
 
 In June 2021, the CEO of GitHub — a soft-spoken venture investor named Nat Friedman — wrote a short blog post announcing something called Copilot. He described it as an "AI pair programmer." A pair programmer, in software culture, is a colleague who sits next to you while you code; one of you drives the keyboard, the other watches and thinks. Friedman was suggesting, with measured language, that the colleague could now be a machine.
@@ -10,7 +12,7 @@ The structure is deliberate. Part I provides the vocabulary. Part II tells the s
 
 Read cover to cover, this guide offers a clearer view of the category than most executives currently hold.
 
-A note on positioning. My professional work is concentrated in the Pega ecosystem, which is one of the workflow platforms whose role this guide touches on briefly in Part VII. The field-guide treatment of the AI coding tools themselves is presented as the analyst community describes them, with no Pega-specific advocacy inside the vendor walkthroughs. The deeper argument for why the workflow and governance layer becomes more valuable rather than less as agentic coding matures is published separately as *The Analyst Consensus on Agentic AI Architecture*, also at press.oakquant.ai.
+A note on positioning. My professional work is concentrated in the Pega ecosystem, which is one of the workflow platforms whose role this guide touches on briefly in Part VII. The field-guide treatment of the AI coding tools themselves is presented as the analyst community describes them, with no Pega-specific advocacy inside the vendor walkthroughs. The deeper argument for why the workflow and governance layer becomes more valuable rather than less as agentic coding matures is published separately as [*The Analyst Consensus on Agentic AI Architecture*](https://press.oakquant.ai/public/articles/the-analyst-consensus), also at press.oakquant.ai.
 
 ---
 
