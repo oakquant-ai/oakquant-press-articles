@@ -1,3 +1,5 @@
+![An analyst's working desk in late afternoon light, with stacked printed reports, a coffee cup, reading glasses, and an open laptop in soft focus.](images/IMG_0015.jpeg)
+
 *A companion to* [Insight Belongs to the Machine. Decisions Belong to the Human.](https://press.oakquant.ai/public/articles/insight-belongs-to-the-machine)
 
 ---
@@ -99,6 +101,8 @@ Moffatt sued. Air Canada's defense was novel: the airline argued that the chatbo
 The architectural lesson is simple but worth being explicit about. The chatbot was a generative system answering customer questions in natural language. The bereavement fare policy was a deterministic rule maintained by the airline. The two were never properly composed. The bot had a probabilistic plausible answer. The airline had a non-negotiable policy. There was no governance layer between them deciding which answer was authoritative. When the two diverged, the customer trusted the bot, the bot was wrong, and the tribunal made the airline pay for the divergence.
 
 That divergence between what generative cognition produces and what the deterministic policy actually says is one face of the three-probabilism question. Generative cognition is one mode of probabilism. Statistical prediction (a credit risk model, a fraud score, a churn classifier) is another. Workflow coordination is the third mode that is not probabilistic at all but governs whether the other two combine into something an enterprise can actually run. The argument the main article develops at length is that all three need to be present, distinct, and properly governed for an agentic system to be production-credible.
+
+![A diagram showing two probabilistic components, generative cognition and statistical prediction, sitting above a deterministic workflow coordination substrate that contains four named capability regions: governance and policy, case state and durability, audit and compliance, and composition and orchestration.](images/fig-three-probabilism-composition.svg)
 
 In 2024, this was contrarian. In 2026, it is recognizable across multiple analyst frames.
 
