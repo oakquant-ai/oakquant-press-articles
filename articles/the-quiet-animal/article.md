@@ -1,4 +1,4 @@
-*Working title — Pumulo, this is a placeholder. Title options at the bottom of this file.*
+*Everything Addicted*
 
 ![A fish that wants to fight, becoming a fish that doesn't.](images/01-hero-rivulus.jpg)
 
