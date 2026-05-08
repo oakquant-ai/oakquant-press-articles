@@ -206,7 +206,7 @@ The pattern, you will notice, is the pattern that the priests of Eleusis already
 
 ## The quiet animal
 
-![The reach is older than the narrator.](images/07-still-water-fish.jpg)
+![The reach is older than the narrator.](images/07-still-water-fish.PNG))
 
 The fish in the tank in Nova Scotia does not know it is calmer. The reindeer in the Siberian snowfield does not know it is high. The wallaby in the Tasmanian poppy field is, as far as anyone can tell, not running an internal commentary on its experience of running in circles. The capuchin monkey rubbing its fur with the millipede secretions is not, in any sense we can verify, asking itself why it does this. The animals do what the animals do. Whatever the reach toward the substance is for them — relief, novelty, defence, social bonding, simple pleasure — it is a reach without a narrator.
 
