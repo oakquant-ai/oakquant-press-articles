@@ -202,7 +202,7 @@ The most important fact about the healing turn, for the reader, is that it is no
 
 The pattern, you will notice, is the pattern that the priests of Eleusis already knew. The chemistry alone is not the medicine. The chemistry plus the room plus the guide plus the integration is the medicine. The Greeks worked this out two and a half thousand years ago. The modern world, having spent a century pretending the chemistry was either evil or magic, is finally rebuilding the rest of the apparatus around it.
 
-## The quiet animal
+## The wanting
 
 ![The reach is older than the narrator.](images/07-still-water-fish.PNG) 
 
@@ -216,13 +216,13 @@ The animal under all of that — the animal that was in Forsyth's tank, the anim
 
 What the long human history of substances shows, at its best, is that the wanting can be honoured. There is nothing wrong with it. The reindeer wants it. The octopus, given the molecule, will reach out and embrace a stranger. The Greek philosopher walked nine days to drink it. The depressed Harvard professor breathed it through a rubber mask in his Cambridge rooms. The patient on the couch at Imperial today swallows it from a small ceramic cup with a trained therapist on either side. The wanting is consistent. What changes is the apparatus.
 
-What the long human history of substances shows, at its worst, is what happens when the apparatus is missing. The corporate marketing of an opioid into a population without the surrounding ritual or the careful priest. The lone user with no community, no integration, no return. The arc of *Über Coca* and the arc of OxyContin, the arc of Coleridge's last decades and the arc of Fleischl's hallucinated insects, are all the same arc. A real reach for a real relief, met by a substance that delivered the relief and, in the absence of the surrounding apparatus that older cultures would have built around it, took the rest of the life with it.
+What the long human history of substances shows, at its worst, is what happens when the apparatus is missing. The corporate marketing of an opioid into a population without the surrounding ritual or the careful priest. The lone user with no community, no integration, no return. The arc of *Über Coca* and the arc of OxyContin, the arc of Coleridge's last decades and the arc of Fleischl's hallucinated insects, are all the same arc. A real reach for a real relief, met by a substance that delivered the relief and, in the absence of the surrounding apparatus that older cultures would have built around it, took the rest of the life with it. The trap is not exotic and it is not foreign. It is the door the reach opens by being a reach at all. Every animal capable of wanting is capable of getting caught in the wanting. Everything that can be reached for can become the thing that owns you.
 
 The fish in the tank cannot help us with any of this. The fish has not asked to be a metaphor. The fish was just calmer that afternoon, in a way that meant a careful research associate could publish a paper. But the result is genuinely strange and worth ending on. The molecule that was in the water was the same molecule that was in the kykeon at Eleusis, the same molecule the Mazatec curandera drank in 1955 with the American banker who would tell the world. It worked on the fish the same way it worked on the philosopher. It did not loosen the fish from its narrator, because the fish has no narrator to loosen. It just dialled down the cost of being a fish in a tank with another fish.
 
 We are the only animal who knows. We are the only animal who can write the paper. We are also the only animal who can build the temple, the trial, the integration session, the careful five-thousand-year tradition of using the chemistry well — and the only animal who can build the marketing department, the paper mill, the cheap synthetic, the fentanyl supply chain, and turn the wanting against ourselves.
 
-Almost everything alive wants to be calmer. What is human about us is what we do with the wanting. The reach is universal. The apparatus is what we build. We have built, in our long history, both the best and the worst of the apparatuses any animal has ever built around any chemistry. We are still building. The fish, mercifully for the fish, does not have to, but is capable of being addicted.
+Almost everything alive wants to be calmer. What is human about us is what we do with the wanting. The reach is universal. The apparatus is what we build. We have built, in our long history, both the best and the worst of the apparatuses any animal has ever built around any chemistry. We are still building. The fish, mercifully for the fish, does not have to.
 
 Pumulo Sikaneta
 
