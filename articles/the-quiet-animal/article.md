@@ -98,7 +98,7 @@ In the late 1920s and into the 1930s, Benjamin took hashish on a number of caref
 
 What the protocols show is a writer who, under hashish, became unusually attentive to the texture of small things. The streetlamps of Marseille belonged to him for the duration of an evening. The sound of a bell unfolded in slow motion as it decayed. Faces, in the cafés, became readable in a way they had not been before. He wrote one of his most beautiful short essays, *Hashish in Marseille*, out of one of these evenings. The essay is not about being high. It is about how the city, on that one evening, came briefly into focus.
 
-![Marseille belonged to him for the duration of an evening.](images/04-marseille-street.jpg)
+![Marseille belonged to him for the duration of an evening.](images/04-marseille-street.jpg "wrap=square align=right")
 
 Benjamin was a man under tremendous pressure. He was running, during the years of the protocols, from the German fascism that would, in 1940, kill him at the Catalan border, when he took an overdose of morphine in a hotel in Portbou rather than be turned over to the Gestapo. He was also a man for whom most of the ordinary supports of a settled life — money, a permanent home, family proximity, professional standing — had failed. The hashish gave him a few hours, several times a year, when the city itself became kind to him. The protocols suggest he understood what the substance was doing for him. He did not romanticise it. He did not depend on it. He used it as a window, a few times, into a relationship with the world that the ordinary working of his mind could not, on its own, sustain.
 
@@ -110,7 +110,7 @@ Aldous Huxley first took mescaline on a May morning in 1953, in the garden of hi
 
 What happened to Huxley in his garden became the book *The Doors of Perception*, published in 1954. The book is, despite its reputation, mostly about flowers. The mescaline gave Huxley a few hours of what he described as *seeing*, in the strong sense — a chair was a chair as a chair actually was, an iris was an iris, the folds in his trousers were a landscape in their own right. The book is a careful piece of writing by a man who had spent his life thinking about religion, mysticism, perception, and the moral life of the rich Western intellectual, and who suddenly had access, for an afternoon, to the kind of perception he had only previously been able to read about in mystical literature.
 
-![An iris was an iris.](images/05-iris-huxley.jpg)
+![An iris was an iris.](images/05-iris-huxley.jpg  "wrap=square align=left")
 
 Huxley spent the rest of his life working through what the encounter had given him. He took mescaline again, sparingly. He took LSD, sparingly. He wrote a sequel — *Heaven and Hell*, in 1956 — that was tougher, more aware of the dark side of the same encounter. He died of cancer in November 1963, on the same day John F. Kennedy was assassinated, which is the reason most Americans alive in 1963 do not remember that Huxley died that day. On his deathbed, lucid, he asked his wife Laura to inject him with LSD. She did. He died a few hours later. It is not a recommendation. It is not a moral. It is the death scene of a writer who had spent ten years thinking about what altered consciousness was good for, and had decided that one of the things it was good for was being awake at the end.
 
@@ -206,7 +206,7 @@ The pattern, you will notice, is the pattern that the priests of Eleusis already
 
 ## The quiet animal
 
-![The reach is older than the narrator.](images/07-still-water-fish.PNG))
+![The reach is older than the narrator.](images/07-still-water-fish.PNG) 
 
 The fish in the tank in Nova Scotia does not know it is calmer. The reindeer in the Siberian snowfield does not know it is high. The wallaby in the Tasmanian poppy field is, as far as anyone can tell, not running an internal commentary on its experience of running in circles. The capuchin monkey rubbing its fur with the millipede secretions is not, in any sense we can verify, asking itself why it does this. The animals do what the animals do. Whatever the reach toward the substance is for them — relief, novelty, defence, social bonding, simple pleasure — it is a reach without a narrator.
 
