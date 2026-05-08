@@ -1,9 +1,9 @@
 articles:
 - slug: everything-addicted
   title: Everything Addicted
-  summary: From a fish in Nova Scotia to the priests of Eleusis to a patient at an
-    ibogaine clinic, the long animal story of how every living thing reaches for mind
-    alteration, and what happens when the reach turns into a trap.
+  summary: From a fish in Nova Scotia to the priests of Eleusis to an ibogaine clinic,
+    the animal story of how every living thing reaches for altered mind, and what
+    happens when the reach turns into a trap.
   tags:
   - psychedelics
   - philosophy
@@ -14,7 +14,7 @@ articles:
   author: Pumulo Sikaneta
   category: philosophy
   published_at: '2026-05-08T12:38:39+00:00'
-  updated_at: '2026-05-08T12:43:23+00:00'
+  updated_at: '2026-05-08T21:41:02+00:00'
 - slug: git-pull-origin-2026
   title: git pull origin 2026
   summary: A working briefing on the products, the people who built them, the companies
