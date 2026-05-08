@@ -1,4 +1,6 @@
-*Working title — Pumulo, this is a placeholder. The piece is doing entertainment-and-engagement work the working title doesn't catch. Suggestions at the bottom of this file.*
+*Working title — Pumulo, this is a placeholder. Title options at the bottom of this file.*
+
+![A fish that wants to fight, becoming a fish that doesn't.](images/01-hero-rivulus.jpg)
 
 ## The fish in the quiet tank
 
@@ -28,6 +30,8 @@ Reindeer in Siberia eat *Amanita muscaria*, the iconic red mushroom with the whi
 
 The herders noticed this about the reindeer, and they noticed something else. The active compounds in the mushroom — ibotenic acid and muscimol — pass through the reindeer's body largely unmetabolised. They come out in the urine. The Koryak and other Siberian peoples developed a ritual practice that takes this fact and runs with it. They drank the urine. The urine was milder, more reliable, less dangerous than the raw mushroom, which has a narrow margin between the dose that produces the visions and the dose that produces an unhappy night. The Sámi connection to all of this is contested by historians, who note that the textual evidence for Sámi shamans drinking reindeer urine on the winter solstice is thinner than the popular story suggests. The Siberian connection is not contested. People who herded reindeer for a living, in the long darkness of the subarctic winter, watched their animals get high and worked out a way to share the experience.
 
+![The herders watched their animals, and worked out a way to share.](images/02-reindeer-mushrooms.jpg)
+
 The list goes on, and once you start it, it is hard to stop.
 
 Cats and nepetalactone. Catnip is in the mint family, and the molecule it produces hits a specific olfactory receptor in domestic cats that produces what behavioural ecologists carefully describe as *prosocial euphoria* and what cat owners describe by recording videos of their cat hugging a sock. About thirty per cent of cats lack the relevant receptor variant and don't respond. The other seventy per cent will, given the chance, find the catnip again.
@@ -53,6 +57,8 @@ Which raises the question of what humans have done with the same impulse. The an
 For most of human history, in most places where humans have lived, the use of substances that alter consciousness has been a deliberate, regulated, communal act. The substance was not a recreational option. It was a sacrament. The setting was not a private apartment. It was a temple, a shrine, a circle of elders, a forest clearing where the names of the absent dead were spoken aloud. The dose was not the user's call. It was a priest's, or a curandera's, or a shaman's, and the priest had spent years learning how the dose interacted with the body, the mind, the room.
 
 The Greeks did this for two thousand years at Eleusis, twenty kilometres west of Athens. The Eleusinian Mysteries were the most prestigious religious initiation in the ancient Mediterranean. Plato attended. Aristotle attended. Marcus Aurelius attended. Cicero said that of all the gifts Athens had given the world, none was greater than the Mysteries, because the Mysteries taught the initiates how to live with joy and how to die without fear. The initiates walked the Sacred Way for nine days, fasting. They reached the sanctuary. They drank a barley beer called the kykeon. The formula, recovered from the surviving Homeric Hymn to Demeter, is a ritual phrase the initiates were apparently required to say before drinking: *I have fasted, I have drunk the kykeon*. What happened after, every initiate was sworn never to disclose, and almost none did. We have hints. We have testimonies that what occurred inside the sanctuary at Eleusis was a vision of the structure of life and death so powerful that the initiates emerged different.
+
+![Nine days on the Sacred Way, fasting, toward the cup.](images/03-eleusis-procession.jpg)
 
 For two and a half thousand years the question of what was actually in the kykeon was an open one. The answer that increasingly looks correct is the one that R. Gordon Wasson, the American mycologist, Albert Hofmann, the Swiss chemist who synthesised LSD, and Carl Ruck, the American classicist who coined the word *entheogen*, proposed in 1978 in a book called *The Road to Eleusis*. The kykeon, they argued, contained ergot — the fungus *Claviceps purpurea*, which infects barley and produces alkaloids closely related to LSD. In 2023, archaeologists in northeastern Spain found ergot in the dental calculus of a man buried at a sanctuary devoted to the Eleusinian goddesses, and in residue inside a ceremonial vase at the same site. In February of this year, a team writing in *Scientific Reports* showed that the chemistry of converting raw ergot into a drinkable psychoactive form using the materials and methods available to ancient priestesses was straightforward — the priestesses would have had to know what they were doing, but they would not have had to know more chemistry than was already lying around the kitchen of any temple. The hypothesis is increasingly hard to argue with. The Greeks, for two and a half millennia, ran an LSD ceremony for the philosophical and political elite of the Mediterranean, and Plato wrote his philosophy after coming home from one.
 
@@ -82,6 +88,8 @@ What James found, under the gas, was a sense of overwhelming reconciliation. The
 
 The Varieties of Religious Experience, which James gave as the Gifford Lectures in 1901–1902 and published in 1902, is one of the most important books in the history of the philosophy of religion. It would not exist, in the form it exists, without the gas. James was a depressive who had glimpsed, while breathing nitrous oxide in 1882, that there was somewhere else to be than the bottom of his own depression. He spent the next twenty years arguing that the somewhere else was real, was philosophically respectable, and was something philosophy had no right to ignore.
 
+![Most of the philosophers wrote in rooms quieter than the work suggested.](images/06-coleridge-study.jpg)
+
 ## Walter Benjamin in Marseille
 
 Walter Benjamin was a German Jewish writer who, between roughly 1924 and his suicide in 1940, produced some of the most original prose written in any European language in the twentieth century. He never held a permanent academic post. He was financially supported, sporadically, by his friend Theodor Adorno and the Frankfurt School. He was separated from his wife. He saw his son rarely. He moved between Berlin, Paris, Capri, and a variety of cheap hotels and borrowed apartments, writing his enormous unfinished study of nineteenth-century Paris — *The Arcades Project* — and short essays for whatever journal would take them.
@@ -89,6 +97,8 @@ Walter Benjamin was a German Jewish writer who, between roughly 1924 and his sui
 In the late 1920s and into the 1930s, Benjamin took hashish on a number of carefully recorded occasions. The records are collected in a notebook he labelled the *Hashish Protocols*. He took the drug with friends, in their apartments, often with one of them as the sober observer. The protocols are not the testimonies of a recreational user. They are the field notes of a man trying to find out what happens to perception, attention, and the experience of meaning when the ordinary working of the mind is loosened.
 
 What the protocols show is a writer who, under hashish, became unusually attentive to the texture of small things. The streetlamps of Marseille belonged to him for the duration of an evening. The sound of a bell unfolded in slow motion as it decayed. Faces, in the cafés, became readable in a way they had not been before. He wrote one of his most beautiful short essays, *Hashish in Marseille*, out of one of these evenings. The essay is not about being high. It is about how the city, on that one evening, came briefly into focus.
+
+![Marseille belonged to him for the duration of an evening.](images/04-marseille-street.jpg)
 
 Benjamin was a man under tremendous pressure. He was running, during the years of the protocols, from the German fascism that would, in 1940, kill him at the Catalan border, when he took an overdose of morphine in a hotel in Portbou rather than be turned over to the Gestapo. He was also a man for whom most of the ordinary supports of a settled life — money, a permanent home, family proximity, professional standing — had failed. The hashish gave him a few hours, several times a year, when the city itself became kind to him. The protocols suggest he understood what the substance was doing for him. He did not romanticise it. He did not depend on it. He used it as a window, a few times, into a relationship with the world that the ordinary working of his mind could not, on its own, sustain.
 
@@ -99,6 +109,8 @@ He killed himself at forty-eight. The hashish had not saved him. But for a few h
 Aldous Huxley first took mescaline on a May morning in 1953, in the garden of his house in the hills above Los Angeles. He was fifty-eight. He had been nearly blind since adolescence, the result of a corneal infection that had left him reading with a magnifying glass for most of his adult life. The doctor on hand for the mescaline experiment was a young Canadian psychiatrist named Humphry Osmond — the man who would, two years later, coin the word *psychedelic* in a letter to Huxley, after the two of them had spent some time trying to find a less laden term than the alternatives on offer.
 
 What happened to Huxley in his garden became the book *The Doors of Perception*, published in 1954. The book is, despite its reputation, mostly about flowers. The mescaline gave Huxley a few hours of what he described as *seeing*, in the strong sense — a chair was a chair as a chair actually was, an iris was an iris, the folds in his trousers were a landscape in their own right. The book is a careful piece of writing by a man who had spent his life thinking about religion, mysticism, perception, and the moral life of the rich Western intellectual, and who suddenly had access, for an afternoon, to the kind of perception he had only previously been able to read about in mystical literature.
+
+![An iris was an iris.](images/05-iris-huxley.jpg)
 
 Huxley spent the rest of his life working through what the encounter had given him. He took mescaline again, sparingly. He took LSD, sparingly. He wrote a sequel — *Heaven and Hell*, in 1956 — that was tougher, more aware of the dark side of the same encounter. He died of cancer in November 1963, on the same day John F. Kennedy was assassinated, which is the reason most Americans alive in 1963 do not remember that Huxley died that day. On his deathbed, lucid, he asked his wife Laura to inject him with LSD. She did. He died a few hours later. It is not a recommendation. It is not a moral. It is the death scene of a writer who had spent ten years thinking about what altered consciousness was good for, and had decided that one of the things it was good for was being awake at the end.
 
@@ -194,6 +206,8 @@ The pattern, you will notice, is the pattern that the priests of Eleusis already
 
 ## The quiet animal
 
+![The reach is older than the narrator.](images/07-still-water-fish.jpg)
+
 The fish in the tank in Nova Scotia does not know it is calmer. The reindeer in the Siberian snowfield does not know it is high. The wallaby in the Tasmanian poppy field is, as far as anyone can tell, not running an internal commentary on its experience of running in circles. The capuchin monkey rubbing its fur with the millipede secretions is not, in any sense we can verify, asking itself why it does this. The animals do what the animals do. Whatever the reach toward the substance is for them — relief, novelty, defence, social bonding, simple pleasure — it is a reach without a narrator.
 
 The narrator is what we have, and the narrator is the trouble.
@@ -215,14 +229,3 @@ Almost everything alive wants to be calmer. What is human about us is what we do
 Pumulo Sikaneta
 
 ---
-
-*Pumulo — title placeholder is "The Quiet Animal." Some alternatives that came up while writing:*
-
-- *The Quiet Animal* (current placeholder, my pick — clean, cuts across fish and philosopher and patient, has the slight aphoristic pull a non-tech reader will click on)
-- *Almost Everything Alive Wants to Be Calmer* (universal, slightly wry, works as a homepage hook)
-- *The Reach* (austere, mysterious, lets the deck do the explanatory work)
-- *What the Reindeer Knew* (most playful — leans into the wonder that anchors the animal section)
-- *The Person from Porlock* (more literary, foregrounds the Coleridge thread; might be too oblique)
-- *On Being Calmer* (essayistic, in the family of *On Bullshit* and *On Liberty*; risk is that it sounds drier than the piece is)
-
-*The piece runs ~9,800 words. No Pega disclosure. Quotes are at one per source, all under 15 words. Shipping copy is at /mnt/user-data/outputs/the-quiet-animal.md.*
