@@ -1,19 +1,4 @@
 articles:
-- slug: the-quiet-animal
-  title: The Quiet Animal
-  summary: From a fish in Nova Scotia to the priests of Eleusis to a patient at an
-    ibogaine clinic, the long animal story of the search for quieter mind.
-  tags:
-  - psychedelics
-  - philosophy
-  - neuroscience
-  - animal-behavior
-  - addiction
-  cover: ''
-  author: Pumulo Sikaneta
-  category: philosophy
-  published_at: '2026-05-08T10:15:25+00:00'
-  updated_at: '2026-05-08T12:15:13+00:00'
 - slug: git-pull-origin-2026
   title: git pull origin 2026
   summary: A working briefing on the products, the people who built them, the companies
