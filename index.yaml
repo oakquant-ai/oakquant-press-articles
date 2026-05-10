@@ -30,6 +30,21 @@ articles:
   category: technology
   published_at: '2026-05-10T07:00:00Z'
   updated_at: '2026-05-10T13:15:53+00:00'
+- slug: git-pull-origin-2026-vpublic
+  title: 'git pull origin 2026: A Field Guide for General Readers'
+  summary: "A field guide to the AI coding-agent revolution for general readers \u2014\
+    \ the founders, the products, the corporate stories, and what comes next."
+  tags:
+  - ai-coding
+  - agentic-systems
+  - software-engineering
+  - technology
+  - founders
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-05-10T07:00:00Z'
+  updated_at: '2026-05-10T13:16:41+00:00'
 - slug: everything-addicted
   title: Everything Addicted
   summary: From a fish in Nova Scotia to the priests of Eleusis to an ibogaine clinic,
