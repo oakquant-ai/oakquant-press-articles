@@ -1,4 +1,19 @@
 articles:
+- slug: git-pull-origin-2026
+  title: 'git pull origin 2026: A Field Guide to the AI Coding Agent Era'
+  summary: "A field guide to the AI coding-agent era \u2014 the founders, the products,\
+    \ the corporate adoption stories, and the standards reshaping software work."
+  tags:
+  - ai-coding
+  - agentic-systems
+  - software-engineering
+  - ai-strategy
+  - technology
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-05-10T07:00:00Z'
+  updated_at: '2026-05-10T13:15:28+00:00'
 - slug: everything-addicted
   title: Everything Addicted
   summary: From a fish in Nova Scotia to the priests of Eleusis to an ibogaine clinic,
@@ -15,21 +30,6 @@ articles:
   category: philosophy
   published_at: '2026-05-08T12:38:39+00:00'
   updated_at: '2026-05-08T23:32:07+00:00'
-- slug: git-pull-origin-2026
-  title: git pull origin 2026
-  summary: A working briefing on the products, the people who built them, the companies
-    that bought them, and the language an executive audience needs to follow along.
-  tags:
-  - ai-coding
-  - agentic-ai
-  - developer-tools
-  - enterprise-software
-  - field-guide
-  cover: ''
-  author: Pumulo Sikaneta
-  category: architecture-and-design
-  published_at: '2026-05-07T20:52:34+00:00'
-  updated_at: '2026-05-07T21:13:13+00:00'
 - slug: the-multipolar-agentic-era
   title: The Multipolar Agentic Era
   summary: Who is actually building this, and what they are actually saying. A global
