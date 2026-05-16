@@ -1,0 +1,13 @@
+title: "The OakQuant Ecosystem: An Architectural Reference for a Bounded-Agent Platform"
+slug: "the-oakquant-ecosystem"
+summary: "How OakQuant was designed and built — seven services, one config plane, three substrates, and the bounded-agent pattern that holds them together."
+tags:
+- architecture
+- agentic-ai
+- bounded-agents
+- systems-design
+- config-driven
+- evaluation
+author: "Pumulo Sikaneta"
+category: "architecture-and-design"
+published_at: "2026-05-16T08:00:00Z"
