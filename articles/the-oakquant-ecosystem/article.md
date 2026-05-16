@@ -8,7 +8,7 @@ The answer that emerged is the one we now run in production: a platform composed
 
 This paper is the architectural reference for that platform. The intent is twofold. First, to document for the team and future contributors how OakQuant is actually built, so that ten years from now someone reading this can pick up the system without re-discovering the load-bearing decisions. Second, to publish — frankly — what works, so that other teams building bounded-agent platforms can borrow the parts that fit and improve on the parts that don't.
 
-The structure is deliberate. Part I introduces the thesis and the cast of services. Part II walks the architectural patterns that shape every service. Part III takes each service in turn — its responsibility, its substrate, its seams. Part IV explains the three configuration substrates that hold the system together. Part V is the data flow: identity capture to weekly insight, with every hop traced. Part VI documents the audit boundary and the bounded-agent contract. Part VII covers the evaluation and regression CI that decides which manifest can run in production. Part VIII addresses cross-domain extension and what the next plug-in looks like. Part IX is the trade-off log — what we chose, what we rejected, and why. Part X looks at what is still open.
+The structure is deliberate. Part I introduces the thesis and the cast of services. Part II walks the architectural patterns that shape every service. Part III takes each service in turn — its responsibility, its substrate, its seams. Part IV explains the three configuration substrates that hold the system together. Part V is the data flow: identity capture to weekly insight, with every hop traced. Part VI documents the audit boundary and the bounded-agent contract. Part VII covers the evaluation and regression CI that decides which manifest can run in production. Part VIII addresses cross-domain extension and what the next plug-in looks like. Part IX is the trade-off log — what we chose, what we rejected, and why. Part X looks at what is still open. Part XI gives the security and access-control model.
 
 A note on style. This is an architecture paper, not a marketing piece. Where a decision is contestable, I say so. Where the spec drifted from the implementation, I correct the spec and document the drift. Where a substrate is partial, I document the gap. The platform is real software; treating it otherwise serves nobody.
 
@@ -723,6 +723,55 @@ The platform is a year and a half of decisions. Some were obvious in retrospect;
 If you are building a bounded-agent platform of your own, the parts that travel well are the seven-service split, the three configuration substrates, the service abstraction, the manifest pattern, the regression CI, the typed-event hierarchy, and the lockstep schema discipline. The parts that are OakQuant-specific are the Financial DNA Protocol, the Plaid signal source, the finance domain weights. Take the first set; supply your own second set; you will have a different platform with similar architectural commitments. That is the point of writing this paper.
 
 The platform's name is OakQuant — *oak* for the tree, *quant* for the analytical surface. The naming convention extends across services: Sky is the canopy you look up at, Canopy is the protective layer over the forest floor, Grove is where the workers grow, Acorn is where reasoning begins, Cambium is the thin living layer where growth actually happens, Timber is the harvested useful material, Ranger is the manager of the whole forest. The metaphor has held for two years and never been confusing in code review. That, too, is part of the architecture.
+
+-----
+
+# Part XI - Security and Access Control
+
+## 43. The Confidentiality Problem
+
+The platform publishes openly under most circumstances. The architectural reference, the agentic-patterns mapping, the cambium investor brief - all are public. But the same platform also produces material that cannot be public: pre-release book chapters being reviewed by named beta readers, internal architecture deep-dives that reference unpublished IP, investor briefings, partner-specific case studies.
+
+The press needs to serve both without bifurcating the codebase. A reader landing on `press.oakquant.ai/articles/<some-slug>` should be able to read it if they have access and be rejected indistinguishably from an article that doesn't exist if they don't. The architecture should fail closed: a bug in the rendering pipeline must never accidentally expose a private article, and the default for any unknown visibility value is private.
+
+The model has three layers, deployed in three phases.
+
+## 44. The Visibility and Access Model
+
+Each article and book carries two fields in its `meta.yaml`:
+
+- `visibility`: one of `public`, `unlisted`, or `private`. Absence means `public` (backward compatibility for the corpus that pre-dates this work). An unrecognised value (e.g. `visibility: foo`) is treated as `private` (fail closed on typos).
+- `access`: a list of identifiers permitted to view when visibility is `private`. The list resolves to a set of canonical user_ids via the identity model below.
+
+The access list accepts multiple identifier kinds. Phase 1 supports GitHub usernames directly. Phase 2 adds email and Timber user_id. Phase 3 adds GitHub team membership and email domain matching. Each form resolves to the same canonical user_id space, so re-keying an article when a new identity provider lands is unnecessary.
+
+A separate canonical identity model holds the access boundary. The platform's source of identity is a Timber `users` row identified by UUID `user_id`. External identity providers (GitHub OAuth, magic-link email, future Google/Microsoft SSO) attach to this canonical identity via a `linked_accounts` table. A user has exactly one `user_id` regardless of how many providers they use; access lists key on canonical id, with the resolver mapping provider-handle form (`pumulo`) to canonical form (`user_id: 4e8c...`).
+
+## 45. Phase 1: GitHub OAuth as the Gate
+
+The v1 implementation is GitHub-only. Every invitee must have a GitHub account; that account's login is matched against the `access:` list of the requested article.
+
+The implementation is small. Press FastAPI already runs a GitHub OAuth flow for authoring (a `current_session` dependency, in-memory session dict, signed cookie). Extending it to readers requires no new infrastructure: the same session model gates the new visibility check, the same `sess.login` value is matched against the access list.
+
+Four endpoints become access-aware: article get, article list (filtered to the requester's permitted set), asset directory listing, and asset binary stream. All four return 404 on denied access rather than 403, so the existence of a private article is not leaked through a probe attack. Cache-Control becomes `private` on every protected asset response so intermediaries do not retain the body. An in-memory append-only access log records every grant and deny.
+
+The frontend has one structural addition: server components in Next.js's App Router fetch articles from the press backend via an internal Docker-network URL, which today does not forward the user's cookie. Phase 1 adds the cookie forwarding so SSR can render private content for the requester. The article render page's `generateMetadata` also gains a fail-closed path: when an article isn't visible to the requester, the rendered metadata is a generic "Sign in to view" with `robots: noindex,nofollow` so link previews don't leak titles or cover images.
+
+The audit trail is real from day one. Every read of a private artifact writes an entry with `(user_login, artifact_slug, visibility, outcome, timestamp)`. The schema is mirrored in a `PressAccessLog` table in Timber that the press will migrate to in Phase 2, but the field shape is stable now.
+
+## 46. Phase 2 and Beyond: Magic-Link, Account Linking, Watermarking
+
+Phase 2 widens the IdP set. Adding Timber's existing `oauth_service` as a second sign-in option lets non-GitHub readers register via passwordless magic-link email. The magic-link path issues a short-lived signed token (15 minutes, single-use) and confirms email ownership on click. Readers who already have a GitHub identity can keep using it; new readers can sign up by email. Both paths land at the same canonical `user_id` in Timber.
+
+Phase 3 adds account linking. A reader who started with GitHub can add an email; a reader who started with email can connect their GitHub. The `linked_accounts` table holds the attachment; either provider's sign-in resolves to the same canonical identity. Access lists do not need re-keying when a new provider is added.
+
+For books, an additional measure: per-response watermarking. PDF and EPUB downloads stamp the requester's display name, timestamp, and an audit-log row UUID on every page before streaming. The watermark is content-stream embedded for IP-sensitive titles (durable across redistribution) and overlay-annotated for everything else (cheaper, strippable but adequate for low-sensitivity content). No download is cached; every response is rendered for one requester.
+
+The full spec, including the schema for the `linked_accounts` table, the magic-link token lifecycle, rate limits, the GDPR right-to-be-forgotten flow, and the failure modes for upstream-unavailable scenarios, lives in `docs/SECURITY_DESIGN.md` in the oakquant-press repository. The spec is the source of truth; code that touches authentication, authorization, or content storage on press.oakquant.ai references it or updates it.
+
+The summary architectural commitment: identity is the gate, not knowledge. A shared URL grants nothing. Access is auditable. Re-identification is reversible only with cryptographic key access. Fail-closed beats fail-open at every step.
+
+-----
 
 ## References
 
