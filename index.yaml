@@ -1,17 +1,4 @@
 articles:
-- slug: oq-security-test-1779059349
-  title: Security Test - oq-security-test-1779059349
-  summary: Automated security test fixture.
-  tags:
-  - test
-  - security
-  cover: ''
-  author: pumulo
-  category: ''
-  published_at: '2026-05-17T23:09:09+00:00'
-  updated_at: '2026-05-17T23:09:14+00:00'
-  visibility: public
-  access: []
 - slug: oq-security-test-1779055701
   title: Security Test - oq-security-test-1779055701
   summary: Automated security test fixture.
