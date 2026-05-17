@@ -9,9 +9,10 @@ articles:
   author: pumulo
   category: ''
   published_at: '2026-05-17T23:09:09+00:00'
-  updated_at: '2026-05-17T23:09:09+00:00'
-  visibility: public
-  access: []
+  updated_at: '2026-05-17T23:09:11+00:00'
+  visibility: private
+  access:
+  - someone-else
 - slug: oq-security-test-1779055701
   title: Security Test - oq-security-test-1779055701
   summary: Automated security test fixture.
