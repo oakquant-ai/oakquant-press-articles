@@ -1,0 +1,252 @@
+<svg viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4640"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3d6b3d"/>
+    </marker>
+    <marker id="arrowSmall" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7a7470"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="760" fill="#faf8f3"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#2a2a28" font-weight="500" letter-spacing="0.5">
+    The Bounded-Agent Architecture
+  </text>
+  <text x="600" y="85" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#6a6560" font-style="italic">
+    The spine asks. The model answers. The eval framework decides whether the answer counted.
+  </text>
+
+  <!-- INPUTS COLUMN -->
+  <text x="115" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-weight="bold" letter-spacing="3">
+    INPUTS
+  </text>
+
+  <!-- Identity Profile -->
+  <rect x="50" y="180" width="130" height="74" rx="4" fill="#ffffff" stroke="#b8b0a4" stroke-width="1.5"/>
+  <text x="115" y="208" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Identity
+  </text>
+  <text x="115" y="228" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Profile
+  </text>
+  <text x="115" y="246" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#7a7470" font-style="italic">
+    (stated identity)
+  </text>
+
+  <!-- Behavioral Event -->
+  <rect x="50" y="310" width="130" height="74" rx="4" fill="#ffffff" stroke="#b8b0a4" stroke-width="1.5"/>
+  <text x="115" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Behavioral
+  </text>
+  <text x="115" y="358" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Event
+  </text>
+  <text x="115" y="376" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#7a7470" font-style="italic">
+    (revealed behavior)
+  </text>
+
+  <!-- Arrows from inputs into spine -->
+  <line x1="185" y1="217" x2="235" y2="270" stroke="#4a4640" stroke-width="1.5" marker-end="url(#arrowDark)"/>
+  <line x1="185" y1="347" x2="235" y2="305" stroke="#4a4640" stroke-width="1.5" marker-end="url(#arrowDark)"/>
+
+  <!-- THE SPINE - main container -->
+  <text x="600" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#3a3835" font-weight="bold" letter-spacing="3">
+    THE DETERMINISTIC SPINE
+  </text>
+  <rect x="240" y="175" width="720" height="370" rx="6" fill="#f0ebe1" stroke="#3a3835" stroke-width="2.5"/>
+
+  <!-- Three call sites -->
+  
+  <!-- CLASSIFIER -->
+  <g transform="translate(265, 215)">
+    <rect x="0" y="0" width="200" height="240" rx="4" fill="#ffffff" stroke="#7a7470" stroke-width="1.2"/>
+    <text x="100" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2a2a28" font-weight="600">
+      Classifier
+    </text>
+    <line x1="30" y1="48" x2="170" y2="48" stroke="#d4ccbf" stroke-width="0.7"/>
+    
+    <text x="100" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-style="italic">
+      narrow question
+    </text>
+    <text x="100" y="96" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9a9590">
+      from the spine
+    </text>
+    
+    <line x1="50" y1="115" x2="150" y2="115" stroke="#d4ccbf" stroke-width="0.5" stroke-dasharray="2,2"/>
+    
+    <text x="100" y="142" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#2a2a28" font-weight="500">
+      the model
+    </text>
+    <text x="100" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#2a2a28" font-weight="500">
+      answers
+    </text>
+    
+    <line x1="50" y1="180" x2="150" y2="180" stroke="#d4ccbf" stroke-width="0.5" stroke-dasharray="2,2"/>
+    
+    <text x="100" y="205" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-style="italic">
+      bounded answer
+    </text>
+    <text x="100" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9a9590">
+      validated, traced
+    </text>
+  </g>
+
+  <!-- REASONER -->
+  <g transform="translate(500, 215)">
+    <rect x="0" y="0" width="200" height="240" rx="4" fill="#ffffff" stroke="#7a7470" stroke-width="1.2"/>
+    <text x="100" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2a2a28" font-weight="600">
+      Reasoner
+    </text>
+    <line x1="30" y1="48" x2="170" y2="48" stroke="#d4ccbf" stroke-width="0.7"/>
+    
+    <text x="100" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-style="italic">
+      narrow question
+    </text>
+    <text x="100" y="96" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9a9590">
+      from the spine
+    </text>
+    
+    <line x1="50" y1="115" x2="150" y2="115" stroke="#d4ccbf" stroke-width="0.5" stroke-dasharray="2,2"/>
+    
+    <text x="100" y="142" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#2a2a28" font-weight="500">
+      the model
+    </text>
+    <text x="100" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#2a2a28" font-weight="500">
+      answers
+    </text>
+    
+    <line x1="50" y1="180" x2="150" y2="180" stroke="#d4ccbf" stroke-width="0.5" stroke-dasharray="2,2"/>
+    
+    <text x="100" y="205" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-style="italic">
+      bounded answer
+    </text>
+    <text x="100" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9a9590">
+      clipped, validated
+    </text>
+  </g>
+
+  <!-- SYNTHESIZER -->
+  <g transform="translate(735, 215)">
+    <rect x="0" y="0" width="200" height="240" rx="4" fill="#ffffff" stroke="#7a7470" stroke-width="1.2"/>
+    <text x="100" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2a2a28" font-weight="600">
+      Synthesizer
+    </text>
+    <line x1="30" y1="48" x2="170" y2="48" stroke="#d4ccbf" stroke-width="0.7"/>
+    
+    <text x="100" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-style="italic">
+      narrow question
+    </text>
+    <text x="100" y="96" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9a9590">
+      from the spine
+    </text>
+    
+    <line x1="50" y1="115" x2="150" y2="115" stroke="#d4ccbf" stroke-width="0.5" stroke-dasharray="2,2"/>
+    
+    <text x="100" y="142" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#2a2a28" font-weight="500">
+      the model
+    </text>
+    <text x="100" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#2a2a28" font-weight="500">
+      answers
+    </text>
+    
+    <line x1="50" y1="180" x2="150" y2="180" stroke="#d4ccbf" stroke-width="0.5" stroke-dasharray="2,2"/>
+    
+    <text x="100" y="205" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-style="italic">
+      bounded answer
+    </text>
+    <text x="100" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9a9590">
+      judged, ranked
+    </text>
+  </g>
+
+  <!-- Arrows between call sites -->
+  <line x1="465" y1="335" x2="500" y2="335" stroke="#7a7470" stroke-width="1.2" marker-end="url(#arrowSmall)"/>
+  <line x1="700" y1="335" x2="735" y2="335" stroke="#7a7470" stroke-width="1.2" marker-end="url(#arrowSmall)"/>
+
+  <!-- Audit trace at bottom of spine -->
+  <line x1="265" y1="488" x2="935" y2="488" stroke="#b8b0a4" stroke-width="0.7" stroke-dasharray="4,3"/>
+  <text x="600" y="513" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#3a3835" font-style="italic">
+    Append-only audit trace
+  </text>
+  <text x="600" y="530" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#6a6560">
+    every decision recorded, none editable, none lost
+  </text>
+
+  <!-- Arrows from spine to outputs -->
+  <line x1="965" y1="305" x2="1010" y2="262" stroke="#4a4640" stroke-width="1.5" marker-end="url(#arrowDark)"/>
+  <line x1="965" y1="395" x2="1010" y2="438" stroke="#4a4640" stroke-width="1.5" marker-end="url(#arrowDark)"/>
+
+  <!-- OUTPUTS COLUMN -->
+  <text x="1085" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a7470" font-weight="bold" letter-spacing="3">
+    OUTPUTS
+  </text>
+
+  <!-- Typed Document -->
+  <rect x="1020" y="218" width="130" height="74" rx="4" fill="#ffffff" stroke="#b8b0a4" stroke-width="1.5"/>
+  <text x="1085" y="246" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Typed
+  </text>
+  <text x="1085" y="266" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Document
+  </text>
+  <text x="1085" y="284" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#7a7470" font-style="italic">
+    (surface-independent)
+  </text>
+
+  <!-- Signed Provenance Certificate -->
+  <rect x="1020" y="408" width="130" height="92" rx="4" fill="#ffffff" stroke="#b8b0a4" stroke-width="1.5"/>
+  <text x="1085" y="436" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Signed
+  </text>
+  <text x="1085" y="456" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Provenance
+  </text>
+  <text x="1085" y="476" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2a2a28" font-weight="600">
+    Certificate
+  </text>
+  <text x="1085" y="492" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#7a7470" font-style="italic">
+    (verifiable offline)
+  </text>
+
+  <!-- EVAL FRAMEWORK at bottom -->
+  <line x1="600" y1="546" x2="600" y2="595" stroke="#3d6b3d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowGreen)"/>
+  <text x="640" y="575" font-family="Georgia, serif" font-size="11" fill="#3d6b3d" font-style="italic">
+    gates what runs
+  </text>
+
+  <text x="600" y="618" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#2a4a2a" font-weight="bold" letter-spacing="3">
+    THE EVAL FRAMEWORK
+  </text>
+  <rect x="240" y="635" width="720" height="90" rx="6" fill="#f0f3ed" stroke="#3d6b3d" stroke-width="1.8" stroke-dasharray="6,3"/>
+
+  <!-- Eval framework contents -->
+  <g transform="translate(280, 660)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="12" fill="#2a4a2a" font-weight="600">Hand-labeled golden sets</text>
+    <text x="0" y="20" font-family="Georgia, serif" font-size="10" fill="#5a6a5a" font-style="italic">examples of correct behavior</text>
+    
+    <text x="190" y="0" font-family="Georgia, serif" font-size="12" fill="#2a4a2a" font-weight="600">Calibration tracking</text>
+    <text x="190" y="20" font-family="Georgia, serif" font-size="10" fill="#5a6a5a" font-style="italic">confidence matches accuracy</text>
+    
+    <text x="380" y="0" font-family="Georgia, serif" font-size="12" fill="#2a4a2a" font-weight="600">Drift detection</text>
+    <text x="380" y="20" font-family="Georgia, serif" font-size="10" fill="#5a6a5a" font-style="italic">model behavior unchanged</text>
+    
+    <text x="540" y="0" font-family="Georgia, serif" font-size="12" fill="#2a4a2a" font-weight="600">Regression CI</text>
+    <text x="540" y="20" font-family="Georgia, serif" font-size="10" fill="#5a6a5a" font-style="italic">promote, hold, or block</text>
+    
+    <text x="60" y="48" font-family="Georgia, serif" font-size="11" fill="#2a4a2a" font-weight="600">Active learning queue</text>
+    <text x="60" y="62" font-family="Georgia, serif" font-size="10" fill="#5a6a5a" font-style="italic">ambiguous cases surface to humans</text>
+    
+    <text x="330" y="48" font-family="Georgia, serif" font-size="11" fill="#2a4a2a" font-weight="600">Multi-judge consensus</text>
+    <text x="330" y="62" font-family="Georgia, serif" font-size="10" fill="#5a6a5a" font-style="italic">two independent judges per output</text>
+    
+    <text x="540" y="48" font-family="Georgia, serif" font-size="11" fill="#2a4a2a" font-weight="600">Shadow A/B</text>
+    <text x="540" y="62" font-family="Georgia, serif" font-size="10" fill="#5a6a5a" font-style="italic">candidate against active on live</text>
+  </g>
+
+</svg>
