@@ -1,4 +1,22 @@
 articles:
+- slug: inside-cambium-the-architecture
+  title: 'Inside Cambium: The Architecture of a Bounded-Agent System'
+  summary: "A walk through Cambium from the inside \u2014 three bounded call sites,\
+    \ a deterministic spine, an eval framework, signed provenance, and a privacy architecture\
+    \ that holds the trust mechanism in code rather than in promises."
+  tags:
+  - agentic-ai
+  - bounded-agents
+  - cambium
+  - ai-architecture
+  - systems-design
+  cover: cambium_architecture_diagram.svg
+  author: Pumulo Sikaneta
+  category: architecture-and-design
+  published_at: '2026-05-17T16:00:00Z'
+  updated_at: '2026-05-18T00:39:27+00:00'
+  visibility: public
+  access: []
 - slug: the-dinner-that-almost-went-wrong
   title: 'The Dinner That Almost Went Wrong: An Architectural Question Hiding in Plain
     Sight'
