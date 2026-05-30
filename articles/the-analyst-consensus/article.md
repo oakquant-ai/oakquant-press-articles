@@ -8,13 +8,13 @@
 
 In February 2024, Klarna told the world it had replaced seven hundred customer service jobs with an AI assistant built on OpenAI. The press release said the bot was handling 2.3 million conversations a month, roughly seventy-six thousand a day, doing the work of 700 full-time agents. The number circulated everywhere. Investor decks referenced it. The story was clean: AI works, savings are real, the future is here.
 
-In May 2025, Klarna's CEO Sebastian Siemiatkowski walked it back. Customer satisfaction had dropped on complex interactions. The bot could process volume but couldn't handle the conversations that actually mattered to keeping a customer. *Cost, unfortunately, seems to have been a too predominant evaluation factor when organising this. What you end up having is lower quality.* The company began rehiring human agents. By early 2026, the reversal was effectively complete. The Klarna story became the canonical 2026 cautionary tale, the one executives now have to explicitly explain how their plan avoids.
+In May 2025, Klarna's CEO Sebastian Siemiatkowski walked it back. Customer satisfaction had dropped on complex interactions. The bot could process volume but could not handle the conversations that actually mattered to keeping a customer. *Cost, unfortunately, seems to have been a too predominant evaluation factor when organising this. What you end up having is lower quality.* The company began rehiring human agents. By early 2026, the reversal was effectively complete. The Klarna story became the canonical 2026 cautionary tale, the one executives now have to explicitly explain how their plan avoids.
 
 Across the Atlantic, in the same period, a different kind of story was running in parallel. JPMorgan's Contract Intelligence platform, known internally as COiN, had been quietly reviewing roughly twelve thousand commercial credit agreements a year since 2017. The work that previously took the bank's lawyers approximately 360,000 hours annually now took seconds, with an error rate lower than human reviewers achieved. To anchor the productivity claim: 360,000 hours is roughly 175 lawyers working full-time for a year, the equivalent of eliminating a mid-sized in-house legal department from the workflow without firing anyone. By 2026, COiN had become invisible in the way good infrastructure becomes invisible. No press release. No reversal. No 700-agent claim. Just a system that worked because it had been built on the right architecture for what it had to do.
 
-These two stories are representative bookends to the success of agentic AI strategies in 2026. One company tried to substitute AI for human judgment in interactions that required human judgment, measured the wrong things on the wrong timeline, and was forced to quietly unwind the experiment. Another company assigned a probabilistic system to a bounded, repeatable, structurally legible task, governed it carefully, and let it scale. The architectural difference between the two is what the analyst community has spent the last eighteen months examining and trying to understand what can make the successes repeatable and the failures avoidable. They have devised different vocabularies. Gartner's *agentic governance* and *decision intelligence*, Forrester's *blended AI and CSR experiences*, McKinsey's *agentic mesh*, BCG's *combining predictive, generative, and agentic AI*. They share a very similar underlying pattern. Cognition belongs to the agent. Coordination belongs to the workflow. Statistical prediction sits between them. Each layer needs its own governance.
+These two stories are representative bookends for the success of agentic AI strategies in 2026. One company tried to substitute AI for human judgment in interactions that required human judgment, measured the wrong things on the wrong timeline, and was forced to quietly unwind the experiment. Another company assigned a probabilistic system to a bounded, repeatable, structurally legible task, governed it carefully, and let it scale. The architectural difference between the two is what the analyst community has spent the last eighteen months examining: how to make the successes repeatable and the failures avoidable. They have devised different vocabularies. Gartner's *agentic governance* and *decision intelligence*, Forrester's *blended AI and CSR experiences*, McKinsey's *agentic mesh*, BCG's *combining predictive, generative, and agentic AI*. They share a very similar underlying pattern. Cognition belongs to the agent. Coordination belongs to the workflow. Statistical prediction sits between them. Each layer needs its own governance.
 
-This companion piece is for the reader who wants to understand where the main article sits in the broader analyst landscape, and where the analyst community thinks the next twenty-four months are heading. I have organized it around six questions. Each one starts with a story, then brings in the analyst data, because the data only makes sense once you have seen what it describes.
+This companion piece is for the reader who wants to understand where the main article sits in the broader analyst landscape, and where the analyst community thinks the next twenty-four months are heading. It is organized around six questions. Each one starts with a story, then brings in the analyst data, because the data only makes sense once you have seen what it describes.
 
 ---
 
@@ -24,39 +24,39 @@ Klarna is the loud version on the extreme end of the spectrum. The quiet version
 
 A March 2026 survey of 650 enterprise technology leaders across financial services, manufacturing, healthcare, retail, and professional services painted the picture in numbers. Seventy-eight percent had at least one AI agent pilot running.
 
-Of those that tried, eighteen percent had successfully scaled an agent to organization-wide operational use. The remaining eighty-two percent were stuck somewhere in between. A working demo, a controlled pilot, a planned rollout that kept getting deferred. Another way to look at these numbers is that only fourteen percent of the 650 enterprises had successfully implemented an agent.
+Of those that tried, eighteen percent had successfully scaled an agent to organization-wide operational use. The remaining eighty-two percent were stuck somewhere in between: a working demo, a controlled pilot, a planned rollout that kept getting deferred. Another way to look at these numbers is that only fourteen percent of the 650 enterprises had successfully implemented an agent.
 
 The senior partner of one of the major consultancies described the pattern privately as *the second half problem* (only fourteen percent passed this test). The first half is easy (seventy-eight percent passed this test). You connect a model to a few systems. You run it in a sandbox. The demo works. Leadership applauds. Then you try to give it real data, real volume, real edge cases, real regulatory scrutiny, and the system breaks in ways the demo did not.
 
 The five most common breaking points in the survey were, in order:
 
-1. integration complexity with legacy systems
-2. inconsistent output quality at volume
-3. absence of monitoring tooling
-4. unclear organizational ownership
+1. integration complexity with legacy systems  
+2. inconsistent output quality at volume  
+3. absence of monitoring tooling  
+4. unclear organizational ownership  
 5. insufficient domain training data
 
-These are not technology problems. They are operational and architectural problems. They are what Klarna ran into eighteen months earlier, in the customer service version. They are what every enterprise that has tried to scale a pilot in 2025 and 2026 has run into in some form.
+These are not model problems. They are operational and architectural problems. They are what Klarna ran into eighteen months earlier in the customer service version. They are what every enterprise that has tried to scale a pilot in 2025 and 2026 has run into in some form.
 
 The analyst community has been writing about this gap for two years and the applicability of these five observations has stayed remarkably consistent.
 
 ### Gartner: the steepest enterprise adoption curve being measured anywhere
 
-Gartner's 2026 CIO and Technology Executive Survey found that only seventeen percent of organizations have deployed AI agents to date, while more than sixty percent expect to do so within the next two years. The survey was conducted with the role that owns the budget and the accountability for whether agentic AI deployment actually works. This is what gives the observation its credibility. This group is uniquely positioned to plan and set the direction we are assuming in the article.
+Gartner's 2026 CIO and Technology Executive Survey found that only seventeen percent of organizations have deployed AI agents to date, while more than sixty percent expect to do so within the next two years. The survey was conducted with the role that owns the budget and the accountability for whether agentic AI deployment actually works. That is what gives the observation its credibility. This group is uniquely positioned to plan and set the direction the main article assumes.
 
 Roughly one in six enterprises has deployed today. Roughly six in ten plan to deploy in the next twenty-four months. The gap between those two figures is the steepest enterprise adoption curve being measured anywhere in the technology stack, more aggressive than the comparable curves for cloud, mobile, or SaaS adoption at their respective inflection points.
 
 Gartner places agentic AI at the Peak of Inflated Expectations on its 2026 Hype Cycle. The *Hype Cycle* is a Gartner framework that traces an emerging technology across five stages:
 
-1. Innovation Trigger
-2. **Peak of Inflated Expectations *(we are here in 2026)***
-3. Trough of Disillusionment
-4. Slope of Enlightenment
+1. Innovation Trigger  
+2. **Peak of Inflated Expectations *(we are here in 2026)***  
+3. Trough of Disillusionment  
+4. Slope of Enlightenment  
 5. Plateau of Productivity
 
 The Peak position indicates extraordinary market attention running ahead of operational maturity.
 
-Translation: the bot demos are at their most enthusiastic moment in the cycle. The bills haven't come due yet.
+Translation: the bot demos are at their most enthusiastic moment in the cycle. The bills have not come due yet.
 
 ### McKinsey: six in ten stuck, one in ten at scale
 
@@ -76,13 +76,13 @@ Deloitte's 2026 State of AI in the Enterprise report, surveying more than 3,200 
 
 ### What the four numbers say together
 
-That is a lot of statistics in four subsections, and the numbers tell a story that is not always intuitive to see when they sit next to each other. They align more closely than they appear.
+That is a lot of statistics in four subsections, and the numbers tell a story that is not always intuitive when they sit next to each other. They align more closely than they appear.
 
 Roughly two-thirds to three-quarters of enterprises have a pilot running. Somewhere between ten and twenty-one percent have actually deployed at scale or built the governance to operate the deployment safely, depending on which dimension the survey is measuring.
 
 The honest math, taken across the four major analysts, is that *between one in ten and one in five enterprises have crossed the line from pilot to scaled production with the discipline to keep the deployment running*.
 
-Stated in the language of a board meeting: *who would sign up for a project with a one-in-ten-to-one-in-five chance of reaching scale?* Two-thirds to three-quarters of large enterprises, that's who, because they have judged the risk of not trying to be larger than the risk of trying and stalling. The competitive imperative is real. The execution discipline that turns the pilot into the production deployment is not yet broadly built.
+Stated in the language of a board meeting: *who would sign up for a project with a one-in-ten-to-one-in-five chance of reaching scale?* Two-thirds to three-quarters of large enterprises, that is who, because they have judged the risk of not trying to be larger than the risk of trying and stalling. The competitive imperative is real. The execution discipline that turns the pilot into the production deployment is not yet broadly built.
 
 What the data also says, more quietly, is that the sixty-or-seventy percent in the middle are not Klarnas. They are not loud failures. They are silent stalls. Their pilots worked in the sandbox. They never got to find out whether the theory would survive contact with production data, real volume, real edge cases, real audit pressure.
 
@@ -124,7 +124,7 @@ Air Canada had components. It did not have composition.
 
 Forrester, in its 2026 Customer Service Solutions Wave, is more pointed. Principal Analyst Kate Leggett's recommendation to enterprises: *Look for vendors that offer tightly blended AI and CSR experiences and measurement and optimization frameworks for AI.* *CSR* refers to the *customer service representative*, the human agent who handles inquiries the automated system cannot resolve, with the architectural question being how the AI agent and the human agent share work.
 
-The phrase *tightly blended* is the key thing to focus on. Forrester is highlighting the same brain-and-rails composition the main article describes, in vocabulary calibrated for customer service buyers.
+The phrase *tightly blended* is the key point. Forrester is highlighting the same brain-and-rails composition the main article describes, in vocabulary calibrated for customer service buyers.
 
 Klarna is what happens when an agentic solution is not tightly blended. An application pivoted fully to AI, with the CSR layer eliminated. The model handled volume; the company assumed it had handled service. Volume and service are different things, governed by different rules, and that is what *blended* means in operational practice.
 
@@ -148,7 +148,7 @@ Gartner's 2026 Hype Cycle for Agentic AI is the most consequential signal. The H
 
 Gartner's framing: these supporting profiles indicate *rising enterprise concern about accountability, control and economic sustainability as agentic systems become more autonomous and interconnected*. Their placement on the curve *highlights that the need for oversight and discipline is becoming evident early in the adoption cycle, not only after large-scale deployment*.
 
-That last sentence is worth re-reading. The 2024 narrative around AI governance was that governance follows deployment, first the pilots, then the audit. The 2026 narrative, per Gartner, is that governance must be designed in alongside the agents, not retrofitted afterward.
+That last sentence is worth re-reading. The 2024 narrative around AI governance was that governance follows deployment: first the pilots, then the audit. The 2026 narrative, per Gartner, is that governance must be designed in alongside the agents, not retrofitted afterward.
 
 McDonald's is what retrofitting looks like. By the time the chicken nugget videos were on social media, the governance question was downstream of a brand crisis. The 2026 architectural argument is that the governance question has to be upstream of the deployment, not downstream of the embarrassment.
 
@@ -156,9 +156,9 @@ McDonald's is what retrofitting looks like. By the time the chicken nugget video
 
 Forrester's AI Governance Wave Q3 2025 formally established AI governance as a recognized vendor category alongside the workflow platforms and the agent frameworks. **Credo AI** was named the Leader of that inaugural Wave. The capabilities Forrester evaluated against define what an AI governance platform is supposed to be:
 
-- *Registry*, a catalog of every AI system the enterprise operates and what it is allowed to do.
-- *Policy enforcement*, the mechanism that prevents an AI system from taking actions outside its approved scope.
-- *Evidence aggregation*, the collection and storage of records that demonstrate the system did what it was supposed to do.
+- *Registry*, a catalog of every AI system the enterprise operates and what it is allowed to do.  
+- *Policy enforcement*, the mechanism that prevents an AI system from taking actions outside its approved scope.  
+- *Evidence aggregation*, the collection and storage of records that demonstrate the system did what it was supposed to do.  
 - *Audit-ready documentation*, the artifacts a regulator or internal auditor can ask for at any moment without the team scrambling to assemble them.
 
 These capabilities sit structurally adjacent to but distinct from the workflow layer, which is why Forrester treats them as their own vendor category.
@@ -175,17 +175,17 @@ The governance was not a layer added after the model worked. It was the constrai
 
 Gartner's 2026 Magic Quadrant for Data and Analytics Governance Platforms identifies five trends that compound the picture:
 
-1. **Agentic governance enforcement.** Governance shifting from AI-assisted recommendations to fully automated, agent-driven policy enforcement.
-2. **Trust models over control models.**
-3. **AI governance convergence.** Data and analytics governance platforms becoming the primary foundation for operationalizing AI governance.
-4. **Horizontal market consolidation.**
+1. **Agentic governance enforcement.** Governance shifting from AI-assisted recommendations to fully automated, agent-driven policy enforcement.  
+2. **Trust models over control models.**  
+3. **AI governance convergence.** Data and analytics governance platforms becoming the primary foundation for operationalizing AI governance.  
+4. **Horizontal market consolidation.**  
 5. **Ecosystem-led innovation.**
 
 The fourth, horizontal market consolidation, is what enterprise architects increasingly mean when they talk about *titan convergence*. The market is consolidating siloed governance tools into unified platforms, and the platforms that win that consolidation will define how enterprise AI operates for the rest of the decade.
 
 ### Where the main article touches this layer, and where it does not
 
-The main article touches the AI governance platform layer in Part VI but does not develop it as a distinct category. The reason for the lighter touch is that the architecture stands on its own without it; the reason it deserves a fuller treatment in future work is that the analyst data, and the McDonald's-and-Klarna-and-Air-Canada landscape it summarizes, now positions it as a first-class concern.
+The main article touches the AI governance platform layer in Part VI but does not develop it as a distinct category. The reason for the lighter touch is that the architecture stands on its own without it; the reason it deserves a fuller treatment in future work is that the analyst data, and the McDonald's–Klarna–Air-Canada landscape it summarizes, now positions it as a first-class concern.
 
 A useful way to read the analyst signal in plain terms: in 2024, fewer than one in three enterprises had a deliberate governance model for AI agents in place at the design phase. In 2026, the analyst consensus is that running an agentic system without one is reckless, and the Deloitte twenty-one percent number is the count of enterprises that have actually built the discipline.
 
@@ -205,7 +205,7 @@ The clearest signal of titan convergence is structural rather than technological
 
 OpenAI announced Frontier Alliances in February 2026 with Boston Consulting Group, McKinsey & Company, Accenture, and Capgemini. The terms include dedicated practice groups inside each consultancy, certified teams trained on OpenAI technology, and OpenAI's own forward-deployed engineers working alongside the consultancy teams in client engagements. OpenAI describes its Frontier platform as *a semantic layer for the enterprise, a unified platform that lets AI agents navigate business software, execute workflows, and make decisions across an organization's entire technology stack*. The framing is significant: OpenAI is no longer positioning as a model provider. It is positioning as a workflow-and-orchestration platform, with the consultancies as its distribution channel.
 
-Google announced a $750 million partner ecosystem fund at Cloud Next 2026, with Accenture, BCG, Deloitte, and McKinsey receiving early access to Gemini models, dedicated practice expansions, and embedded Google forward-deployed engineers. Deloitte specifically is forming a dedicated Google Cloud Agentic Transformation practice and rolling out Gemini Enterprise to more than 100,000 of its own teams. McKinsey is launching the McKinsey Google Transformation Group. The structural pattern is identical to the OpenAI move: foundation model vendor, distributed through consultancy, embedded with forward-deployed engineering.
+Google announced a $750 million partner ecosystem fund at Cloud Next 2026, with Accenture, BCG, Deloitte, and McKinsey receiving early access to Gemini models, dedicated practice expansions, and embedded Google forward-deployed engineers. Deloitte is forming a dedicated Google Cloud Agentic Transformation practice and rolling out Gemini Enterprise to more than 100,000 of its own teams. McKinsey is launching the McKinsey Google Transformation Group. The structural pattern is identical to the OpenAI move: foundation model vendor, distributed through consultancy, embedded with forward-deployed engineering.
 
 Anthropic has formal partnerships with Accenture, Deloitte, PwC, and other major system integrators on similar lines.
 
@@ -213,7 +213,7 @@ The implication for enterprise architects is uncomfortable but worth naming dire
 
 This does not make the consultancies untrustworthy. It makes their counsel platform-conditioned, in ways that the architectural conversation has not yet fully absorbed. A regulated enterprise commissioning agentic AI architecture work in 2026 should ask, first, *which platforms is this advisor commercially aligned with*, and second, *would this advice change if those alignments were different.* Both questions are reasonable. Neither was on the table in 2024.
 
-The convergence is also visible at the equity markets. Investors in early 2026 have been reported as punishing the share prices of traditional SaaS vendors over concerns that customers will choose foundation-model-vendor agentic platforms instead, or that AI coding tools will eliminate the need for the underlying SaaS products entirely. *SaaS*, or *software as a service*, is the business model under which enterprise software is delivered as a hosted subscription rather than as installed product, the model that has dominated enterprise software since roughly 2010. The thesis the markets are testing is that the orchestration layer, not the application layer, is where enterprise AI value will accrue. Whether the thesis is right is a separate question; the fact that it is being tested at all is the structural change.
+The convergence is also visible in the equity markets. Investors in early 2026 have been reported as punishing the share prices of traditional SaaS vendors over concerns that customers will choose foundation-model-vendor agentic platforms instead, or that AI coding tools will eliminate the need for the underlying SaaS products entirely. *SaaS*, or *software as a service*, is the business model under which enterprise software is delivered as a hosted subscription rather than as installed product, the model that has dominated enterprise software since roughly 2010. The thesis the markets are testing is that the orchestration layer, not the application layer, is where enterprise AI value will accrue. Whether the thesis is right is a separate question; the fact that it is being tested at all is the structural change.
 
 The structural change has a downstream consequence the bank architect at the start of this section is already living. Two-thirds to three-quarters of large enterprises are commissioning agentic AI roadmaps right now, and almost all of them are doing so in conversation with one of the four or five major consultancies that have commercial alignments with the foundation model vendors whose platforms the roadmaps recommend. The architectural advice is good. The architectural advice is also platform-conditioned in ways that were not on the table eighteen months ago. The architects who walked into 2024 trusting their consultancy were not wrong then. The architects who walk into 2026 with the same trust are operating with one fewer instrument than the conversation requires. *Which platforms is this advisor commercially aligned with* is the question that separates an architect who will look back on the 2026 commitment with confidence in 2028 from one who will be quietly unwinding it the way Klarna unwound the 700-agent press release.
 
@@ -227,7 +227,7 @@ The analyst guidance, taken across the major frames the previous sections have r
 
 The strategic implication for an incumbent vendor watching its share price get punished is that the response is not to compete with OpenAI or Anthropic on the agent layer. That is a fight the foundation labs win on capability, on capital, and on go-to-market scale. The response is to make the workflow, governance, and orchestration layer so visibly necessary in regulated production deployment that no foundation lab engagement in a regulated industry can land safely without it. The case studies the analyst community is citing, including Klarna's reversal, Air Canada's tribunal ruling, McDonald's drive-thru retreat, and JPMorgan's COiN succeeding for nearly a decade because it was governed at the design phase, are all variations of the same underlying observation. Probabilistic systems need deterministic governance. Agentic AI in regulated environments needs a workflow layer that can answer to a regulator. The incumbent vendors that own the workflow layer can still own the answer to that question. The vendors that try to also be the agent layer will not.
 
-The strategic moves visible in the public 2026 record vary in how cleanly they execute the analyst-consensus positioning. Salesforce's Agentforce reached roughly $800 million in annual recurring revenue by April 2026, paired with Marc Benioff's contrarian one-thousand-graduate hire and a workflow-and-data-layer reassertion the equity market is not yet rewarding despite its operational traction. ServiceNow's AI Control Tower positioning emphasizes the orchestration-and-governance layer explicitly. Microsoft's Copilot Studio and Foundry positioning is structurally different from the rest because Microsoft owns parts of multiple layers simultaneously through its Azure-OpenAI relationship. Oracle anchors to its database-and-application-suite footprint with agentic features layered above. SAP under Christian Klein has emphasized regulated-enterprise governance and EU AI Act compliance, which is the right positioning but slower to execute than the US peers. Workday has staked a vertical position in human capital and finance.
+The strategic moves visible in the public 2026 record vary in how cleanly they execute the analyst-consensus positioning. Salesforce's Agentforce reached roughly $800 million in annual recurring revenue by April 2026, paired with Marc Benioff's contrarian one-thousand-graduate hire and a workflow-and-data-layer reassertion the equity market is not yet rewarding despite its operational traction. ServiceNow's AI Control Tower positioning emphasizes the orchestration-and-governance layer explicitly. Microsoft's Copilot Studio and Foundry positioning is structurally different from the rest because Microsoft owns parts of multiple layers simultaneously through its Azure–OpenAI relationship. Oracle anchors to its database-and-application-suite footprint with agentic features layered above. SAP under Christian Klein has emphasized regulated-enterprise governance and EU AI Act compliance, which is the right positioning but slower to execute than the US peers. Workday has staked a vertical position in human capital and finance.
 
 The vendor I have the most direct working knowledge of, and the vendor whose strategy I can describe with specificity rather than from public observation alone, is Pega. As the top-of-piece disclosure notes, my professional work is concentrated in the Pega ecosystem, and the description that follows reflects that. Pega's strategy combines three architectural assets that together describe the workflow-and-governance positioning the corpus has been arguing for. Predictable AI is the runtime decisioning capability — predictive scoring, adaptive learning, and decision strategies that have been making operational decisions deterministic and accountable inside Pega applications for years. Blueprint, the AI-powered design environment that has been used at scale since 2024, generates the application structure from natural language. The Claude skill announced for Pega Infinity '26.1, described later in this section, is the larger umbrella that extends design, authoring, configuration, integration, testing, and deployment of Pega applications into Claude itself, so a developer never has to leave the foundation lab UI to build a regulated production application against the Pega runtime.
 
@@ -243,7 +243,7 @@ The third is the *state and governance barrier*, and it is the barrier where the
 
 Together these three barriers describe the architectural territory the workflow vendors hold and the foundation labs structurally cannot. Skills clear the invocation barrier. A2UI clears the interaction barrier. The workflow runtime clears the state and governance barrier. The first two are where the foundation labs and the workflow vendors meet. The third is where the workflow vendors keep durable advantage. All three together are what makes it possible to keep the human in the room — present, informed, supported by the right interface — at the moment the agentic system needs a decision the regulator and the customer ultimately need a person to make. The bet is unproven. The fact that multiple credible incumbents are making it simultaneously, with publicly inspectable artifacts, is itself the analytically meaningful observation.
 
-The credible incumbents are also doing two other things alongside clearing the three barriers. They are emphasizing regulatory durability across banking, insurance, healthcare, government, and telecom, as the dimension on which their position strengthens as agentic AI moves from pilot to production. And they are building out governance, audit, identity, and policy enforcement capabilities at the orchestration layer, often in partnership with dedicated AI governance vendors like Credo AI rather than attempting to build everything in-house.
+The credible incumbents are also doing two other things alongside clearing the three barriers. They are emphasizing regulatory durability across banking, insurance, healthcare, government, and telecom as the dimension on which their position strengthens as agentic AI moves from pilot to production. And they are building out governance, audit, identity, and policy enforcement capabilities at the orchestration layer, often in partnership with dedicated AI governance vendors like Credo AI rather than attempting to build everything in-house.
 
 The strongest evidence that the entry-point migration is not speculative comes from the developer community itself. *GSD*, short for *Get Shit Done*, is a community-built framework on top of Claude Code, written by an independent developer named Lex Christopherson. It is one of three major frameworks — alongside *Superpowers*, which Anthropic accepted into its official marketplace in January 2026, and a third called *gstack* — that together account for roughly ninety-four thousand active developers as of April 2026. What these frameworks have in common is that they let developers do their full software development lifecycle from inside the AI assistant: planning, building, reviewing, shipping, all without leaving the foundation lab UI. The developer community has not waited for the official frameworks to mature. Developers have built their own tooling to do the work where they want to do it, which is inside Claude or Cursor or Codex rather than inside the traditional IDE. The migration of the developer authoring surface is not a forecast. It is already in motion, driven by demand from below rather than push from above. The workflow vendors that meet the developer where the developer already is will own the architectural relationship the developer brings into the regulated enterprise. The workflow vendors that wait for the developer to come back to the traditional IDE will not.
 
@@ -315,4 +315,4 @@ The architecture is right. The market knows it is right. The hard part, the part
 
 *This companion piece supplements* [Insight Belongs to the Machine. Decisions Belong to the Human.](https://press.oakquant.ai/public/articles/insight-belongs-to-the-machine)
 
-*Analyst data referenced from: Gartner 2026 Hype Cycle for Agentic AI; Gartner 2026 Magic Quadrant for Decision Intelligence Platforms; Gartner 2026 Magic Quadrant for Data & Analytics Governance Platforms; Gartner 2026 Magic Quadrant for Customer Service Solutions; Gartner 2026 Magic Quadrant for Integration Platform as a Service; Forrester Wave™: Customer Service Solutions Q1 2026; Forrester Wave™: AI Governance Q3 2025; Forrester Wave™: AI Infrastructure Solutions Q4 2025; McKinsey* Reimagining tech infrastructure for agentic AI *(2026); McKinsey* The State of AI in 2025: Agents, innovation, and transformation; *BCG* How Agents Are Accelerating the Next Wave of AI Value Creation *(December 2025); Deloitte 2026 State of AI in the Enterprise. Vendor and partnership announcements referenced from public press releases by Google, OpenAI, and Anthropic during Q1–Q2 2026. Enterprise case studies grounded in published reporting on Klarna's AI rollout and reversal (2024-2026), the Moffatt v. Air Canada decision of the British Columbia Civil Resolution Tribunal (February 2024), the McDonald's-IBM AI drive-thru pilot and its 2024 discontinuation, and JPMorgan Chase's COiN platform deployment (2017-present). The 650-leader pilot-to-production survey is drawn from publicly reported March 2026 enterprise technology research.*
+*Analyst data referenced from: Gartner 2026 Hype Cycle for Agentic AI; Gartner 2026 Magic Quadrant for Decision Intelligence Platforms; Gartner 2026 Magic Quadrant for Data & Analytics Governance Platforms; Gartner 2026 Magic Quadrant for Customer Service Solutions; Gartner 2026 Magic Quadrant for Integration Platform as a Service; Forrester Wave™: Customer Service Solutions Q1 2026; Forrester Wave™: AI Governance Q3 2025; Forrester Wave™: AI Infrastructure Solutions Q4 2025; McKinsey* Reimagining tech infrastructure for agentic AI *(2026); McKinsey* The State of AI in 2025: Agents, innovation, and transformation; *BCG* How Agents Are Accelerating the Next Wave of AI Value Creation *(December 2025); Deloitte 2026 State of AI in the Enterprise. Vendor and partnership announcements referenced from public press releases by Google, OpenAI, and Anthropic during Q1–Q2 2026. Enterprise case studies grounded in published reporting on Klarna's AI rollout and reversal (2024–2026), the Moffatt v. Air Canada decision of the British Columbia Civil Resolution Tribunal (February 2024), the McDonald's–IBM AI drive-thru pilot and its 2024 discontinuation, and JPMorgan Chase's COiN platform deployment (2017–present). The 650-leader pilot-to-production survey is drawn from publicly reported March 2026 enterprise technology research.*
