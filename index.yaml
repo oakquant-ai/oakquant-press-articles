@@ -1,4 +1,19 @@
 articles:
+- slug: build-it-anyway
+  title: Build It Anyway
+  summary: Everything you build will be taken apart. That is not an argument against
+    building. It is the reason to build with care, because care is the only work that
+    pays out before the teardown.
+  tags:
+  - building
+  - craft
+  - resilience
+  - making
+  cover: ''
+  author: Pumulo Sikaneta
+  category: personal
+  published_at: '2026-05-31T18:00:00+00:00'
+  updated_at: '2026-05-31T18:54:31+00:00'
 - slug: two-desks
   title: Two Desks
   summary: People who find me through the software are surprised by the books, and
