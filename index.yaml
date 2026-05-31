@@ -1,4 +1,23 @@
 articles:
+- slug: magnifica-humanitas-and-the-work-of-building-good-tools
+  title: Magnifica Humanitas and the Work of Building Good Tools
+  summary: A Pope, two bank CIOs, and the sovereign-AI debate all converged this spring
+    on one question about artificial intelligence and human dignity. The most useful
+    answer is not agreement in the abstract but a concrete account of what it looks
+    like to build and write with these systems well, and where it could go wrong.
+  tags:
+  - ai-ethics
+  - agentic-ai
+  - governance
+  - enterprise-ai
+  - oakquant
+  - press
+  - writing
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-05-30T20:23:00+00:00'
+  updated_at: '2026-05-31T00:30:45+00:00'
 - slug: career-org-of-the-future
   title: Are You Worried About Your Job? Building the Career That Builds the Org of
     the Future
