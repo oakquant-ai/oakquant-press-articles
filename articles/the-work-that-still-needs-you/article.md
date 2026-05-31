@@ -1,6 +1,6 @@
 # The Work That Still Needs You
 
-![the-work-that-still-needs-you-hero](images/the-work-that-still-needs-you-hero.png)
+![The Work That Still Needs You](images/the-work-that-still-needs-you-hero.png)
 
 In the last few months I have started hearing from people I had not spoken to in years. The first minute is the good part, the real pleasure of a name I am glad to see again, and I do not want to pretend otherwise. Then the reason surfaces, and the call turns out not to be about reconnecting. It is a request for help.
 
