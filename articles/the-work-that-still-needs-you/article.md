@@ -14,7 +14,7 @@ I want to be clear about where I stand when I pick up. I build these systems. I 
 
 I am not going to tell you any of their stories. They did not call me to become someone's anecdote, and the details that would make a story vivid are the same details that would make a person recognizable. So I will do the one honest thing I can with what I have been told. I will describe the shape I see when I lay the calls beside each other, in my own words, as a pattern and not a person.
 
-The shape is almost always the same. Someone who spent decades learning to find the single fatal flaw in a forty-page proposal, the buried assumption that would have cost the firm millions. The kind of judgment that looks like nothing on the page and takes twenty years to build. Their worth was never the words they produced. It was the refusal to sign off on something that did not hold. Then a tool arrived that writes a good-enough version of the words in seconds, and the firm decided the judgment underneath them was a cost it no longer wanted to carry. What got filed under friction was the exact thing that had been keeping the firm out of trouble.
+The shape is almost always the same. Someone who spent years learning how to turn messy intent into something real: a working flow, a sound design, a model that holds, a system that can survive contact with production. The kind of judgment that looks lighter from the outside than it really is and takes years to build. Their worth was never just the artifact they produced. It was the ability to see where the model would break, where the workflow would fail, where the elegant design on the screen would not survive the world. Then better assistants arrived, and more of the translation layer started getting automated. What got filed under friction was the exact thing that had been keeping the system honest.
 
 -----
 
@@ -22,7 +22,7 @@ The shape is almost always the same. Someone who spent decades learning to find 
 
 Here is what I tell them, and what I have watched hold true.
 
-The machine has made the artifact cheap. It is extraordinary at the plausible deck, the competent memo, the clean line of code. It has no concept of consequence. It cannot be held responsible for what it makes, and it does not know when it is confidently wrong, because it does not know anything.
+The machine has made the artifact cheap. It is extraordinary at the plausible deck, the competent memo, the clean line of code. It can help produce the design, the draft, the flow, the scaffold. It has no concept of consequence. It cannot be held responsible for what it makes, and it does not know when it is confidently wrong, because it does not know anything.
 
 The valuable part of your career was the judgment you exercised before your name went on the work, never the work itself. That judgment did not get cheaper this year. It got scarcer, and worth more. We are walking into a world drowning in fluent, plausible, hollow output, and the thing that world will pay for is the one thing the machine cannot fake: a human willing to stand behind a decision.
 
@@ -36,7 +36,7 @@ If you are sitting inside that fear, stop chasing the tool tricks. Stop studying
 
 You will still learn tools. You have to. But learn them as instruments, not as the source of your value.
 
-Learn to verify. If you spent years as a reviewer, a risk partner, a QA lead, or the quiet adult in the room, this is your work. Read what other people, and the machines, have built, not to produce it again but to audit it, because the world is filling up with perfect-looking output that is quietly wrong and running short of people who can tell the difference. Reclaim your depth instead of apologizing for it. A tool with no depth ships the error straight into the world, and your twenty years are what catch it before it lands. And stand for something. The most human parts of the work, teaching the person behind you, being present when a decision is being weighed, carrying the weight when it goes wrong, are no longer the soft edges of the job. They are the job.
+Learn to verify. If you spent years as an architect, a product engineer, a developer, a QA lead, or the quiet adult in the room, this is your work. Read what other people, and the machines, have built, not to produce it again but to audit it, because the world is filling up with perfect-looking output that is quietly wrong and running short of people who can tell the difference. Reclaim your depth instead of apologizing for it. A tool with no depth ships the error straight into the world, and your years are what catch it before it lands. And stand for something. The most human parts of the work, teaching the person behind you, being present when a decision is being weighed, carrying the weight when it goes wrong, knowing where the elegant design will break, are no longer the soft edges of the job. They are the job.
 
 -----
 
