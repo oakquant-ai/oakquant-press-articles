@@ -1,5 +1,3 @@
-# Judge the Worst, Not the Best
-
 ![Synergy](images/header-6-3.png)
 
 Imagine a trading floor, years ago, where two engineers ship code in the same week. The first writes a pricing engine people would still talk about. Elegant, fast, the kind of thing that gets a person promoted and quoted in the all-hands. The second writes a small integration job, late, under deadline, that looks clean in the demo and passes every eye in the room. It runs quietly for four months before it begins rounding a currency conversion the wrong way on a narrow set of trades. By the time anyone notices, the number that has leaked out the side of the system has a great many zeros in it.
