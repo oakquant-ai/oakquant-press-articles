@@ -1,3 +1,7 @@
+# Judge the Worst, Not the Best
+
+![Synergy](images/header-6-3.png)
+
 Imagine a trading floor, years ago, where two engineers ship code in the same week. The first writes a pricing engine people would still talk about. Elegant, fast, the kind of thing that gets a person promoted and quoted in the all-hands. The second writes a small integration job, late, under deadline, that looks clean in the demo and passes every eye in the room. It runs quietly for four months before it begins rounding a currency conversion the wrong way on a narrow set of trades. By the time anyone notices, the number that has leaked out the side of the system has a great many zeros in it.
 
 Nobody would give a conference talk about the second engineer. That, in one sentence, is the problem with how we judge software.
@@ -30,7 +34,7 @@ A framework that builds in guardrails is a bet on the floor and on the tail. Sai
 
 The concrete advantages stack up once you look for them rather than at them. Interoperability becomes a property of the platform instead of something every team hand-rolls and every team gets slightly wrong. Enterprise-grade quality becomes a structural guarantee of the spine rather than a heroic property of whoever happened to build that one module. And the governed case, the thing that carries the audit trail and the policy and the accountability, is now becoming natively callable: Pega has begun exposing the case itself through open agent standards like MCP and A2A, which means the floor does not stop at the platform boundary. It extends outward to whatever plugs in.
 
-The most telling signal is coming from the other end of the field. The most intelligence-forward lab on earth shipped a capability on June 2 that lets its model write and run its own deterministic workflow on the fly: it breaks a task into smaller agents and sets them to check one another, so the system cannot quietly declare a hard job finished when it is only two-thirds done. Read that again. The frontier is engineering a floor, reaching back from raw cognition toward determinism. The governed platform was already there, reaching the other way, toward cognition. Two serious builders, no incentive to imitate each other, arriving at the same shape because the structure of the problem forced them to. That is not fashion. It is closer to a law.
+The most telling signal is coming from the other end of the field. On June 2, Anthropic shipped dynamic workflows in Claude Code, a capability that lets its model write and run its own deterministic workflow on the fly: it breaks a task into smaller agents and sets them to check one another, so the system cannot quietly declare a hard job finished when it is only two-thirds done. Read that again. The frontier is engineering a floor, reaching back from raw cognition toward determinism. The governed platform was already there, reaching the other way, toward cognition. Two serious builders, no incentive to imitate each other, arriving at the same shape because the structure of the problem forced them to. That is not fashion. It is closer to a law.
 
 ## Where the ceiling actually comes from
 
