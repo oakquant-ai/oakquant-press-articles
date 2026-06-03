@@ -1,4 +1,18 @@
 articles:
+- slug: judge-the-worst-not-the-best
+  title: Judge the Worst, Not the Best
+  summary: ''
+  tags:
+  - agentic-ai
+  - enterprise-architecture
+  - governance
+  - vibe-coding
+  - pegaworld
+  cover: ''
+  author: Pumulo
+  category: ''
+  published_at: '2026-06-03T15:20:15+00:00'
+  updated_at: '2026-06-03T15:20:15+00:00'
 - slug: build-it-anyway
   title: Build It Anyway
   summary: Everything you build will be taken apart. That is not an argument against
