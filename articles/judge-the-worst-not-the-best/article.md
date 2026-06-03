@@ -2,7 +2,9 @@ Imagine a trading floor, years ago, where two engineers ship code in the same we
 
 Nobody would give a conference talk about the second engineer. That, in one sentence, is the problem with how we judge software.
 
-We have always judged it by its best examples. The cathedral, never the collapse. And for thirty years that habit was survivable, because the people who could build the cathedral and the people who could cause the collapse were often the same people, working under the same roof, and we mostly got away with it.
+The rule is simple, and almost nobody follows it: judge a system by the worst it will do in production at scale, not the best it can show you in a demo.
+
+And yet we have always judged it by its best examples. The cathedral, never the collapse. And for thirty years that habit was survivable, because the people who could build the cathedral and the people who could cause the collapse were often the same people, working under the same roof, and we mostly got away with it.
 
 ## The trade we already made once
 
@@ -16,7 +18,9 @@ Vibe coding is that same trade, walking back through the door. And the seduction
 
 Picture the proof of concept your own team wired together from scratch, no platform underneath it, the one that lit up the boardroom and had everyone asking why the whole company could not move that fast. That demo is spectacular, and it is real. It is also a single sample drawn from the very top of your own distribution. A production estate is ten thousand samples, and the ones that hurt you are not the best one. They are the worst ten.
 
-This is the part of the famous MIT number that almost everyone reads backward. When MIT's NANDA initiative reported that roughly ninety-five percent of enterprise generative AI pilots delivered no measurable return despite \$30 to \$40 billion in spending, most people heard "AI is hype." That is the lazy reading. The more useful one is that we are mesmerized by the five percent at the top and we are not measuring the distribution at all. We are grading the technology by its cathedral and ignoring its floor.
+This is the part of the famous MIT number that almost everyone reads backward. When MIT's NANDA initiative reported that roughly ninety-five percent of enterprise generative AI pilots delivered no measurable return despite \$30 to \$40 billion in spending, most people heard "AI is hype." That is the lazy reading.
+
+The more useful reading is that we are mesmerized by the five percent at the top and are not measuring the distribution at all. We are grading the technology by its cathedral and ignoring its floor.
 
 So here is the question I would put to any leader walking into a keynote next week. Not "how good can AI-built software be." A demo already answered that. The question is "what does the worst thing my organization ships this quarter look like, and what is it allowed to touch." That is a risk officer's sentence, and it is the one that separates a serious enterprise strategy from a highlight reel.
 
