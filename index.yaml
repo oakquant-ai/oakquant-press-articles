@@ -1,7 +1,9 @@
 articles:
 - slug: judge-the-worst-not-the-best
   title: Judge the Worst, Not the Best
-  summary: ''
+  summary: Every era of enterprise software seduces us with its best example. The
+    mature question, and the one almost nobody is asking about AI-built systems, is
+    about the worst one.
   tags:
   - agentic-ai
   - enterprise-architecture
@@ -12,7 +14,7 @@ articles:
   author: Pumulo
   category: architecture-and-design
   published_at: '2026-06-03T15:20:15+00:00'
-  updated_at: '2026-06-03T16:54:47+00:00'
+  updated_at: '2026-06-04T15:02:09+00:00'
 - slug: build-it-anyway
   title: Build It Anyway
   summary: Everything you build will be taken apart. That is not an argument against
