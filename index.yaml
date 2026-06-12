@@ -1,4 +1,19 @@
 articles:
+- slug: your-ai-architecture-is-a-company
+  title: Your AI Architecture Is a Company
+  summary: 'Agents are employees, tools are their hands, skills are their training.
+    The math of coordination and the economics of the firm both point to the same
+    answer: a few capable agents reporting to a spine that remembers.'
+  tags:
+  - agents
+  - architecture
+  - automation
+  - governance
+  cover: ''
+  author: Pumulo
+  category: architecture
+  published_at: '2026-06-12T00:41:16+00:00'
+  updated_at: '2026-06-12T00:41:16+00:00'
 - slug: judge-the-worst-not-the-best
   title: Judge the Worst, Not the Best
   summary: Every era of enterprise software seduces us with its best example. The
