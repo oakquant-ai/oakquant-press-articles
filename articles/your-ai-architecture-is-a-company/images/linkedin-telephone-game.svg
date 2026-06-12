@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="1200" fill="#FAF7F1"/>
+
+  <!-- headline -->
+  <text x="90" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#1C1C1C">The telephone game,</text>
+  <text x="90" y="205" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#1C1C1C">productionized.</text>
+  <line x1="90" y1="250" x2="1110" y2="250" stroke="#1C1C1C" stroke-width="1.5"/>
+
+  <!-- ROW 1 -->
+  <g opacity="1">
+    <circle cx="150" cy="340" r="34" fill="#2B2B2B"/>
+    <path d="M 196 340 L 222 326 L 222 354 Z" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <rect x="220" y="298" width="830" height="84" rx="18" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <text x="254" y="349" font-size="25" fill="#1C1C1C">Reverse the $42.50 fee on account 8841. Platinum. Policy 7.3.</text>
+  </g>
+
+  <!-- ROW 2 -->
+  <g opacity="0.85">
+    <circle cx="150" cy="500" r="34" fill="#FAF7F1" stroke="#2B2B2B" stroke-width="3"/>
+    <path d="M 196 500 L 222 486 L 222 514 Z" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <rect x="220" y="458" width="680" height="84" rx="18" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <text x="254" y="509" font-size="25" fill="#1C1C1C">Reverse a $42 fee on 8841. Platinum, some policy.</text>
+  </g>
+
+  <!-- ROW 3 -->
+  <g opacity="0.66">
+    <circle cx="150" cy="660" r="34" fill="#FAF7F1" stroke="#2B2B2B" stroke-width="3"/>
+    <path d="M 196 660 L 222 646 L 222 674 Z" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <rect x="220" y="618" width="560" height="84" rx="18" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <text x="254" y="669" font-size="25" fill="#1C1C1C">Refund about $40. Account ends in 41?</text>
+  </g>
+
+  <!-- ROW 4 -->
+  <g opacity="0.5">
+    <circle cx="150" cy="820" r="34" fill="#FAF7F1" stroke="#2B2B2B" stroke-width="3"/>
+    <path d="M 196 820 L 222 806 L 222 834 Z" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <rect x="220" y="778" width="475" height="84" rx="18" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <text x="254" y="829" font-size="25" fill="#1C1C1C">Refund something. Good customer.</text>
+  </g>
+
+  <!-- ROW 5 -->
+  <g opacity="0.36">
+    <circle cx="150" cy="980" r="34" fill="#FAF7F1" stroke="#2B2B2B" stroke-width="3"/>
+    <path d="M 196 980 L 222 966 L 222 994 Z" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <rect x="220" y="938" width="200" height="84" rx="18" fill="#FFFFFF" stroke="#2B2B2B" stroke-width="2.5"/>
+    <text x="254" y="989" font-size="25" fill="#1C1C1C">...refund?</text>
+  </g>
+
+  <!-- token meter, right margin -->
+  <g fill="#9B5331" text-anchor="end" font-size="20" letter-spacing="1">
+    <text x="1110" y="510" opacity="0.85">briefing paid 2x</text>
+    <text x="1110" y="670" opacity="0.8">3x</text>
+    <text x="1110" y="830" opacity="0.75">4x</text>
+    <text x="1110" y="990" opacity="0.7">5x</text>
+  </g>
+
+  <line x1="90" y1="1062" x2="1110" y2="1062" stroke="#D8D2C6" stroke-width="1.5"/>
+  <text x="90" y="1112" font-size="25" fill="#3A3A3A" font-style="italic" font-family="Georgia, serif">Five hops. Five briefings paid. One decision made on a summary of a summary.</text>
+  <text x="90" y="1162" font-size="17" letter-spacing="3" fill="#6B6B6B">YOUR AI ARCHITECTURE IS A COMPANY</text>
+</svg>
