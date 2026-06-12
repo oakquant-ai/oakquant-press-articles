@@ -1,3 +1,5 @@
+![Losing context](images/linkedin-telephone-game.svg)
+
 I spent last week at PegaWorld, and the word I heard more than any other was agents. Not AI. Agents. Usually plural. Often very plural. Somewhere between the keynotes and the hallway conversations, a pattern became hard to ignore. Everyone agrees they are the future of enterprise software. Almost nobody agrees on how many you should have, what each one should know, or how they should talk to each other. Those turn out to be the only questions that matter.
 
 Here is the mental model I keep offering, because it works on everyone from engineers to CFOs, and because it converts an abstract architecture debate into a decision most leaders have already made once in their careers.
@@ -47,6 +49,8 @@ Now read that paragraph again with agents in mind. Every handoff Brooks would co
 Coase tells you what to do about it. When transaction costs dominate, you internalize. You form a firm. In agent architecture, the firm is the governed workflow: the structure that holds the state, the history, and the rules of the work in one place, so that coordination stops being a series of expensive bilateral transactions and becomes direction.
 
 ## Three shapes, three companies
+
+![Three Shapes](images/three-shapes-three-companies.svg)
 
 In practice, multi-agent architectures take three broad shapes, and each has an organizational twin.
 
