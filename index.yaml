@@ -11,9 +11,9 @@ articles:
   - governance
   cover: ''
   author: Pumulo
-  category: architecture
+  category: architecture-and-design
   published_at: '2026-06-12T00:41:16+00:00'
-  updated_at: '2026-06-12T00:49:53+00:00'
+  updated_at: '2026-06-12T00:51:05+00:00'
 - slug: judge-the-worst-not-the-best
   title: Judge the Worst, Not the Best
   summary: Every era of enterprise software seduces us with its best example. The
