@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#2B2B2B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowFade" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#2B2B2B" stroke-width="1.6" stroke-opacity="0.45" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowAccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#1F6F54" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- ground -->
+  <rect width="1600" height="900" fill="#FAF7F1"/>
+
+  <!-- header -->
+  <text x="80" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#1C1C1C">Three Shapes, Three Companies</text>
+  <text x="80" y="128" font-size="16" letter-spacing="3" fill="#6B6B6B">THE CHAIN&#160;&#160;&#183;&#160;&#160;THE TREE&#160;&#160;&#183;&#160;&#160;THE SPINE</text>
+  <line x1="80" y1="158" x2="1520" y2="158" stroke="#1C1C1C" stroke-width="1.2"/>
+
+  <!-- column separators -->
+  <line x1="546" y1="210" x2="546" y2="810" stroke="#D8D2C6" stroke-width="1"/>
+  <line x1="1053" y1="210" x2="1053" y2="810" stroke="#D8D2C6" stroke-width="1"/>
+
+  <!-- ============ PANEL 1: THE CHAIN ============ -->
+  <text x="90" y="240" font-size="14" letter-spacing="3" fill="#9B5331">I&#160;&#160;THE CHAIN</text>
+
+  <!-- six nodes, fading: context degrades hop by hop -->
+  <g stroke="#2B2B2B" stroke-width="2" fill="#FAF7F1">
+    <circle cx="120" cy="450" r="17" fill="#2B2B2B"/>
+    <circle cx="194" cy="450" r="17" fill-opacity="1" opacity="0.88"/>
+    <circle cx="268" cy="450" r="17" opacity="0.74"/>
+    <circle cx="342" cy="450" r="17" opacity="0.60"/>
+    <circle cx="416" cy="450" r="17" opacity="0.46"/>
+    <circle cx="490" cy="450" r="17" opacity="0.32"/>
+  </g>
+  <g stroke="#2B2B2B" stroke-width="1.6" fill="none">
+    <line x1="141" y1="450" x2="171" y2="450" marker-end="url(#arrow)"/>
+    <line x1="215" y1="450" x2="245" y2="450" marker-end="url(#arrow)" opacity="0.82"/>
+    <line x1="289" y1="450" x2="319" y2="450" marker-end="url(#arrow)" opacity="0.66"/>
+    <line x1="363" y1="450" x2="393" y2="450" marker-end="url(#arrowFade)" opacity="0.52"/>
+    <line x1="437" y1="450" x2="467" y2="450" marker-end="url(#arrowFade)" opacity="0.38"/>
+  </g>
+  <!-- context payload shrinking beneath each node -->
+  <g fill="#9B5331">
+    <rect x="104" y="492" width="32" height="7" rx="2"/>
+    <rect x="181" y="492" width="26" height="7" rx="2" opacity="0.85"/>
+    <rect x="258" y="492" width="20" height="7" rx="2" opacity="0.7"/>
+    <rect x="335" y="492" width="14" height="7" rx="2" opacity="0.55"/>
+    <rect x="412" y="492" width="9" height="7" rx="2" opacity="0.4"/>
+    <rect x="487" y="492" width="5" height="7" rx="2" opacity="0.3"/>
+  </g>
+  <text x="120" y="530" font-size="12.5" fill="#6B6B6B">context</text>
+  <text x="305" y="600" font-size="15" fill="#3A3A3A" text-anchor="middle" font-style="italic" font-family="Georgia, serif">a summary of a summary of a summary</text>
+
+  <text x="90" y="752" font-family="Georgia, serif" font-size="20" fill="#1C1C1C">The company with no management</text>
+  <text x="90" y="780" font-size="14" fill="#6B6B6B">Context travels agent to agent and sheds</text>
+  <text x="90" y="800" font-size="14" fill="#6B6B6B">detail at every hop. Paid in tokens and truth.</text>
+
+  <!-- ============ PANEL 2: THE TREE ============ -->
+  <text x="597" y="240" font-size="14" letter-spacing="3" fill="#9B5331">II&#160;&#160;THE TREE</text>
+
+  <!-- edges: thick going down (delegation), drawn thin upward feel via opacity -->
+  <g stroke="#2B2B2B" fill="none">
+    <line x1="800" y1="327" x2="712" y2="433" stroke-width="2"/>
+    <line x1="800" y1="327" x2="888" y2="433" stroke-width="2"/>
+    <line x1="712" y1="467" x2="660" y2="573" stroke-width="1.4" opacity="0.7"/>
+    <line x1="712" y1="467" x2="764" y2="573" stroke-width="1.4" opacity="0.7"/>
+    <line x1="888" y1="467" x2="836" y2="573" stroke-width="1.4" opacity="0.7"/>
+    <line x1="888" y1="467" x2="940" y2="573" stroke-width="1.4" opacity="0.7"/>
+  </g>
+  <g stroke="#2B2B2B" stroke-width="2" fill="#FAF7F1">
+    <circle cx="800" cy="308" r="19" fill="#2B2B2B"/>
+    <circle cx="712" cy="450" r="17"/>
+    <circle cx="888" cy="450" r="17"/>
+    <circle cx="660" cy="590" r="14" opacity="0.75"/>
+    <circle cx="764" cy="590" r="14" opacity="0.75"/>
+    <circle cx="836" cy="590" r="14" opacity="0.75"/>
+    <circle cx="940" cy="590" r="14" opacity="0.75"/>
+  </g>
+  <text x="800" y="648" font-size="15" fill="#3A3A3A" text-anchor="middle" font-style="italic" font-family="Georgia, serif">every layer of management is a layer of summarization</text>
+
+  <text x="597" y="752" font-family="Georgia, serif" font-size="20" fill="#1C1C1C">The layered hierarchy</text>
+  <text x="597" y="780" font-size="14" fill="#6B6B6B">The supervisor knows what its reports told it,</text>
+  <text x="597" y="800" font-size="14" fill="#6B6B6B">which is not the same as what happened.</text>
+
+  <!-- ============ PANEL 3: THE SPINE ============ -->
+  <text x="1104" y="240" font-size="14" letter-spacing="3" fill="#1F6F54">III&#160;&#160;THE SPINE</text>
+
+  <!-- bidirectional links from agents to the record -->
+  <g stroke="#1F6F54" stroke-width="1.6" fill="none">
+    <line x1="1287" y1="312" x2="1287" y2="388" marker-start="url(#arrowAccent)" marker-end="url(#arrowAccent)"/>
+    <line x1="1167" y1="392" x2="1227" y2="425" marker-start="url(#arrowAccent)" marker-end="url(#arrowAccent)"/>
+    <line x1="1407" y1="392" x2="1347" y2="425" marker-start="url(#arrowAccent)" marker-end="url(#arrowAccent)"/>
+    <line x1="1180" y1="565" x2="1235" y2="510" marker-start="url(#arrowAccent)" marker-end="url(#arrowAccent)"/>
+    <line x1="1394" y1="565" x2="1339" y2="510" marker-start="url(#arrowAccent)" marker-end="url(#arrowAccent)"/>
+  </g>
+
+  <!-- the system of record -->
+  <rect x="1192" y="398" width="190" height="104" rx="10" fill="#1F6F54"/>
+  <rect x="1199" y="405" width="176" height="90" rx="7" fill="none" stroke="#FAF7F1" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="1287" y="442" font-size="13" letter-spacing="2.5" fill="#FAF7F1" text-anchor="middle">SYSTEM</text>
+  <text x="1287" y="462" font-size="13" letter-spacing="2.5" fill="#FAF7F1" text-anchor="middle">OF</text>
+  <text x="1287" y="482" font-size="13" letter-spacing="2.5" fill="#FAF7F1" text-anchor="middle">RECORD</text>
+
+  <!-- five capable agents, full ink, no fading -->
+  <g stroke="#2B2B2B" stroke-width="2" fill="#FAF7F1">
+    <circle cx="1287" cy="290" r="19"/>
+    <circle cx="1147" cy="380" r="19"/>
+    <circle cx="1427" cy="380" r="19"/>
+    <circle cx="1165" cy="582" r="19"/>
+    <circle cx="1409" cy="582" r="19"/>
+  </g>
+  <text x="1287" y="648" font-size="15" fill="#3A3A3A" text-anchor="middle" font-style="italic" font-family="Georgia, serif">agents report to the work, not to each other</text>
+
+  <text x="1104" y="752" font-family="Georgia, serif" font-size="20" fill="#1C1C1C">The well-run firm</text>
+  <text x="1104" y="780" font-size="14" fill="#6B6B6B">Context lives in one governed place. Nothing is</text>
+  <text x="1104" y="800" font-size="14" fill="#6B6B6B">re-explained to a record that never forgot.</text>
+
+  <!-- footer rule -->
+  <line x1="80" y1="842" x2="1520" y2="842" stroke="#1C1C1C" stroke-width="1.2"/>
+  <text x="80" y="872" font-size="12.5" letter-spacing="2" fill="#6B6B6B">YOUR AI ARCHITECTURE IS A COMPANY</text>
+  <text x="1520" y="872" font-size="12.5" letter-spacing="2" fill="#6B6B6B" text-anchor="end">PRESS.OAKQUANT.AI</text>
+</svg>
