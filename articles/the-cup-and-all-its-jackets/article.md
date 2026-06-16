@@ -1,3 +1,5 @@
+![Canes Fever](images/hockey.jpg "wrap=square align=right")
+
 The cup was luck in all its jackets.
 
 From the outside, that is the simplest way to tell the story. The Carolina Hurricanes went into Las Vegas and won Game 6. The horn sounded, the clock hit zero, and for the second time in franchise history, a team in red and black lifted the Stanley Cup. The highlight reels will package it neatly. A few big saves, a few big goals, confetti from the rafters, and a slow-motion shot of a captain finally raising silver over his head.
