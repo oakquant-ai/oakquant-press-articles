@@ -1,4 +1,14 @@
 articles:
+- slug: the-cup-and-all-its-jackets
+  title: The Cup, and All Its Jackets
+  summary: "The Carolina Hurricanes\u2019 Stanley Cup run as a story about work, luck,\
+    \ grace, and the jackets we all keep putting on."
+  tags: []
+  cover: ''
+  author: Pumulo
+  category: ''
+  published_at: '2026-06-16T22:45:54+00:00'
+  updated_at: '2026-06-16T22:45:54+00:00'
 - slug: the-big-puppy-at-the-bowl
   title: The Big Puppy at the Bowl
   summary: The democratizing promise of AI is colliding with the physical scarcity
