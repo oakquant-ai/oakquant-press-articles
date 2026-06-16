@@ -64,7 +64,7 @@ Jordan Staal finally lifting the cup again, seventeen years after the first, and
 
 Rod Brind'Amour tasting a championship as a coach after eight seasons teaching this room what it meant to be a Hurricane, two decades after he lifted the same cup as their captain.
 
-Eric Tulsky, the former blogger and analyst who turned spreadsheets and stubbornness into a front office philosophy strong enough to survive the league's fiendish competitiveness.
+Eric Tulsky, the former blogger and analyst who turned spreadsheets and stubbornness into a front office philosophy strong enough to survive the league's unforgiving math.
 
 Every one of them wears a different jacket of luck.
 
