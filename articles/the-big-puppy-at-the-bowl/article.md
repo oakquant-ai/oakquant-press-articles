@@ -1,3 +1,5 @@
+![Access becomes destiny.](images/puppies_eating.png)
+
 There is a scene that repeats itself in litters raised under scarcity.
 
 The food comes down. The largest puppy gets there first.
