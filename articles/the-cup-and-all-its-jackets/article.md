@@ -64,13 +64,13 @@ Jordan Staal finally lifting the cup again, seventeen years after the first, and
 
 Rod Brind'Amour tasting a championship as a coach after eight seasons teaching this room what it meant to be a Hurricane, two decades after he lifted the same cup as their captain.
 
-Eric Tulsky, the former blogger and analyst who turned spreadsheets and stubbornness into a front office philosophy strong enough to survive the league's weather.
+Eric Tulsky, the former blogger and analyst who turned spreadsheets and stubbornness into a front office philosophy strong enough to survive the league's fiendish competitiveness.
 
 Every one of them wears a different jacket of luck.
 
 There is the luck of staying healthy long enough for hard work to compound. The luck of being hired by an organization willing to give your ideas time. The luck of a marriage or a family that holds steady while you chase a silver object around the continent.
 
-Around them are jackets no broadcast will name: equipment managers who know every routine, athletic trainers who catch small things before they become surgeries, ticket reps who lived through the lean years and kept dialing. The people who make the building feel like a place worth working hard for, even on ordinary Tuesdays in February when nobody thinks about June.
+Around them are jackets no broadcast will name: equipment managers who know every routine, athletic trainers who catch small things before they become surgeries, ticket reps who lived through the lean years and kept dialing. The people who make the building feel like a place worth working hard for, even on ordinary week nights in February when nobody thinks about June.
 
 None of those jobs look like luck when you are doing them. They look like upkeep.
 
