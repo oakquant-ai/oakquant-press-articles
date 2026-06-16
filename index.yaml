@@ -1,4 +1,20 @@
 articles:
+- slug: the-big-puppy-at-the-bowl
+  title: The Big Puppy at the Bowl
+  summary: The democratizing promise of AI is colliding with the physical scarcity
+    that decides who actually commands it. A reflection on compute, dependency, and
+    the feeding order forming at the frontier.
+  tags:
+  - ai-governance
+  - political-economy
+  - compute
+  - sovereignty
+  - dependency-theory
+  cover: ''
+  author: Pumulo
+  category: ''
+  published_at: '2026-06-16T04:04:14+00:00'
+  updated_at: '2026-06-16T04:04:14+00:00'
 - slug: your-ai-architecture-is-a-company
   title: Your AI Architecture Is a Company
   summary: 'Agents are employees, tools are their hands, skills are their training.
