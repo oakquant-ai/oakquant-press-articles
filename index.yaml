@@ -12,9 +12,9 @@ articles:
   - dependency-theory
   cover: ''
   author: Pumulo
-  category: ''
+  category: current-events
   published_at: '2026-06-16T04:04:14+00:00'
-  updated_at: '2026-06-16T04:04:14+00:00'
+  updated_at: '2026-06-16T04:04:38+00:00'
 - slug: your-ai-architecture-is-a-company
   title: Your AI Architecture Is a Company
   summary: 'Agents are employees, tools are their hands, skills are their training.
