@@ -14,7 +14,7 @@ Not perfection. Not performance. Not charisma. A durable orientation toward othe
 
 ## The Architecture of Becoming
 
-Here is something worth sitting with: the most powerful AI systems ever built are, at their core, prediction engines trained on human data.
+Here is something worth considering: the most powerful AI systems ever built are, at their core, prediction engines trained on human data.
 
 A foundation model does not begin with intelligence. It begins with exposure. Billions of words, ideas, arguments, stories, and observations, written by people across centuries and cultures. The model processes this corpus and learns to predict: given what came before, what comes next? Given this context, what is the most likely continuation?
 
