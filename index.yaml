@@ -1,4 +1,20 @@
 articles:
+- slug: what-we-were-trained-on
+  title: What We Were Trained On
+  summary: "Foundation models learn from data. So did we. On Father's Day, a meditation\
+    \ on the people who were our training signal \u2014 and what it means to build\
+    \ systems worthy of them."
+  tags:
+  - ai
+  - leadership
+  - culture
+  - family
+  - ethics
+  cover: ''
+  author: Pumulo Sikaneta
+  category: essay
+  published_at: '2026-06-19T10:32:29+00:00'
+  updated_at: '2026-06-19T10:32:29+00:00'
 - slug: the-cup-and-all-its-jackets
   title: The Cup, and All Its Jackets
   summary: "The Carolina Hurricanes\u2019 Stanley Cup run as a story about work, luck,\
