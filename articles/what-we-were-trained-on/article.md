@@ -1,3 +1,5 @@
+![The original model](images/family.png)
+
 Father's Day turns the mind away from gifts and rituals and toward the quiet ways a life is formed.
 
 My father was the oldest child, raised in Zambia, the first in his family to attend university in the United States and then medical school in Canada. He built a life through discipline, intellect, and hard work. He served as a physician, a Rotarian, a brother, a husband, and a father who kept showing up for his family and his community.
