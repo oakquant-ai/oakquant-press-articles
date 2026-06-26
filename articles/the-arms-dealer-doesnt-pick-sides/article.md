@@ -1,3 +1,5 @@
+![The real AI race isn't fought in the models. It's fought over this.](images/header_broadcom.png)
+
 In late June, a man most people outside the chip industry have never heard of walked into OpenAI's offices, carrying a piece of silicon roughly the size of a coaster, and handed it across a table to Sam Altman and Greg Brockman.
 
 His name is Hock Tan. He runs Broadcom, a company most of the public could not pick out of a lineup.
