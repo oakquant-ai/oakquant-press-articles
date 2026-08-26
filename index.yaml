@@ -1,4 +1,17 @@
 articles:
+- slug: the-homework-fight-is-about-proof
+  title: The homework fight is about proof
+  summary: ''
+  tags:
+  - education
+  - artificial intelligence
+  - assessment
+  - policy
+  cover: ''
+  author: Pumulo Sikaneta
+  category: ''
+  published_at: '2026-08-26T16:09:38+00:00'
+  updated_at: '2026-08-26T16:09:38+00:00'
 - slug: the-arms-dealer-doesnt-pick-sides
   title: The Arms Dealer Doesn't Pick Sides
   summary: Everyone is watching the prospectors. The real power belongs to whoever
