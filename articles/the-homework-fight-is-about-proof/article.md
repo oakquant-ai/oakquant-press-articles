@@ -1,4 +1,4 @@
-![AI impact on student learning](images/turkish-study-light.png)\
+![AI impact on student learning](images/turkish-study-light.png)
 
 I dropped my daughter back at college two weeks ago for her second year. Somewhere on the drive home I realized I could tell you what she is studying and not what she is learning, and that those are two different questions.
 
