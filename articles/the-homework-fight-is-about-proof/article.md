@@ -1,3 +1,5 @@
+![AI impact on student learning](images/turkish-study-light.png)\
+
 I dropped my daughter back at college two weeks ago for her second year. Somewhere on the drive home I realized I could tell you what she is studying and not what she is learning, and that those are two different questions.
 
 The second one is the one I could not answer. She will hand in work this year that a machine could have produced in ninety seconds. So will every student in her building, and every ninth-grader in the school down my road. What does a grade mean now.
