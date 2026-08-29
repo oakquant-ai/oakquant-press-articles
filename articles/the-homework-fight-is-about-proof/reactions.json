@@ -1,4 +1,6 @@
 {
-  "likes": 0,
-  "users": []
+  "likes": 1,
+  "users": [
+    "1Simmons"
+  ]
 }
