@@ -3,7 +3,7 @@ summary: The method behind OakQuant's stock-direction predictor, and the case th
   most prediction systems have never been measured well enough to know whether they
   work.
 author: Pumulo Sikaneta
-category: technology
+category: architecture-and-design
 published_at: '2026-09-06T07:00:00Z'
 tags:
 - quantitative-finance
@@ -11,4 +11,4 @@ tags:
 - machine-learning
 - model-evaluation
 - research-method
-updated_at: '2026-09-06T19:48:10+00:00'
+updated_at: '2026-09-06T20:08:37+00:00'
