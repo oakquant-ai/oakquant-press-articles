@@ -135,6 +135,18 @@ You are not, because the 500 names move together. When the market falls, almost 
 
 So accumulating evidence forward, in real time, takes decades. A research program that waits for it will learn the answer long after everyone who asked the question has moved on.
 
+There is a sharper version of this, and we walked straight into it.
+
+Our system reads the news each day and produces one board — the themes firing right now. Every symbol forecast that day is scored against that same board. With 36 symbols a single day's board generates dozens of attributions. Widen the universe and it generates hundreds.
+
+Those are not hundreds of observations about a theme. They are **one observation wearing three hundred hats.**
+
+![One news board, attributed across every symbol forecast that day. The board fans out to hundreds of symbols and each produces its own attribution row, but all of them came from the same eight themes on the same morning. Counted as hundreds, n climbs, the shrinkage weight climbs with it, and the theme sounds certain on the strength of a single day. The fix is to count distinct days: one observation per theme, per sector, per day. It is the overlapping-windows problem again, one level up — across names instead of across time.](figures/one-board-many-hats.svg)
+
+Counting them as independent does something worse than waste them. It makes the model confident. Feed 300 near-duplicate rows into a shrinkage weight and $n$ climbs, $w$ climbs with it, and the theme concludes it has earned the right to speak for itself. The fix is to count distinct days rather than rows: one observation per theme, per sector, per day, before anything is folded in. Without that, every interval the theme layer reports is wrong in the confident direction.
+
+This inverted an assumption I had held without examining it. I expected the news layer to be starved beside the price layer, and to need protecting from being drowned out. The rates say otherwise. About 108 outcomes a day across 36 symbols is roughly 3 per symbol, while those same outcomes reach 8 themes at 12 to 37 each. Themes firm up faster than symbols do. The urgent guard is a **ceiling**, not a floor.
+
 ## The witness who has read tomorrow's newspaper
 
 If evidence cannot be gathered forward fast enough, it has to be reconstructed backward. Replay the system across decades of history and see what it would have said.
@@ -188,6 +200,38 @@ The dataset answered a question nobody asked: *how did the losers who were going
 The rule I take from this: **a bias has a direction, and the direction is a property of the estimator, not the dataset.** The same missing companies flatter a long-only backtest and destroy a long-short one. Before trusting any correction for bias, derive its sign for the specific thing you are measuring. Inheriting the sign from a rule of thumb is how a corpus artifact gets written up as a discovery.
 
 I have made this mistake. It is not hypothetical.
+
+### The same rule, applied to old news
+
+I had to derive a sign a second time, for a different bias, and that time the answer made a whole class of data usable instead of unusable.
+
+We would like to learn from old news. Old news is curated. Stories get retracted, de-indexed, put behind paywalls, quietly edited. Links rot. Re-query a window from 2009 today and what comes back is a version of the past that has been tidied up by what happened afterward.
+
+The reflex is to throw it out. Derive the sign instead.
+
+Curation inflates **magnitude** far more than it flips **sign**. A retracted story rarely reverses what a theme implied at the time. It removes the noise that stood around it. So the direction estimate survives the bias and the effect size does not.
+
+That asymmetry is worth having, because direction is most of what we want from a theme in the first place.
+
+### Letting weak evidence be quiet instead of silent
+
+So biased history is admissible, provided it arrives with a discount attached rather than a vote.
+
+Let every observation carry a **credibility** $c$ between 0 and 1, and fold it in as $c$ observations rather than as one. The node statistics are already sums, so this changes nothing structural. An observation with $c = 0.35$ moves the estimate the right way, a third as fast, and can never outvote a live one.
+
+$$c = c_{\text{source}} \times c_{\text{age}} \times c_{\text{competition}}$$
+
+| Term | Form | What it is discounting |
+|---|---|---|
+| $c_{\text{source}}$ | live 1.0, replayed about 0.35 | roughly three replayed observations count as one live one |
+| $c_{\text{age}}$ | $\text{floor} + (1-\text{floor}) \cdot 0.5^{\,\text{age}/H}$, floor 0.25, $H \approx 180$ days | curation accumulates with age — de-indexing, paywalls, link rot, editorial cleanup |
+| $c_{\text{competition}}$ | $1/(1 + \lambda(k-1))$, $\lambda \approx 0.1$, $k$ themes firing | on a crowded board, which theme owned the move is less certain |
+
+![How credibility decays and where it stops. The curve is the age term, 0.25 plus 0.75 times one-half raised to the age in 180-day units. It falls from 1.0 for a fresh observation toward a floor of 0.25, which it never goes below. Beneath it are the other two terms. The source term is 1.0 for a live observation and about 0.35 for a replayed one, so roughly three replayed observations count as one live one. The competition term falls from 1.0 when a single theme is firing to about 0.59 when eight are. The three multiply together, and because every one of them floors above zero, no observation is ever worth nothing.](figures/credibility-weights.svg)
+
+**The floors matter as much as the decay.** Every term bottoms out above zero, so an old observation on a crowded board comes out quiet and never silent. Nothing is drowned out. It is simply outweighed by better evidence, in proportion to how much better that evidence is.
+
+One trap is written into the plan in capital letters, because it is the kind of thing a tidy mind does by accident. $c_{\text{age}}$ is a **data-quality** discount: old records have been curated more. Regime-recency weighting is a **different** idea: old market conditions are less like today's. Both point the same direction, which is exactly why they will get merged into one number — and then neither can be tuned, because a single knob cannot answer two questions. Two parameters, two names, two hypotheses.
 
 ## One observation can own a mean
 
@@ -256,7 +300,7 @@ The correct answer sits between them and slides smoothly along that line dependi
 
 The estimate is built as a sum:
 
-![The estimator, drawn as the sum it is. At the root sits the measured market drift, which is the always-up baseline and therefore the model's floor. A price spine descends from it: a sector deviation shrunk toward the market, then a symbol deviation shrunk toward its sector. Alongside the spine, a theme hierarchy contributes whatever themes were firing at the moment the bet was placed, each shrunk from its effect in one specific sector, toward that theme's average effect everywhere, toward its family. Every arrow in the picture is the same shrinkage operation, weighted only by how much evidence the node beneath it has earned.](figures/hierarchy.svg)
+![The estimator as it is being rebuilt. A price spine runs market drift to sector to symbol and produces the base estimate. Alongside it a theme hierarchy runs family to theme to theme-and-sector and produces a theme adjustment, with each theme credited only its apportioned share of the residual. The two are added rather than chosen between: final equals the base estimate plus a macro weight times the theme adjustment. Every arrow is the same shrinkage operation, w = n/(n+K). Along the bottom, the macro term's share of the answer is bounded — a hard floor at 10% so it can never be argued to zero, a ceiling at 35% so one loud news day cannot run away with a forecast, and a 15 to 25% target band which is a prior borrowed from published variance decompositions rather than anything we have measured.](figures/hierarchy.svg)
 
 ```
 estimate(symbol) = market drift                     <- the floor
@@ -302,6 +346,37 @@ That one choice changes what the baseline is. Earlier in this piece, always-up a
 A stock the system has never seen has $n = 0$, so $w = 0$, so its estimate is its sector's, which is shrunk toward the market's. With no information at all, the model predicts the market drift. It starts where the rock starts. Every observation it gathers can only move it away from that floor in a direction the data supports.
 
 A system that cannot underperform the baseline through ignorance is a different kind of object from one that competes with the baseline and might lose. The baseline stopped being the opponent and became the ground.
+
+### And then the wiring defeated it
+
+That is the design. Here is what the code was doing.
+
+```
+per_tier = predict_cascade(models, features)
+if not per_tier:
+    return hierarchy_prior(...)    # the only place the theme layer is consulted
+return cascade_answer              # macro never enters
+```
+
+The prior was consulted **only when nothing else fitted**. The moment any tier of the cascade produced an answer, the hierarchy — and the whole theme layer with it — stopped being consulted at all. Not phased down to something small. Switched off, at zero, abruptly.
+
+I had built the prior as an *alternative* to the model, when the entire argument for it is that it should be a *component* of the model. The floor described above was real in the arithmetic and unreachable in the wiring. A reader who accepted my account of it would have believed something the running system did not do.
+
+The correction is to make macro additive rather than conditional:
+
+$$\text{final} = \text{base estimate} + w_{\text{macro}} \times \text{theme adjustment}$$
+
+and then to bound what that term is allowed to be. Its share of the answer is measurable directly, as $|macro| / (|base| + |macro|)$, so it can be constrained rather than hoped for.
+
+| Bound | Value | Why |
+|---|---|---|
+| Floor | 10% | macro is always a factor and may never be argued to zero |
+| Target band | 15–25% | conservative against the reference below |
+| Ceiling | 35% | stops one loud news day running away with a forecast |
+
+**The 15–25% band is a prior, not a finding, and it has to be labeled that way every time it is quoted.** We have no data that justifies it. The defensible anchor is separate and weaker than a measurement: for large-cap equities, market and sector factors account for roughly 30 to 50% of a single stock's short-horizon return variance. Holding macro to 15–25% of predictive contribution is therefore conservative rather than generous. That is a reference point borrowed from other people's work. It is not our result, and we do not have one yet.
+
+$w_{\text{macro}}$ is tuned, on a pre-registered grid, with the floor as a hard constraint the optimizer is not allowed to argue away. The trials ledger then deflates the winner for multiple testing, because the best of eight weights always looks better than it is.
 
 ### The dial had no best setting
 
@@ -349,6 +424,20 @@ The price spine has already made its prediction. If a stock rose and the spine e
 A tutor is hired for a student who has been scoring 80 all year. The student scores 82. The tutor gets credit for two points, not eighty-two. Crediting the whole score would make every tutor in the country look extraordinary, and would tell you nothing about which ones help.
 
 Without this, the theme layer would slowly re-take credit for the equity drift. Every theme in the taxonomy would drift toward looking mildly bullish, because most things do. Attributing the residual keeps the layers from double-counting the same effect.
+
+There was a second double-count underneath that one, and it survived until two halves of the system were made to state their answer in the same units.
+
+Learning credited **every** firing theme with the **whole** residual. Prediction **summed** weight times effect across all of them. With three themes firing, learning taught each one the entire move, and prediction then added three entire moves together.
+
+The error scales with how busy the news is. On a quiet day it is nearly invisible. On the day it matters most — a crowded board, everything firing at once — it is at its worst.
+
+The fix is apportionment. Credit theme $i$ with
+
+$$r_i = r \cdot \frac{w_i}{\sum_j w_j}$$
+
+so the credits reconstruct exactly one residual between them. Learning and prediction then agree by construction rather than by luck.
+
+Nobody found this by reading the code. It surfaced from a question — what happens when two narratives compete for the same move? — taken literally instead of answered in the abstract.
 
 ### Why this survives having almost no data
 
@@ -400,11 +489,21 @@ Here is the honest position, stated plainly.
 
 We have not demonstrated an edge in predicting stock direction. What we have built is an instrument that can tell us when we do not know, and an estimator whose structure is safe while it does not know. Right now the instrument is telling us we do not know.
 
-Everything described above is running. The hierarchy serves the cold start, so a symbol nobody has scored inherits its sector, and an unseen sector inherits the measured market drift. The hourly job that folds settled outcomes into the theme memory is live, and the memory has started filling.
+Everything described above is built and deployed, and one piece of it is not yet doing what I said it does.
+
+The hourly job that folds settled outcomes into the theme memory is live, and the memory has started filling. The hierarchy serves the cold start. But because the prior is consulted only when no cascade tier fits, **macro's influence on a live forecast today is approximately zero** — structurally, not as a tuning choice. Making it an additive term with a floor and a ceiling is the next change. It is the one that turns the theme layer from an idea into a term in the answer.
 
 Five feature families now attach where four did before, and why that took so long is worth telling. One family had never once computed. The builder unpacked a four-value return into two names, the exception that raised was swallowed, and zero of 1,425 scored rows ever carried those features. The suite was green the entire time, because the test double declared the same wrong signature the buggy code assumed. **A double built from the code's own assumptions cannot contradict them.** It took a run against the real interface to see it.
 
 What all of this buys is a clock, not an answer. The system places about 108 predictions a day. Each settles after five trading days and attributes to between one and three firing themes, so a day of running yields roughly 100 to 300 theme observations. Against a $K$ in the region of 40 to 80, a theme needs several hundred before its effect moves meaningfully away from its parent. The macro boards cannot be backfilled, so this is the only rate at which that evidence can ever arrive. Gate H is weeks from being answerable, and it was written down before any of it started, which is the only reason its answer will mean anything when it comes.
+
+The order of work is settled, and the first item is the cheapest thing in the whole program. Widening the universe from 36 symbols to about 200 multiplies theme observations by roughly five and a half times a day. No backfill. No history to buy. And no curation bias at all, because every observation it produces is forward-looking. It buys the same evidence as a six-month replay with none of the trap. After that: macro additive with its bounds, then apportionment and de-duplication, then the credibility weights.
+
+The gate for that work was written down before any of it started:
+
+> **Gate M.** With macro additive and apportioned, the full estimate's macro contribution sits inside 10% to 35% on live bets, and the evaluation reports the macro term's out-of-sample lift with an interval — whichever way it points.
+
+A null result there would say that macro adds nothing measurable at any weight in the band. That is a deliverable, and it would be worth more than another decade of asserting that macro must matter.
 
 I want to be careful about one thing. The price-spine result above is decisive, and it is negative, and it is a verdict on seven price features. It is not a verdict on the architecture, because the twenty-year corpus carries no news whatsoever. The theme layer has barely any settled observations yet and has therefore been graded on nothing. Presenting a price-only result as a verdict on the whole design would be exactly the error this article is about, so we are not doing it.
 
@@ -421,6 +520,10 @@ The knobs below are genuinely open, and I would rather be argued with than agree
 - **The shrinkage constant $K$, on live evidence.** The sweep above ran on price history. The values running in production are placeholder round numbers, and tuning them against settled theme outcomes cannot begin until there are settled theme outcomes.
 - **Theme effects are lifetime means.** A theme's implication drifts with the regime, so old evidence should decay rather than count forever. The trust ledger elsewhere in this system already has half-life machinery, and this should reuse it rather than reinvent it.
 - **The hierarchy's shape.** The price spine has three levels and the theme hierarchy has three. Industry, country, and factor-exposure levels are all plausible parents. More levels means more parameters and less evidence per node, and where that trade turns negative is an empirical question we have not answered.
+- **The macro weight $w_{\text{macro}}$ is untuned.** It runs on a pre-registered grid with the 10% floor as a hard constraint, and the winner is deflated for multiple testing. No value of it has earned anything yet.
+- **The 15–25% band is borrowed, not measured.** It rests on other people's variance decompositions, not on our bets. Replacing it with a measurement is what Gate M is for.
+- **The credibility terms are guesses with the right shape.** A replayed observation worth 0.35 of a live one. A 180-day half-life on curation. A 0.1 crowding penalty. Every one of those is a starting point, and the structure matters more than the values.
+- **The historical replay cannot validate anything, and must never be presented as if it could.** Six months across 36 correlated mega-caps is about 4,500 overlapping bets, worth perhaps 300 to 900 independent ones, against the 4,900 a 52% edge needs. It is a bootstrap and a product surface. Nothing more.
 - **Residual attribution assumes the spine is right.** Crediting a theme with `actual − spine expected` is only sound if the spine's expectation is unbiased. If the spine is systematically wrong for a sector, that error lands in the themes and looks like a discovery.
 - **The effective-sample-size correction** uses the standard overlapping-window inflation factor. It does not yet account for cross-sectional correlation between names, which means our $n_{\text{eff}}$ is optimistic. The honest number is smaller than the one we report.
 - **Multiple testing is counted, and the counter is only as honest as the log.** The evaluation command tracks trials to date and deflates significance accordingly, along the lines Lopez de Prado and others have proposed for backtest evaluation. It can only count the trials that passed through it. An idea discarded at a whiteboard never enters the count, and it was still a test.
