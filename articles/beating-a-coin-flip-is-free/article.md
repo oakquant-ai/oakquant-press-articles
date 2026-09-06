@@ -24,7 +24,7 @@ Most people already have good instincts here. If you have taken that bus twice, 
 
 That is the whole game. **Historical context does not turn a prediction into a fact. It narrows the range of answers the truth could sit in.** A forecast that says "70% chance of rain" is a better object than one that says "it will rain," because the first tells you how much to trust it and the second does not.
 
-![A prediction interval narrowing as independent observations accumulate. At six observations the band is wide enough to contain almost any conclusion you might want to draw. At sixty it has tightened, and still spans the baseline. At six hundred it has closed far enough that the estimate and the baseline can finally be told apart. Notice that the point estimate in the middle barely moves across the three. Only the range around it changes, and the range is what decides whether you have learned anything.](figures/uncertainty-narrows.svg)
+![A prediction interval narrowing as independent observations accumulate. The estimate is held at 52% in all three. At six observations the interval runs +/-40 points, wide enough to contain almost any conclusion you might want to draw. At sixty it is +/-12.7. At six hundred it is +/-4.0 and still crosses the 50% line, which is the honest shape of this problem: six hundred observations do not settle a two-point edge. The point estimate never moves. Only the range does, and the range is what decides whether you have learned anything.](figures/uncertainty-narrows.svg)
 
 Everything in this article is one of two questions:
 
@@ -37,7 +37,7 @@ The rest is detail.
 
 Run this test. Take twenty years of daily prices for large US companies. Our backfill holds 2,402,296 daily bars, from January 2006 to September 2026. Step through it one forecast horizon at a time, so that no two bets share a day. That gives 473,405 independent bets. On every one of them, predict up. Never look at anything. Never change your mind.
 
-That constant scores **54.569%** correct, with an interval of [54.427, 54.711].
+That constant scores **54.569%** correct, with a 95% interval of [54.427, 54.711] — the band the true rate plausibly falls in.
 
 It scores that because equities drift up. Over long stretches, more days close green than red. The drift is small on any one day and enormous over twenty years, and it is baked into the direction of the market itself. It also gets stronger the further ahead you look: 54.6% over five days, 57.8% over twenty-one, 62.8% over sixty-three. The longer your horizon, the more of your accuracy the rock is handing you for free.
 
@@ -125,7 +125,7 @@ The obvious response is patience. Run the system longer. Collect more bets. Let 
 
 Work out how long that takes.
 
-Suppose the real edge is 52% against a 50% baseline. To detect a gap that small, with 80% power, at the usual 5% significance level, you need roughly 4,900 **independent** bets.
+Suppose the real edge is 52% against a 50% baseline. To detect a gap that small you need roughly 4,900 **independent** bets. Two standard conditions come attached to that figure. **80% power** means an 80% chance of spotting the edge if it is genuinely there. A **5% significance level** means a one-in-twenty risk of being fooled by luck when it is not.
 
 One stock gives you about fifty independent five-day bets in a year, because a year holds about 252 trading days and non-overlapping five-day windows fit into it about fifty times. So 4,900 independent bets is about 97 stock-years.
 
@@ -163,7 +163,7 @@ Everyone in finance has heard of survivorship bias. Most people have learned it 
 
 The familiar version goes like this. Build a universe from the companies in the index today. You have just excluded every company that went bankrupt, got delisted, or was absorbed on bad terms. Your history contains only survivors. Your backtest looks better than reality. Survivorship flatters.
 
-That is true for a long-only strategy. It is exactly backward for a long-short one, and the reason is worth sitting with.
+That is true for a long-only strategy. It is exactly backward for a long-short one. Here is why.
 
 A long-short strategy buys some companies and sells others short. Short selling profits when a stock falls. A company that goes to zero is the single best outcome available to whoever is short it. It is a 100% return on that leg.
 
@@ -177,7 +177,7 @@ Here is the worked example, and it is the one that made this concrete for me.
 
 Take an S&P universe built only from companies that survived to today. Sort them into five buckets by momentum. Look at the worst-momentum bucket, the beaten-down names, in **March 2009** — the month the market bottomed after the financial crisis.
 
-That bucket returned **+42.95%** in a single month.
+That bucket returned **+42.95%** in a single month. A thousand dollars spread across those names at the start of March 2009 was worth about $1,429 by the end of it. One month, one bucket, one number — a denominator of exactly 1.
 
 At first glance this looks like a stunning finding about buying losers. It is not a finding at all. It is an artifact of the universe.
 
@@ -193,15 +193,17 @@ I have made this mistake. It is not hypothetical.
 
 The same survivors-only test produced a second lesson, and this one is arithmetic that any reader can check.
 
-Across roughly 240 monthly observations — twenty years of months — the average monthly winners-minus-losers premium was **-0.075%**. Slightly negative. Momentum does not work, apparently.
+First, what the test measures. A **winners-minus-losers premium** works like this. Buy the best-momentum stocks. Sell the worst ones short. Hold for a month, then record what the pair returned together. Do that every month for twenty years and you have roughly 240 monthly numbers.
+
+The average of those 240 months was **-0.075%**. On every thousand dollars committed, that is a loss of about seventy-five cents a month. Slightly negative. Momentum does not work, apparently.
 
 Three other numbers from the same 240 months:
 
-- The **median** month was **+0.419%**.
+- The **median** month was **+0.419%** — a gain of about four dollars twenty on the same thousand, pointing the opposite way.
 - **55%** of the months were positive.
 - The **trimmed mean**, with the extreme months removed, sat on the positive side with the median.
 
-A mean of -0.075% and a median of +0.419% cannot both describe a typical month. The gap between them is about half a percentage point, and over 240 months half a point of average is about 118 percentage points of total return. That much return does not arrive quietly, spread evenly across two decades. It arrives in a few enormous months.
+A mean of -0.075% and a median of +0.419% cannot both describe a typical month. The gap between them is about half a percentage point per month. Multiply half a point by 240 months and you get roughly 118 percentage points of return that has to be accounted for somewhere. That is not a rounding difference — it is more than the whole strategy. And that much return does not arrive quietly, spread evenly across two decades. It arrives in a few enormous months.
 
 Those months are momentum crashes. Kent Daniel and Tobias Moskowitz have documented them. Momentum works for long stretches, then reverses with terrible violence. It usually happens in a panic recovery, when the beaten-down names snap back all at once. March 2009 is the textbook case, which is why the same month shows up in both of these lessons.
 
@@ -274,7 +276,7 @@ where $n$ is how many observations that node has and $K$ says how much evidence 
 
 $$\hat{\mu}_{\text{node}} = w \cdot \bar{x}_{\text{node}} + (1 - w) \cdot \hat{\mu}_{\text{parent}}$$
 
-Look at what $w$ does. With $K = 50$:
+Here $n$ counts the settled bets that node has actually been graded on. Look at what $w$ does with $K = 50$:
 
 | Observations $n$ | $w = n/(n+K)$ | Effect |
 |---|---|---|
@@ -305,18 +307,28 @@ A system that cannot underperform the baseline through ignorance is a different 
 
 Here is the result I did not expect, and it is the most useful thing the price history has told us.
 
-We graded the price spine on those same 473,405 non-overlapping bets. Because the windows never touch, $n_{\text{eff}}$ equals $n$, and the intervals come out at about ±0.14 points. It is the most evidence this program has ever had about any candidate, and it was enough to give a decisive answer rather than a shrug.
+We graded the price spine on those same 473,405 non-overlapping bets. Because the windows never touch, $n_{\text{eff}}$ equals $n$, and the intervals come out at about ±0.14 percentage points of hit rate. It is the most evidence this program has ever had about any candidate, and it was enough to give a decisive answer rather than a shrug.
 
-Then we swept $K$ across four orders of magnitude and measured lift against always-up, on identical bets:
+Then we swept $K$ across four orders of magnitude and measured lift on identical bets.
 
-| $K$ | Lift over always-up |
-|---|---|
-| 0 | −0.475 points |
-| 50 | −0.370 |
-| 1,000 | −0.226 |
-| 50,000 | −0.158 |
+Before the numbers, what they are. **Lift is the model's hit rate minus the baseline's hit rate**, counted in percentage points of direction called correctly. Always-up scored 54.569% on these bets. A lift of zero means the model tied the rock. A positive lift would be the first real result this program has produced. A negative lift means the model called direction correctly *less often* than a constant did.
 
-Every value is negative. And there is no peak anywhere in the middle. More pooling is monotonically better, and the limit of "better" is *exactly* always-up. The best thing the dial can do is turn itself all the way off.
+| $K$ | Model's hit rate | Lift over always-up | Extra wrong calls per 1,000 |
+|---|---|---|---|
+| 0 | 54.094% | −0.475 points | 4.8 |
+| 50 | 54.199% | −0.370 | 3.7 |
+| 1,000 | 54.343% | −0.226 | 2.3 |
+| 50,000 | 54.411% | −0.158 | 1.6 |
+
+Every value is negative. Read that plainly: **at every setting we tried, you would have done better by ignoring the model.** Across all 473,405 bets, the worst setting got about 2,250 more calls wrong than the rock did. The best setting still got about 750 more wrong.
+
+Now watch the direction of travel, because that is the part that matters. The number climbs: −0.475, then −0.370, then −0.226, then −0.158. It is heading toward zero. But zero *is* always-up. Every step of that improvement is the model doing less of its own thinking and copying its parent more. The destination is the model contributing nothing at all.
+
+Put it in terms of somebody's money. Imagine paying a manager to call which way each stock moves next week. Compare them against a rule you could follow for free: assume every stock goes up. The dial controls how much the manager may back their own opinion instead of copying the free rule. We turned it from "all opinion" to "almost none." They lost at every setting. They improved only in the sense that they were doing less, and the best version of this manager is the one who stops making calls.
+
+There is no peak anywhere in the middle. More pooling is monotonically better, and the limit of "better" is *exactly* always-up.
+
+One honesty note, because direction is not money. A hit rate counts how often a call was right. It says nothing about how much was riding on each one. You can be right on many small moves, wrong on a few enormous ones, and still lose badly. That is precisely what the momentum-crash months did earlier in this article. So none of these figures is a claim about returns. They are a claim about whether the model knows which way a stock is heading, and the answer is that it knows slightly less than nothing.
 
 The reason runs straight back to the survivorship section. On a universe that drifts up, the sign of a stock's historical mean is almost always positive. An estimator built out of level means therefore re-derives the very baseline it is shrinking toward. Its only lever for adding anything of its own is calling "down" on the few names whose drift is negative. On a survivor universe, those are precisely the names that fell hard and then came back. The one move available to it is the move the dataset has been rigged against.
 
@@ -346,7 +358,7 @@ Under this structure, that is safe. With zero observations a theme has $n = 0$, 
 
 It is how you already treat a new colleague. On their first day you have no information about them, so you assume they are roughly like the team they joined. You do not invent a rating for them and you do not refuse to work with them. As they do things, your picture of them separates from the team's, in proportion to what you have actually seen.
 
-A theme seen three times moves the estimate by less than 0.03 against the 0.10 it appeared to see. A theme seen two thousand times earns its full effect. Everything in between is a smooth ramp.
+Say a theme has fired three times, and across those three the sector moved 10 percentage points more than the price spine expected. The theme does not get to claim 10 points. It contributes under 3 of them, and the other 7 stay with its parent until more evidence arrives. A theme seen two thousand times earns close to the whole effect. Everything in between is a smooth ramp.
 
 That is the strongest argument for partial pooling here, and it is worth stating plainly: **you do not need twenty years of news to start. You need a structure that makes four days safe and four hundred days valuable, with nothing rewritten in between.**
 
