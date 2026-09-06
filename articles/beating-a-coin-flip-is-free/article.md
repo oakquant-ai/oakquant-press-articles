@@ -1,5 +1,7 @@
 ## The forecaster who is almost always right
 
+![50% isn't great](images/cartoon.jpeg)
+
 Arica sits on the coast of northern Chile, at the edge of the Atacama. It is the driest inhabited place on earth. Some years it does not rain at all. Not a shower, not a drizzle. Nothing.
 
 Give a forecaster in Arica one job. Every morning, say whether it will rain.
