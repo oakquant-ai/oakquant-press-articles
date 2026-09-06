@@ -1,4 +1,20 @@
 articles:
+- slug: beating-a-coin-flip-is-free
+  title: Beating a Coin Flip Is Free. Knowing Whether You Did Is the Hard Part.
+  summary: The method behind OakQuant's stock-direction predictor, and the case that
+    most prediction systems have never been measured well enough to know whether they
+    work.
+  tags:
+  - quantitative-finance
+  - measurement
+  - machine-learning
+  - model-evaluation
+  - research-method
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-09-06T07:00:00Z'
+  updated_at: '2026-09-06T17:50:17+00:00'
 - slug: the-homework-fight-is-about-proof
   title: The homework fight is about proof
   summary: ''
