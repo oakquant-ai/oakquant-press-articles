@@ -9,9 +9,9 @@ articles:
   - regulation
   cover: ''
   author: Pumulo Sikaneta
-  category: ''
+  category: current-events
   published_at: '2026-09-11T22:16:49+00:00'
-  updated_at: '2026-09-11T22:16:49+00:00'
+  updated_at: '2026-09-11T22:17:06+00:00'
 - slug: beating-a-coin-flip-is-free
   title: Beating a Coin Flip Is Free. Knowing Whether You Did Is the Hard Part.
   summary: The method behind OakQuant's stock-direction predictor, and the case that
