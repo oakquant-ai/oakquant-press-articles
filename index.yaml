@@ -1,4 +1,19 @@
 articles:
+- slug: leadership-jekyll-and-hyde
+  title: Leadership Jekyll and Hyde
+  summary: ''
+  tags:
+  - leadership
+  - power
+  - institutions
+  - sport
+  - politics
+  - conformity
+  cover: ''
+  author: Pumulo Sikaneta
+  category: ''
+  published_at: '2026-09-26T15:35:34+00:00'
+  updated_at: '2026-09-26T15:35:34+00:00'
 - slug: a-hundred-million-views-and-no-brake-pedal
   title: A hundred million views and no brake pedal
   summary: ''
