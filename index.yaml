@@ -1,4 +1,20 @@
 articles:
+- slug: the-oldest-code-in-the-building
+  title: The oldest code in the building
+  summary: AI can read forty years of code. People still decide what it meant. How
+    to modernize a mainframe while the family still lives in the house.
+  tags:
+  - ai
+  - mainframe
+  - modernization
+  - cobol
+  - legacy
+  - enterprise
+  cover: ''
+  author: Pumulo Sikaneta
+  category: architecture
+  published_at: '2026-10-06T17:36:38+00:00'
+  updated_at: '2026-10-06T17:36:38+00:00'
 - slug: shadow-ai-is-a-product-problem
   title: Shadow AI is a product problem wearing a security badge
   summary: 'Most people who use personal AI at work are trying to finish their work.
