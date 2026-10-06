@@ -1,4 +1,20 @@
 articles:
+- slug: the-thing-youd-notice-if-it-stopped
+  title: The thing you'd notice if it stopped
+  summary: 'The most important AI may be the AI nobody notices: the case that stays
+    found, the customer who only says it once, and the record that explains what happened.'
+  tags:
+  - ai
+  - automation
+  - infrastructure
+  - case-management
+  - responsible-ai
+  - enterprise
+  cover: ''
+  author: Pumulo Sikaneta
+  category: architecture
+  published_at: '2026-10-06T17:37:07+00:00'
+  updated_at: '2026-10-06T17:37:07+00:00'
 - slug: the-oldest-code-in-the-building
   title: The oldest code in the building
   summary: AI can read forty years of code. People still decide what it meant. How
