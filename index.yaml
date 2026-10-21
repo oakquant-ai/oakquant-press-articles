@@ -1,4 +1,18 @@
 articles:
+- slug: you-said-this-donation-would-save-social-security
+  title: You Said This Donation Would Save Social Security
+  summary: A hypothetical American experiment in making campaign promises partially
+    self-funding.
+  tags:
+  - satire
+  - social-security
+  - campaign-finance
+  - politics
+  cover: ''
+  author: Pumulo Sikaneta
+  category: professional
+  published_at: '2026-10-21T16:13:00+00:00'
+  updated_at: '2026-10-21T16:30:14+00:00'
 - slug: ai-has-different-jobs
   title: AI has different jobs. Stop governing it like one thing.
   summary: The closer AI gets to action, the more evidence it owes you. A kitchen,
