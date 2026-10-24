@@ -1,4 +1,18 @@
 articles:
+- slug: i-really-love-my-grandchildren
+  title: I Love My Children. I REALLY Love My Grandchildren.
+  summary: A satire about political advertising, family values, and the qualifications
+    required to have an opinion.
+  tags:
+  - satire
+  - political-advertising
+  - family-values
+  - politics
+  cover: ''
+  author: Pumulo Sikaneta
+  category: professional
+  published_at: '2026-10-24T18:28:00+00:00'
+  updated_at: '2026-10-24T18:31:00+00:00'
 - slug: you-said-this-donation-would-save-social-security
   title: You Said This Donation Would Save Social Security
   summary: A hypothetical American experiment in making campaign promises partially
