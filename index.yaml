@@ -352,6 +352,22 @@ articles:
   category: architecture-and-design
   published_at: '2026-05-17T10:00:00Z'
   updated_at: '2026-05-18T00:31:05+00:00'
+- slug: the-oakquant-ecosystem
+  title: 'The OakQuant Ecosystem: An Architectural Reference for a Bounded-Agent Platform'
+  summary: "How OakQuant was designed and built \u2014 seven services, one config\
+    \ plane, three substrates, and the bounded-agent pattern that holds them together."
+  tags:
+  - architecture
+  - agentic-ai
+  - bounded-agents
+  - systems-design
+  - config-driven
+  - evaluation
+  cover: ''
+  author: Pumulo Sikaneta
+  category: architecture-and-design
+  published_at: '2026-05-16T08:00:00Z'
+  updated_at: ''
 - slug: git-pull-origin-2026
   title: 'git pull origin 2026: A Field Guide to the AI Coding Agent Era'
   summary: "A field guide to the AI coding-agent era \u2014 the founders, the products,\
