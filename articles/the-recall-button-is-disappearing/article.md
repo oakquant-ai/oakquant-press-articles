@@ -30,7 +30,7 @@ A model can sometimes be withdrawn by the company that operates it. If the model
 
 Access can often be revoked in more places than the model itself can be recalled. The deploying organization needs its own ability to disable credentials, rotate keys, disconnect tools, narrow permissions, require human approval, and shut down the workflow. In some cases, account administrators, tool providers, or hosting platforms can also block access. But the key operational point is that the deploying organization cannot depend on the model provider alone to stop a live incident.
 
-![Withdrawing a model and revoking its access are separate controls. Neither reverses completed harm.](images/recall-vs-revocation.svg "wrap=square align=left")
+![*Withdrawing a model and revoking its access are separate controls. Neither reverses completed harm.*](images/recall-versus-revocation.svg)
 
 Open-weight distribution changes the first row profoundly. Once weights are copied, fine-tuned, quantized, and redistributed, there may be no meaningful global recall path at all. The remaining defenses sit mostly in the second row: identity, permissions, logging, platform policy, hosting controls, and incident response.
 
