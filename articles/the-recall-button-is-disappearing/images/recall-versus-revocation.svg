@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="850" viewBox="0 0 1440 850" role="img" aria-labelledby="title desc">
+<title id="title">Two places to stop an AI system</title><desc id="desc">A provider can withdraw a hosted model, but cannot recall every distributed copy. A deploying organization can revoke the agent's access to tools. Neither control reverses completed actions.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#64716c" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="850" fill="#f7f5ef"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#22332d">
+<text x="80" y="85" font-size="39" font-weight="700">Two places to stop an AI system</text>
+<text x="80" y="129" font-size="22" fill="#53635c">Withdrawing the model and revoking its access solve different problems.</text>
+<rect x="80" y="193" width="588" height="184" rx="15" fill="#fff" stroke="#d3dad3" stroke-width="2"/>
+<text x="110" y="234" font-size="19" fill="#65746c">1 / MODEL PROVIDER</text>
+<text x="110" y="279" font-size="29" font-weight="700">Withdraw or restrict the model</text>
+<text x="110" y="318" font-size="21">Patch a hosted service or suspend access.</text>
+<text x="110" y="350" font-size="21" fill="#99533e">Distributed copies may remain available.</text>
+<rect x="724" y="193" width="636" height="184" rx="15" fill="#fff" stroke="#d3dad3" stroke-width="2"/>
+<text x="754" y="234" font-size="19" fill="#65746c">2 / DEPLOYING ORGANIZATION</text>
+<text x="754" y="279" font-size="29" font-weight="700">Revoke the agent’s access</text>
+<text x="754" y="318" font-size="21">Disable credentials, disconnect tools,</text>
+<text x="754" y="350" font-size="21">or shut down the workflow.</text>
+<path d="M374 377 V466" stroke="#64716c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M1042 377 V448 H936 V466" fill="none" stroke="#64716c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="80" y="482" width="330" height="103" rx="12" fill="#e4eae3"/>
+<text x="245" y="526" font-size="25" text-anchor="middle" font-weight="700">Model</text><text x="245" y="557" font-size="18" text-anchor="middle">Hosted or self-hosted</text>
+<rect x="492" y="482" width="256" height="103" rx="12" fill="#e4eae3"/>
+<text x="620" y="542" font-size="25" text-anchor="middle" font-weight="700">Agent workflow</text>
+<rect x="828" y="482" width="216" height="103" rx="12" fill="#f1ded5" stroke="#b36149" stroke-width="2"/>
+<text x="936" y="526" font-size="24" text-anchor="middle" font-weight="700">Access gate</text><text x="936" y="557" font-size="18" text-anchor="middle">Credentials + policy</text>
+<rect x="1124" y="482" width="236" height="103" rx="12" fill="#e4eae3"/>
+<text x="1242" y="526" font-size="24" text-anchor="middle" font-weight="700">Tools + data</text><text x="1242" y="557" font-size="18" text-anchor="middle">Email, records, payments</text>
+<g stroke="#64716c" stroke-width="2.5" marker-end="url(#arrow)"><path d="M410 533 H479"/><path d="M748 533 H815"/><path d="M1044 533 H1111"/></g>
+<rect x="80" y="654" width="1280" height="124" rx="13" fill="#223c32"/>
+<text x="112" y="702" font-size="26" font-weight="700" fill="#fff">Neither control reverses completed harm.</text>
+<text x="112" y="744" font-size="22" fill="#e0e8df">Leaked records and completed transactions still need a separate response.</text>
+</g></svg>
