@@ -10,9 +10,9 @@ articles:
   - oakquant
   cover: ''
   author: Pumulo Sikaneta
-  category: technology
+  category: architecture-and-design
   published_at: '2026-11-01T19:10:32+00:00'
-  updated_at: '2026-11-01T19:10:32+00:00'
+  updated_at: '2026-11-01T19:11:08+00:00'
 - slug: an-agent-needs-to-know-what-it-can-do
   title: An agent needs to know what it can do
   summary: What would it take for an AI agent to discover a useful workflow, notice
