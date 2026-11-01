@@ -1,4 +1,20 @@
 articles:
+- slug: what-my-next-ai-session-inherits
+  title: What my next AI session inherits
+  summary: I believe a growing share of software intellectual property will live in
+    the capability to build, judge, and improve the work. OakQuant's skills and evals
+    are how I am building it.
+  tags:
+  - building-in-public
+  - ai
+  - software-design
+  - evaluations
+  - oakquant
+  cover: ''
+  author: Pumulo Sikaneta
+  category: personal
+  published_at: '2026-11-01T20:40:14+00:00'
+  updated_at: '2026-11-01T20:40:14+00:00'
 - slug: the-forecast-has-to-meet-the-price
   title: The forecast has to meet the price
   summary: Bring a company you follow. Examine the models and signals behind its forecast,
