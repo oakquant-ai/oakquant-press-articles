@@ -1,4 +1,18 @@
 articles:
+- slug: the-cheapest-correct-answer
+  title: The cheapest correct answer
+  summary: A model spent almost its whole budget and returned half a sentence. Here
+    is how I decide which jobs need AI, and how to judge the answer.
+  tags:
+  - ai
+  - model-selection
+  - software-design
+  - oakquant
+  cover: images/cheapest-correct-answer-cover.png
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-01T19:06:46+00:00'
+  updated_at: '2026-11-01T19:06:46+00:00'
 - slug: the-recall-button-is-disappearing
   title: The Recall Button Is Disappearing
   summary: ''
