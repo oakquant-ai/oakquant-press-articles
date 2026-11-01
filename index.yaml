@@ -1,4 +1,18 @@
 articles:
+- slug: the-forecast-has-to-meet-the-price
+  title: The forecast has to meet the price
+  summary: Bring a company you follow. Examine the models and signals behind its forecast,
+    then see what a track record can tell you when the price arrives.
+  tags:
+  - forecasting
+  - algorithms
+  - ai
+  - oakquant
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-01T19:10:32+00:00'
+  updated_at: '2026-11-01T19:10:32+00:00'
 - slug: an-agent-needs-to-know-what-it-can-do
   title: An agent needs to know what it can do
   summary: What would it take for an AI agent to discover a useful workflow, notice
