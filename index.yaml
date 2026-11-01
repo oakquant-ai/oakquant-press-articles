@@ -1,4 +1,18 @@
 articles:
+- slug: code-does-the-math-ai-writes-the-explanation
+  title: Code does the math. AI writes the explanation.
+  summary: A portfolio can change without its owner making a trade. Following one
+    review shows where code, AI, and a person's judgment each belong.
+  tags:
+  - ai
+  - workflows
+  - human-judgment
+  - oakquant
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-01T19:08:45+00:00'
+  updated_at: '2026-11-01T19:08:45+00:00'
 - slug: the-cheapest-correct-answer
   title: The cheapest correct answer
   summary: A model spent almost its whole budget and returned half a sentence. Here
