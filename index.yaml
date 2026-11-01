@@ -1,4 +1,18 @@
 articles:
+- slug: an-agent-needs-to-know-what-it-can-do
+  title: An agent needs to know what it can do
+  summary: What would it take for an AI agent to discover a useful workflow, notice
+    what is missing, and propose a new one that a person can inspect?
+  tags:
+  - ai-agents
+  - workflows
+  - software-design
+  - oakquant
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-01T19:09:30+00:00'
+  updated_at: '2026-11-01T19:09:30+00:00'
 - slug: code-does-the-math-ai-writes-the-explanation
   title: Code does the math. AI writes the explanation.
   summary: A portfolio can change without its owner making a trade. Following one
