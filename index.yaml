@@ -1,4 +1,19 @@
 articles:
+- slug: sausage-poblano-mushroom-skillet-broccolini
+  title: Sausage, Poblano, and Mushroom Skillet with Broccolini
+  summary: A tomato-based Italian sausage skillet with browned king oyster mushrooms,
+    poblano, broccolini, and optional ginger and Thai chili.
+  tags:
+  - recipes
+  - sausage
+  - skillet
+  - fusion
+  - weeknight-cooking
+  cover: ''
+  author: Pumulo Sikaneta
+  category: recipes
+  published_at: '2026-11-02T18:12:42+00:00'
+  updated_at: '2026-11-02T18:12:42+00:00'
 - slug: what-my-next-ai-session-inherits
   title: What my next AI session inherits
   summary: I believe a growing share of software intellectual property will live in
