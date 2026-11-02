@@ -33,3 +33,7 @@ categories:
   description: Satirical articles meant to create discussion about sensitive topics
     without picking a side.
   order: 8
+- slug: recipes
+  name: Recipes
+  description: My favorite recipes
+  order: 9
