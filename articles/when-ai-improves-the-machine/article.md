@@ -1,3 +1,7 @@
+![A dark field of about six thousand small dots, with a single amber dot circled. One dot stands for the share of weights that was changed, about one in six thousand. It is not one literal weight.](images/cover-when-ai-improves-the-machine.png "center")
+
+One dot in about six thousand stands for the share of weights Astra changed. It is not one literal weight.
+
 On November 2, 2026, four researchers at the Massachusetts Institute of Technology (MIT), one of the best-known AI research labs in the world, put a blog post online about a very small AI model with a bad habit. The model was called Qwen3.5-0.8B. Ask it a math problem and it would start thinking, then keep thinking, then start over and think the same thoughts again. The team collected 96 practice answers from it. In 85 of them the model never finished. It kept going until it hit its cap of 32,768 tokens per answer. A token is a small chunk of text, usually a word or part of one.
 
 Think of a student who restarts the same problem until the exam ends. Most of us have sat in a meeting like that.
