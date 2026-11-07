@@ -1,4 +1,22 @@
 articles:
+- slug: when-search-writes-the-answer
+  title: When Search Writes the Answer
+  summary: AI search answers questions using other people's work. This essay explains
+    generative engine optimization (GEO), what a publisher can do to be cited, and
+    why a citation is different from a reader. It ends with a GEO checklist for your
+    own site that I update as platforms change and my tests show new results.
+  tags:
+  - Artificial Intelligence
+  - Generative Search
+  - AI Search
+  - GEO
+  - SEO
+  - Publishing
+  cover: ''
+  author: Pumulo Sikaneta
+  category: professional
+  published_at: '2026-11-07T21:11:31+00:00'
+  updated_at: '2026-11-07T21:11:31+00:00'
 - slug: sausage-poblano-mushroom-skillet-broccolini
   title: Sausage, Poblano, and Mushroom Skillet with Broccolini
   summary: A tomato-based Italian sausage skillet with browned king oyster mushrooms,
