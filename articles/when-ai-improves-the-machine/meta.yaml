@@ -3,7 +3,7 @@ summary: A small AI model kept looping until a larger one edited the weights ins
   it. What the MIT result shows, what it does not, and how to keep humans in charge
   of AI that changes AI.
 author: Pumulo Sikaneta
-category: artificial-intelligence
+category: technology
 tags:
 - recursive self-improvement
 - AI safety
@@ -18,4 +18,4 @@ imageAlt: A dark field of about six thousand small dots, with a single amber dot
   One dot stands for the share of weights that was changed, about one in six thousand.
   It is not one literal weight.
 published_at: '2026-11-07T22:09:32+00:00'
-updated_at: '2026-11-07T22:10:55+00:00'
+updated_at: '2026-11-08T00:17:39+00:00'
