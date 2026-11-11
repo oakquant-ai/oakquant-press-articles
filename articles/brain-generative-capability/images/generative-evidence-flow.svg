@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" role="img" aria-labelledby="title desc">
+<title id="title">From generated question to bounded forecast explanation</title>
+<desc id="desc">A dated document leads to a candidate question. A verification gate sends supported facts toward a numeric forecast and bounded explanation, while unsupported claims stop at the gate.</desc>
+<rect width="920" height="240" fill="#f6f8fb"/>
+<g font-family="Arial, sans-serif" fill="#102a43">
+<text x="28" y="35" font-size="18" font-weight="700">Generation opens a question; evidence controls the answer</text>
+<g stroke="#244e69" stroke-width="2">
+<rect x="28" y="80" width="170" height="90" rx="10" fill="#dceef5"/>
+<rect x="258" y="80" width="170" height="90" rx="10" fill="#e8e4f7"/>
+<rect x="488" y="80" width="170" height="90" rx="10" fill="#dff1e8"/>
+<rect x="718" y="80" width="174" height="90" rx="10" fill="#fff0d8"/>
+</g>
+<g font-size="16" font-weight="700" text-anchor="middle">
+<text x="113" y="117">Dated source</text><text x="113" y="141">document</text>
+<text x="343" y="117">Candidate question</text><text x="343" y="141">or event</text>
+<text x="573" y="117">Verify passage,</text><text x="573" y="141">role, and date</text>
+<text x="805" y="117">Bounded forecast</text><text x="805" y="141">explanation</text>
+</g>
+<g stroke="#244e69" stroke-width="3" fill="none"><path d="M199 125h48m-12-9 12 9-12 9M429 125h48m-12-9 12 9-12 9M659 125h48m-12-9 12 9-12 9"/></g>
+<text x="573" y="207" text-anchor="middle" font-size="14" fill="#9d2f28">Unsupported claim stops here</text>
+<path d="M573 170v18" stroke="#9d2f28" stroke-width="2"/>
+</g></svg>
