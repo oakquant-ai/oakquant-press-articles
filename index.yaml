@@ -1,4 +1,17 @@
 articles:
+- slug: brain-energy-and-relationships
+  title: Energy models and relationships
+  summary: How small energy models test joint market states, and how hidden factors
+    and company links must earn their added complexity.
+  tags:
+  - machine-learning
+  - energy-models
+  - forecasting
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-11T06:05:36+00:00'
+  updated_at: '2026-11-11T06:05:36+00:00'
 - slug: brain-combining-and-calibrating
   title: Combining forecasts and calibrating confidence
   summary: How specialist forecasts become one distribution, and why event probability,
