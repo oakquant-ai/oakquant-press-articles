@@ -42,6 +42,6 @@ categories:
   description: My implementation of ai applied to investments and more
   order: 10
 - slug: machine-intelligence
-  name: Machine Intelligence
+  name: OakQuant Machine Intelligence
   description: Deterministic, statistical and generative intelligence
   order: 11
