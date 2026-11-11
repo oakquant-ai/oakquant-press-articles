@@ -128,9 +128,9 @@ articles:
   - evaluation
   cover: ''
   author: Pumulo Sikaneta
-  category: oakquant-machine-intelligence
+  category: machine-intelligence
   published_at: '2026-11-11T06:04:58+00:00'
-  updated_at: '2026-11-11T17:04:01+00:00'
+  updated_at: '2026-11-11T17:04:15+00:00'
 - slug: brain-data-and-cost
   title: Giving the brain good senses
   summary: How a learning system gathers facts from disparate sources, preserves their
