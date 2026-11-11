@@ -9,9 +9,9 @@ articles:
   - forecasting
   cover: ''
   author: Pumulo Sikaneta
-  category: technology
+  category: machine-intelligence
   published_at: '2026-11-11T06:06:18+00:00'
-  updated_at: '2026-11-11T06:06:18+00:00'
+  updated_at: '2026-11-11T06:06:28+00:00'
 - slug: brain-trees-and-interactions
   title: Trees and the conditions that change an answer
   summary: How small trees learn thresholds and interactions, and how quantile trees
