@@ -146,9 +146,9 @@ articles:
   published_at: '2026-11-11T06:04:37+00:00'
   updated_at: '2026-11-11T17:06:27+00:00'
 - slug: brain-generative-capability
-  title: Giving the brain imagination and words
-  summary: Generative AI supplies ideas, scenarios, and language. Predictive models
-    and explicit checks test what those ideas can support.
+  title: 'Generative capability: ideas, evidence, and words'
+  summary: Generative AI can propose questions and explain recorded forecasts, provided
+    evidence and arithmetic stay outside the prose model.
   tags:
   - machine-learning
   - language-models
@@ -156,9 +156,9 @@ articles:
   - explanation
   cover: ''
   author: Pumulo Sikaneta
-  category: machine-intelligence
+  category: oakquant-machine-intelligence
   published_at: '2026-11-11T06:02:22+00:00'
-  updated_at: '2026-11-11T06:04:27+00:00'
+  updated_at: '2026-11-11T17:07:18+00:00'
 - slug: building-a-brain
   title: Building a Brain
   summary: "A child\u2019s weather notebook opens a conversation about how OakQuant\

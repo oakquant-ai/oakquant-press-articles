@@ -1,35 +1,73 @@
-A port closes. The first report names the terminal and the expected length of the interruption. The harder questions concern the companies that depend on it. Can Maple Freight move cargo through another port? Which customers will feel the delay? What changes if the closure lasts a month?
+A shipping terminal closes before the market opens. A company filing mentions the terminal, but says nothing about how much cargo could move elsewhere. An analyst needs to know what to investigate before making a forecast. A language model can draft that list of questions quickly; it cannot turn the missing capacity figures into observed facts.
 
-A language model can propose those questions and point researchers toward records worth checking. A forecast needs dated evidence about the routes, capacity, and companies involved. A scenario can be useful even when there is too little evidence to assign it a probability.
+That is the useful role of generative capability here: widen the search for plausible explanations, then speak clearly about conclusions established by other evidence. The distinction matters most when the prose sounds more certain than the records permit.
 
-## What the language model predicts
+![A four-stage flow shows a source document feeding candidate questions, verified facts, and a bounded explanation; an unverified question never enters the forecast.](images/generative-evidence-flow.svg)
 
-An autoregressive language model estimates which **token**, or unit of text, comes next. It adds that token and repeats the process. Attention lets it use relationships among the words and passages in its context. The task for a return model is to estimate a defined market outcome, such as the spread of possible returns over five trading sessions. It learns from settled examples of that outcome. [Vaswani et al. on attention](https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html).
+*Generation proposes; source checks and numerical models decide what can become a forecast claim.*
 
-That difference shapes how OakQuant uses generation. It can help phrase a question, propose a test, or explain a forecast. If it proposes a new signal, that signal enters research. The researchers need a source they can use and a test on dates the model has never seen.
+**In brief:** Use generation for open-ended questions and readable synthesis. Keep source verification, numeric computation, and permission checks in explicit steps. [Why use it?](#why-use-it) · [How it works](#how-it-works) · [The math](#the-math) · [OakQuant](#where-oakquant-uses-it) · [Public use](#where-it-is-used-elsewhere) · [Alternatives](#alternatives-and-tradeoffs) · [Reading](#people-libraries-and-further-reading)
 
-## Give it a brief that can be checked
+## Why use it?
 
-A forecast explanation starts with the recorded target, horizon, probability, and return interval. It also needs the relevant source facts and any gaps in the evidence. If the probability uses data from the broader sector, the brief names the group that supplied it. Cambium can reduce the brief to the fields the task needs and the data the selected provider is permitted to receive.
+A fixed report can display a probability and a return range perfectly well. Generation becomes useful when a reader asks a new question, such as which suppliers a disruption might affect, or wants a concise explanation drawn from several permitted records. It can propose scenarios that a narrow forecasting model was never built to enumerate. A scenario is a conditional story, not a probability estimate.
 
-Code supplies the arithmetic and checks that the numbers in the draft match the saved forecast. The explanation needs a source for each reported fact. Where verification fails, a fixed template can show the values and their limits directly. Fluent text can contain invented facts and citations, a risk NIST calls **confabulation**. [NIST Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf).
+For routine numbers and repeated wording, a template is cheaper, easier to audit, and less likely to invent a source. The [NIST Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) calls confidently presented false output *confabulation*, including false citations. Fluency is therefore a reason to check the claim, not evidence that it is true.
 
-## Put extracted facts through their own test
+## How it works
 
-A language model can also turn a filing or transcript into a structured candidate feature. It can identify a plant closure, a supplier, or a disclosed fuel exposure. Evaluate the extraction against labeled records. Then measure whether the feature improves the forecast enough to justify its cost and delay.
+A common language model assigns probabilities to the next token, a piece of text, given the tokens already present. It repeats this step to make a sentence. The Transformer introduced by [Vaswani and colleagues](https://arxiv.org/abs/1706.03762) uses attention to relate positions in a sequence. That machinery is powerful at forming text; next-token prediction alone does not verify a filing or estimate a five-day return distribution.
 
-Historical text needs special care. A modern extractor may have learned later events during pretraining. An old filing's date alone cannot establish that the extractor was free of hindsight. Freeze the extractor and collect a forward test with a dated record of every document and result.
+Consider a synthetic port-closure notice. The model proposes: “Did Carrier A divert ships?” A researcher retrieves a dated filing or operational notice and records the passage, company, event date, and role. If the passage says only that Carrier A *may* divert ships, the event remains a plan, not a completed diversion. A structured extractor could help produce candidate records, but each candidate needs an evidence check before it becomes a feature.
 
-## Measure what the text step adds
+For a forecast explanation, start instead with a saved forecast: target, horizon, probability, interval, cutoff time, and approved source facts. Compute and lock the numbers in code. Give the generator only the facts needed for the requested explanation. Then check its factual assertions and numeric strings against the saved record. If a check fails, a fixed template can display the forecast and its limits. This is a proposed publication contract, not a claim that every check is already deployed.
 
-Ask the extractor for a named event, the company involved, the date, and the source passage that supports it. A passage about a port closure can name a carrier that diverted ships and another that kept sailing. Save the roles so they do not turn into the same event flag.
+A historical evaluation must also respect time. The document must have been available by the forecast cutoff. A modern model may have seen later events in pretraining, so replaying old documents through it does not by itself demonstrate a hindsight-free signal. A frozen extractor, dated inputs, and a forward test provide stronger evidence.
 
-Suppose 15 passages in a hand-labeled set describe closures. The extractor flags 12 passages and gets 9 right. It got 9 of its 12 flags right, a measure called **precision**. It found 9 of the 15 real closures, its **recall**. Look at both counts and read the misses. A feature that confuses plans with events that took place can shift a forecast even when its overall score looks good.
+## The math
 
-Then replay the same forecasts with and without the extracted event. Count the extra compute time and the delay before the feature is ready. A clear summary can help a reader even if the signal adds little to return forecasts.
+For a token sequence \(x_1,\ldots,x_T\), an autoregressive model assigns
 
-A reader should be able to trace the difference between a fact in a filing, a factor that changed the model's forecast, and an explanation of what might have caused a market move. Each is a different claim and carries its own evidence.
+$$
+p(x_1,\ldots,x_T)=\prod_{t=1}^{T}p(x_t\mid x_1,\ldots,x_{t-1}).
+$$
 
----
+Here \(x_t\) is token \(t\), and the right-hand factor is its conditional probability given earlier tokens. This equation describes text generation. It is **not** the probability that a proposed business event occurred.
 
-[Building a Brain](/public/articles/building-a-brain) · [Giving the brain good senses](/public/articles/brain-data-and-cost) · [Why a learning brain needs rules](/public/articles/brain-rules-engine) · [Point-in-time memory](/public/articles/brain-point-in-time-memory)
+An extractor needs a separate test. Let \(TP\) be true positive event flags, \(FP\) false flags, and \(FN\) missed events. Then
+
+$$
+\text{precision}=\frac{TP}{TP+FP},\qquad
+\text{recall}=\frac{TP}{TP+FN}.
+$$
+
+Suppose a labeled sample contains 15 real closure passages. The extractor flags 12 passages, 9 correctly. Then \(TP=9\), \(FP=3\), and \(FN=6\): precision is \(9/12=0.75\); recall is \(9/15=0.60\). Inspect the three false flags and six misses by role, date, and “planned versus completed” status. Only then test whether adding the feature improves forecasts on later, held-out outcomes. Extraction quality and forecast value are different measurements.
+
+## Where OakQuant uses it
+
+In the current local code, **Acorn** is the agent front door. Its `services/cambium_gateway.py` exposes `distill_context` to reduce prompt payloads and `record_usage` to account for model calls. `acorn/agents/oracle_agent.py` calls that gateway before parts of its model interaction. **Cambium** implements the reusable routing and cost primitives: `ASSEMBLE` skips a model when formatting is deterministic; other routes pass or reduce context before a possible model call. The gateway has an import fallback, so this code inspection alone does not prove which route a deployed request took.
+
+A filing-event extractor, a source-by-source explanation validator, and a forward test of extracted features are **research and product designs** in this article. The inspected code does not establish them as live forecast capabilities. They would belong behind explicit data, workflow, and permission boundaries: shared market research uses permitted market documents; a private household record serves its authorized user and does not become shared market-model training data. A generative step can describe a forecast, but the forecast calculation and household decision rules need their own evidence and checks.
+
+## Where it is used elsewhere
+
+[Morgan Stanley announced](https://www.morganstanley.com/press-releases/key-milestone-in-innovation-journey-with-openai) an internal assistant for financial advisers that synthesizes the firm's own content and links answers to source documents. Its [2024 Debrief announcement](https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch) also describes meeting notes and action items generated with client consent. These are documented language and retrieval uses. They are not evidence that generative text predicts returns.
+
+## Alternatives and tradeoffs
+
+| Approach | Best use | What it gives up | Failure to watch |
+|---|---|---|---|
+| Fixed template | Repeated forecast fields and standard caveats | Little flexibility for new questions | A stale or incomplete template |
+| Rules or conventional entity extraction | Known event types in regular documents | May miss unfamiliar wording and relationships | Negation, dates, and “planned” events misclassified |
+| Retrieval plus generation | Questions spanning approved, changing documents | More cost and validation work | Retrieved passage is irrelevant or answer exceeds it |
+| Unrestricted generation | Early brainstorming | No dependable grounding | Invented facts, numbers, or citations |
+
+Retrieval can provide relevant passages to a generator; it does not certify the resulting sentence. The original [retrieval-augmented generation paper](https://arxiv.org/abs/2005.11401) studies that combination as a language-generation method. For consequential claims, compare the final text with the actual passage and saved numeric record.
+
+## People, libraries, and further reading
+
+**People.** [Ashish Vaswani and coauthors](https://arxiv.org/abs/1706.03762) introduced the Transformer architecture. [Patrick Lewis and coauthors](https://arxiv.org/abs/2005.11401) developed a notable retrieval-augmented generation formulation. Neither group invented the broad practice of proposing questions with language models.
+
+**Libraries.** [Hugging Face Transformers generation documentation](https://huggingface.co/docs/transformers/main_classes/text_generation) is a practical first stop for token-generation controls. [spaCy's entity and rule-matching documentation](https://spacy.io/usage/linguistic-features) shows a simpler path for known extraction tasks. These are public learning resources, not claims about OakQuant dependencies.
+
+**Read deeper.** Start with the [NIST Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) for failure modes, then read the [Transformer](https://arxiv.org/abs/1706.03762) and [retrieval-augmented generation](https://arxiv.org/abs/2005.11401) papers for the mechanisms.
