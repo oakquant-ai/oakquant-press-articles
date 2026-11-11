@@ -1,57 +1,77 @@
-Two shipping companies can look alike on a list of industry codes and respond quite differently to a credit squeeze. A carrier and a retailer may share a port dependency even though their stocks rarely move together. The right grouping depends on the question.
+On an ordinary Tuesday, a jump in trading volume may mean little. On a morning when credit spreads widen and market breadth collapses, the same jump arrives in a different setting. A forecast that treats those mornings as interchangeable may miss the distinction that matters.
 
-## Five uses for groups
+Clustering finds observations that resemble one another before deciding whether that resemblance helps predict anything. It can suggest market states, company peers, or forecasters with a shared blind spot. The group itself is a description, never a forecast.
 
-| Task | What the grouping contributes |
-|---|---|
-| Company peers | Firms with similar past behavior or business exposures can share evidence in a hierarchy. |
-| News and events | Separate duplicate wire copies, reports of the same event, and broader topics. |
-| Market regimes | Group dates by shifts in prices, credit spreads, or market breadth. |
-| Historical comparisons | Retrieve earlier episodes with similar inputs and outcomes already known at issue time. |
-| Model errors | Find specialists that miss on the same settled cases, so shared errors remain visible. |
+![Dated market observations become scaled feature vectors, receive uncertain calm and stressed state memberships, then feed a forecast tested on later dates.](clustering-flow.svg)
 
-The inputs tell the model what to compare. For peers defined by trading behavior, first estimate and remove the broad market move on earlier dates. For peers defined by what companies do, compare routes, customers, and costs. A news model can use **text embeddings**, lists of numbers that place related passages close to each other.
+*A useful cluster earns its place by improving a later decision, not by acquiring a persuasive name.*
 
-## Find peers for the question at hand
+**In brief:** Group observations using facts known at the decision time, preserve uncertain assignments, and test their value on later forecasts. Extra flexibility can also produce attractive patterns that vanish out of sample.
 
-Suppose two carriers rise with the market. After we subtract their estimated market exposure, one still moves with Maple Freight when fuel prices change. The other trades more like the firms in its domestic market. That first carrier gives Maple a candidate peer for fuel exposure. A test can compare peers found this way with industry groups and a wider sector pool.
+**Contents:** [Why use it?](#why-use-it) · [How it works](#how-it-works) · [The math](#the-math) · [Where OakQuant uses it](#where-oakquant-uses-it) · [Where it is used elsewhere](#where-it-is-used-elsewhere) · [Alternatives and tradeoffs](#alternatives-and-tradeoffs) · [People, libraries, and further reading](#people-libraries-and-further-reading)
 
-Start with trailing returns from dates the two companies share. Fit each company's market exposure on the training dates and compare the residuals, the moves left after removing that exposure. Add business facts if the question calls for them. Set the scale and weight of each input on earlier dates. For a firm with little shared history, a formal group can give the hierarchy a sounder starting point.
+## Why use it?
 
-## Find models with the same blind spot
+An industry code is a useful first guess at a company's peers. It may miss that two firms depend on the same fuel price or funding market. One market-wide model may miss that its errors gather during credit stress. Clustering can reveal candidate relationships without requiring someone to label every historical day.
 
-Two methods can disagree on normal days and both miss when port delays spike. Line up the forecasts they issued for the same company, cutoff, and horizon. For a return estimate, subtract the realized return from each prediction. For a gain probability, subtract the outcome flag from the stated chance. Compare each kind of error within its own task.
+There are three distinct jobs. **Peer discovery** groups firms by a defined exposure or by returns after removing broad market movement. **State discovery** groups dates by volatility, credit spreads, breadth, or other information known at the time. **Error grouping** finds forecasters that fail on the same settled opportunities; near-duplicates should not count as independent votes. Each job needs its own features and test. [Von Luxburg, Williamson, and Guyon](https://proceedings.mlr.press/v27/luxburg12a.html) argue that cluster quality must be judged by the intended use.
 
-A group of models with similar errors deserves a check as a group. Ask how much the second model improves the blend after the first is in it. Repeat the test on later dates. A score for each model on its own leaves that question open. Where the shared record is thin, keep track of how many dates support the apparent link.
+If a formal sector, a volatility threshold, or the original features in a simple model work just as well on later dates, the grouping has not earned its cost.
 
-## Choose the number of groups
+## How it works
 
-Try a small range of group counts on training windows. A **silhouette score** compares how close a point is to its own group and how close it is to the next best group. Use it to spot groups that run together. Also check the size of each group. A group with three weeks from the same selloff gives us little basis for a separate forecast rule. [Scikit-learn on choosing a cluster count](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html).
+Imagine a fictional lender's stock on a day when credit spreads widen. A team asks whether that day's five-session gain forecast should change because it resembles past stressed markets. First it fixes the **cutoff**: the instant at which the forecast would be issued. It builds one feature vector for each historical date from facts available by its cutoff. It fits feature scaling on earlier dates only; otherwise the feature with the largest units can dominate the distance.
 
-Refit on nearby windows and with different starting seeds. Assign the same held-out records under each fit. Then check how often pairs stay together, or use the **adjusted Rand index** to compare the two sets of labels after accounting for chance. For market dates, resample blocks of sessions so the test keeps some of the dependence within a selloff.
+Next it fits a grouping on the training window. **K-means** assigns the current date to its nearest fitted centre. A **Gaussian mixture** gives a share for each fitted component. Those shares are estimates under a model, not proof that markets contain literal hidden labels. The [scikit-learn clustering guide](https://scikit-learn.org/stable/modules/clustering.html) describes distance-based methods; its [mixture guide](https://scikit-learn.org/stable/modules/mixture.html) describes probabilistic component assignments.
 
-A stable group can still be of little use. Compare the models with and without each grouping on later dates. Choose the simplest group count that gives dependable gains for the task. [Von Luxburg, Williamson, and Guyon on clustering for a purpose](https://proceedings.mlr.press/v27/luxburg12a.html).
+Market observations also arrive in sequence. A **hidden Markov model** adds transition probabilities, estimating how often a state persists or changes. **Filtering** estimates the state from evidence available so far. **Smoothing** also uses later observations; it can describe history but cannot supply an as-issued state for a backtest. The [St. Louis Fed explains](https://www.stlouisfed.org/on-the-economy/2025/may/making-sense-recession-probabilities) why its published smoothed recession series can revise earlier months using subsequent data.
 
-## Let an uncertain state stay uncertain
+Finally, the team tests the proposed grouping. Fit the conditional forecast on earlier dates, issue predictions on later dates, and compare on the *same* opportunities with a model that sees the original inputs but no cluster label. Refit on nearby windows and seeds. A [silhouette score](https://scikit-learn.org/stable/modules/clustering.html#silhouette-coefficient) can reveal poor geometric separation, but an elegant silhouette does not establish forecasting value. Keep groups large enough to support comparison; allow unfamiliar observations to remain unclassified; save each fitted version with the forecasts it informed. For overlapping five-session outcomes, evaluate in date blocks instead of counting adjacent days as independent trials.
 
-**K-means** assigns each record to its nearest center and fits those centers to reduce squared distance within groups. Feature scale affects distance, so fit any scaling on the training window. A Gaussian mixture can give a record a probability of belonging to each group. [Scikit-learn on clustering](https://scikit-learn.org/stable/modules/clustering.html) · [Gaussian mixtures](https://scikit-learn.org/stable/modules/mixture.html).
+Peer and error grouping follow the same sequence with different inputs. For peers, estimate market exposure on earlier shared dates, then compare residual returns and any business exposure relevant to the question. For errors, align predictions by subject, issue cutoff, and horizon. Compare return errors with return errors or probability errors with probability errors. A correlation based on a few common dates is weak evidence of a shared failure mode.
 
-Suppose a model assigns probabilities of 0.70 and 0.30 to calm and stressed markets. Its five-session chance of a gain is 0.55 in calm conditions and 0.40 in stress. Combining those estimates yields
+## The math
+
+K-means chooses centres to minimize squared distance within groups:
 
 $$
-p=0.70(0.55)+0.30(0.40)=0.505.
+\min_{c_1,\ldots,c_K}\;\sum_{i=1}^{n}\min_{1\leq k\leq K}\lVert x_i-c_k\rVert_2^2.
 $$
 
-A hard assignment to calm would give 0.55. Keeping both states gives a forecast that reflects uncertainty about which one applies.
+Here $x_i$ is observation $i$'s scaled feature vector, $c_k$ is group $k$'s centre, $K$ is the number of groups, and $n$ is the number of training observations. The objective favors compact groups in the chosen geometry. It says nothing about future returns.
 
-## Respect the order of the evidence
+For a soft assignment, let $w_k=P(Z=k\mid x_{\leq t})$ be the estimated share for state $k$ using inputs through cutoff $t$. Let $p_k=P(Y=1\mid Z=k,x_{\leq t})$ be the estimated chance of the target event in that state. Then
 
-A **hidden Markov model** learns how often a state tends to last or change. Filtering estimates each state’s chance from the facts so far. Smoothing also looks at what happened next. To replay a forecast, fit the model on earlier data and use filtering. A later crash cannot become evidence that the market was already in stress at issue time. [Rabiner on hidden Markov models](https://www.cs.ubc.ca/~murphyk/Bayes/rabiner.pdf).
+$$
+P(Y=1\mid x_{\leq t})=\sum_{k=1}^{K}w_kp_k,\qquad \sum_{k=1}^{K}w_k=1.
+$$
 
-A new fit can swap the numbers used to name the groups. Match them by who is in them or where their centers lie. Save both fits. Allow an unknown state when the current inputs are far from the fitted groups. Several nearby dates in a single selloff can be useful comparisons, though they share much of the same evidence.
+$Z$ is a modeled latent state; $Y=1$ means the stated event occurs. This is the law of total probability when the state shares and conditional forecasts are coherent estimates. In a **synthetic** example, calm and stressed shares are $0.70$ and $0.30$, with five-session gain chances of $0.55$ and $0.40$. The combined chance is $0.70(0.55)+0.30(0.40)=0.505$, or **50.5%**. A forced calm label would yield 55% and discard state uncertainty. Neither number proves predictive skill before later outcomes are scored.
 
-For a regime model, compare the forecast with one that sees the original market inputs without the group labels. The group earns its place if it helps on later cases or gives comparable forecasts at lower cost.
+## Where OakQuant uses it
 
----
+An existing online **news-topic clusterer** in `oak-domain-investments/oak_domain_investments/adapt/cluster.py` embeds article text, assigns it to a nearby centroid or opens a new cluster, and emits topic-level sentiment features. This is distinct from grouping stocks or market dates. The local [FABLE 52 ML plan](../FABLE_52_ML_PLAN.md) documents limitations in the news features, including changing cluster identifiers and duplicate articles; having a clusterer does not establish forecast improvement.
 
-[Building a Brain](/public/articles/building-a-brain) · [Bayesian hierarchies and borrowed evidence](/public/articles/brain-bayesian-hierarchies) · [Combining forecasts and calibrating confidence](/public/articles/brain-combining-and-calibrating) · [Point-in-time memory](/public/articles/brain-point-in-time-memory)
+In **Cambium**, `cambium/cambium/adapt/competition_scenarios.py` accepts caller-declared sector and regime labels with a known-at timestamp and produces replayable, shadow-only loss reviews. It does not learn labels or change serving. The local model-competition plan puts residual-error clustering and as-of qualification in a later phase. The [FABLE 52 ML plan](../FABLE_52_ML_PLAN.md) proposes market regimes and learned peers as future work. The inspected code and plans show no learned stock, sector, or market-state clustering in the live forecast route. Cambium's separate conversation-intent `regime.py` describes an interaction state, not a market state.
+
+For the proposed design, investment-domain market features and estimators belong with the investment model; generic matched-loss and blend arithmetic belongs in Cambium; changeable workflow wiring belongs in Grove configuration. Shared market-model training must use approved market evidence, not private household records.
+
+## Where it is used elsewhere
+
+The [Federal Reserve Bank of St. Louis publishes a Smoothed U.S. Recession Probabilities series](https://fred.stlouisfed.org/series/RECPROUSM156N) from work by Marcelle Chauvet and Jeremy Piger. Its notes describe a dynamic-factor Markov-switching model using four monthly economic indicators. That is a documented use of probabilistic economic-state modeling, not evidence that a state label forecasts a particular stock. Because the published series is smoothed using later revised data, a historical graph of it cannot be inserted unchanged into a real-time backtest.
+
+## Alternatives and tradeoffs
+
+| Approach | When it helps | What it gives up or risks |
+|---|---|---|
+| Fixed sector or volatility rule | A clear, cheap baseline with little history | Misses cross-sector exposure or gradual changes; thresholds can be brittle. |
+| K-means | Quick exploration of compact numerical groups | Hard assignment, chosen $K$, sensitivity to scale and roughly round groups. |
+| Gaussian mixture | Uncertain membership and different component shapes | Distribution assumptions and weakly identified components can create false precision. |
+| Hidden Markov model | State persistence and transitions matter | More assumptions; smoothed labels leak later evidence into a replay. |
+| Original features without groups | Enough data to learn direct relationships | May need a more flexible model; remains the necessary comparison. |
+
+## People, libraries, and further reading
+
+For a practical first stop, use [scikit-learn's clustering guide](https://scikit-learn.org/stable/modules/clustering.html), [Gaussian-mixture guide](https://scikit-learn.org/stable/modules/mixture.html), and [silhouette example](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html). These are public learning resources, not claims about OakQuant's installed market-regime packages. [Statsmodels' Markov-switching notebook](https://www.statsmodels.org/stable/examples/notebooks/generated/markov_regression.html) provides a time-series example; check whether a plotted probability is filtered or smoothed before adapting it to a replay.
+
+For original work, [James MacQueen's 1967 paper](https://digicoll.lib.berkeley.edu/record/113015?v=pdf) is a classic k-means reference. [Lawrence Rabiner's tutorial](https://www.cs.cmu.edu/~durand/03-711/Readings/Rabiner89.pdf) explains hidden Markov filtering and smoothing. The [St. Louis Fed's notes](https://fred.stlouisfed.org/series/RECPROUSM156N) credit Chauvet and Piger for the recession-probability model. For the deeper question of what makes a grouping useful, return to [von Luxburg, Williamson, and Guyon](https://proceedings.mlr.press/v27/luxburg12a.html).
