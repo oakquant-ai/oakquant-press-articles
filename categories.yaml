@@ -24,14 +24,14 @@ categories:
   name: Personal
   description: Notes from the studio. Less argument, more witness.
   order: 6
+- slug: oakquant
+  name: OakQuant
+  description: My implementation of ai applied to investments and more
+  order: 7
 - slug: professional
   name: Professional
   description: Articles tied to authors professional career
   order: 7
-- slug: oakquant
-  name: OakQuant
-  description: My implementation of ai applied to investments and more
-  order: 8
 - slug: satire
   name: Satire
   description: Satirical articles meant to create discussion about sensitive topics
