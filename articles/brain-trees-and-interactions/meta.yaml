@@ -1,11 +1,11 @@
-title: Trees and the conditions that change an answer
-summary: How small trees learn thresholds and interactions, and how quantile trees
-  describe a spread of possible returns.
+title: 'Trees and interactions: when one signal changes another'
+summary: How decision trees learn conditional patterns, why boosted stumps can miss
+  them, and what quantile trees add.
 tags:
 - machine-learning
 - decision-trees
 - forecasting
 author: Pumulo Sikaneta
-category: machine-intelligence
+category: oakquant-machine-intelligence
 published_at: '2026-11-11T06:05:55+00:00'
-updated_at: '2026-11-11T06:06:06+00:00'
+updated_at: '2026-11-11T17:02:09+00:00'

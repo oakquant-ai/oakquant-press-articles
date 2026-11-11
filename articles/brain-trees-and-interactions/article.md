@@ -1,38 +1,90 @@
-Higher fuel prices can have a different meaning for a carrier that has locked in its fuel costs. A model that adds a separate effect for each input needs an interaction term to express that difference. A tree can learn it by asking about one input only after it has split on the other.
+An earnings beat arrives before the market opens. One stock has climbed for weeks; another has fallen. The same headline may carry a different message for each. A forecast that gives the earnings beat one fixed weight cannot express that difference unless someone supplies an interaction term.
 
-## What a split can learn
+A decision tree offers another route: ask about the earlier price move, then interpret the earnings news within each group. That conditional logic is why trees are worth testing in financial forecasts. It is also where the details of the tree matter most.
 
-A tree divides past examples at a threshold, such as whether a fuel price change exceeds a given level. It can divide each resulting group again. A terminal group, called a **leaf**, supplies the prediction.
+![Two one-split trees each group opposite outcomes into a zero average, while a two-level tree separates all four combinations of earnings and prior price moves.](images/interaction-splits.svg)
 
-A tree with one split is a stump. A sum of stumps can fit a curved response to each variable on its own. A tree with two levels can make the effect of one variable depend on the other.
+*A tree needs both questions on a path to describe this invented interaction; a collection of one-split trees cannot recover it from these two inputs alone.*
 
-| Fuel prices rose | Fuel costs are hedged | Illustrative return in percentage points |
+**In brief:** Trees learn thresholds and conditional effects from examples. Their flexibility can capture patterns a plain additive model misses, but shallow trees have limits and deeper ones can memorize accidents.
+
+**Contents:** [Why use it?](#why-use-it) · [How it works](#how-it-works) · [The math](#the-math) · [Where OakQuant uses it](#where-oakquant-uses-it) · [Where it is used elsewhere](#where-it-is-used-elsewhere) · [Alternatives and tradeoffs](#alternatives-and-tradeoffs) · [People, libraries, and further reading](#people-libraries-and-further-reading)
+
+## Why use it?
+
+Many financial inputs are conditional. A jump in trading volume after an earnings release is different from one on a quiet day. A debt ratio may matter more when borrowing costs rise. A tree can find a threshold, then ask a different question on either side. That lets it represent an interaction without writing every candidate pair into a regression formula.
+
+This is a reason to **compare** trees, not a claim that they forecast returns well. If the relationship is approximately additive, a ridge regression can be simpler and more stable. If analysts can name a few plausible interactions in advance, adding those terms explicitly may be cheaper to fit and easier to audit. Tree complexity earns its place only through later, untouched observations.
+
+## How it works
+
+Start with dated examples. Each has inputs known at the forecast deadline and a return observed only after the chosen horizon. A regression tree searches for a question such as “was the prior return above this threshold?” It divides the training examples, repeats the search within each child group, and puts a prediction in each final group, or **leaf**. A new case follows the questions to one leaf.
+
+Consider four equally frequent, synthetic cases. “Beat” means an earnings result above a declared expectation; “rally” means a prior price move above a declared threshold. The numbers are illustrative return targets in percentage points, not observations about real stocks.
+
+| Earnings beat? | Prior rally? | Later return |
 |---|---|---:|
 | No | No | −2 |
 | No | Yes | +2 |
 | Yes | No | +2 |
 | Yes | Yes | −2 |
 
-These invented numbers isolate an interaction. Each variable on its own splits the rows into groups with the same mean of zero. A two-level tree can express all four outcomes. A greedy fitting algorithm may stop at the first split because neither variable improves the fit by itself. This is a reason to test explicit interaction terms alongside trees.
+A split on earnings alone leaves two groups averaging zero. So does a split on the prior rally alone. Yet a tree that asks both questions along each path can assign the four different returns exactly. The pattern is an interaction: changing one input reverses the effect of the other.
 
-## Improve the prediction in stages
+Standard tree growth has a limit. It is greedy: it chooses a first split for its immediate improvement. Here neither first split improves squared error, so a learner that requires positive gain may never grow the useful second level. The diagram shows **representational capacity**, not a guarantee that ordinary training will discover it. An explicit interaction feature, a search that looks ahead, or a different model can rescue the pattern. [XGBoost’s official tree tutorial](https://xgboost.readthedocs.io/en/stable/tutorials/model.html) also notes edge cases caused by split-by-split growth.
 
-**Gradient boosting** starts from a reference prediction and adds small trees. Each tree fits a correction to the combined prediction so far. Under squared error, the correction follows the remaining residual. Other losses define their own direction for improvement. The learning rate scales down each addition. [Friedman on gradient boosting](https://doi.org/10.1214/aos/1013203451).
+**Gradient boosting** builds a forecast in stages. It starts with a reference value and adds small trees that correct the current fit. Under squared error, those corrections follow residuals; another loss changes the direction of correction. A learning rate reduces each tree’s contribution. Jerome Friedman formalized the gradient-boosting view in [his 2001 paper](https://doi.org/10.1214/aos/1013203451). More trees do not fix every limitation: a sum of one-split trees still adds separate functions of individual inputs and cannot express the four-cell pattern above unless an interaction is supplied as an input.
 
-Depth, minimum leaf size, and tree count affect how closely the ensemble can fit the past. Choose them on earlier validation dates. Beyond the range seen in training, a tree continues to route inputs into existing leaves. Its predictions cannot extend a trend the way a linear model can.
+Trees also stop at their learned leaves. Beyond the range of training inputs, they route a new value to an existing leaf rather than extending a slope. A split supported by three cases from one unusual week may encode that week, not a repeatable rule. Minimum leaf size, limits on depth and tree count, and validation on later dates all matter. Support should be checked across distinct dates and conditions, not just row counts.
 
-A split also needs enough evidence on each side. Suppose a new tree finds that an unusual fuel cost marks three of the worst cases in the training set. If all three came from one port closure, the leaf has seen one shock. Test minimum leaf size alongside support across dates and markets. That helps tell a repeatable condition from a narrow fit to a single episode.
+## The math
 
-## Estimate a range of returns
+For a boosted regression model, write the forecast after \(M\) trees as
 
-A quantile tree can estimate a cutoff for the upper or lower tail. At the 90th percentile, the **pinball loss** charges nine times as much for missing above the cutoff as for missing the same distance below it. If the cutoff is 2 percentage points, a realized return of 4 gives a loss of 1.8. A realized return of zero gives a loss of 0.2.
+$$
+\hat y_M(x)=b+\eta\sum_{m=1}^{M}T_m(x).
+$$
 
-Separate fits can produce crossing quantiles. Check their order before issuing intervals. A few quantiles specify particular cutoffs. A full distribution needs an additional model or explicit assumptions about the gaps and tails. **NGBoost** takes another route by predicting parameters of a chosen distribution, such as its location and scale. The distribution family still has to fit the observed tails. [Duan et al. on NGBoost](https://proceedings.mlr.press/v119/duan20a.html).
+Here \(x\) is the input vector, \(b\) is the starting prediction, \(T_m(x)\) is the value reached in tree \(m\), \(M\) is the number of trees, and \(\eta\) is the learning rate. If \(b=1\) percentage point, two trees return \(+2\) and \(-1\) percentage points for a case, and \(\eta=0.1\), the forecast is \(1+0.1(2-1)=1.1\) percentage points. The example shows the arithmetic, not a fitted market result.
 
-Check each tail on held-out dates. For a well-calibrated 90th percentile, the return lands above the cutoff about once in ten comparable cases. A leaf can get the average return right and miss that tail often. For a range, also check how wide the bounds had to be to achieve coverage.
+For uncertainty, a **quantile** is a conditional cutoff: a fitted 90th percentile aims to have outcomes at or below it in roughly nine of ten comparable cases. A quantile tree can fit that cutoff directly with **pinball loss**:
 
-Use the same cases to compare trees with ridge regression and a linear model with explicit interactions. Shift a filing past the issue cutoff and check that its value disappears from the inputs. Mask a feed to see whether the trees learned a useful relationship or a quirk of the vendor's missing data.
+$$
+L_{\alpha}(y,q)=
+\begin{cases}
+\alpha(y-q), & y\geq q,\\
+(1-\alpha)(q-y), & y<q.
+\end{cases}
+$$
 
----
+\(y\) is the realized return, \(q\) the predicted cutoff, and \(\alpha\) the desired quantile level. At \(\alpha=0.9\), a cutoff of \(2\) percentage points and an outcome of \(4\) costs \(0.9(4-2)=1.8\) percentage points of loss; an outcome of \(0\) costs \(0.1(2-0)=0.2\). The unequal penalties push the fitted cutoff toward the chosen quantile. [Scikit-learn’s official documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html) identifies this loss in its quantile boosting implementation.
 
-[Building a Brain](/public/articles/building-a-brain) · [Baselines and adaptive gradients](/public/articles/brain-baselines-and-adaptive-gradients) · [Combining forecasts and calibrating confidence](/public/articles/brain-combining-and-calibrating) · [Point-in-time memory](/public/articles/brain-point-in-time-memory)
+Separate quantile fits may cross, with a nominal lower cutoff above an upper one. They need an ordering rule and held-out coverage checks. A few cutoffs do **not** define a full return distribution: probability between and beyond them remains unspecified. NGBoost takes a different route by fitting parameters of a chosen distribution, but the chosen family may miss the tails. [Duan and colleagues’ paper](https://proceedings.mlr.press/v119/duan20a.html) describes that approach.
+
+## Where OakQuant uses it
+
+The current **Timber** package implements bounded, batch, squared-error boosting with regression **stumps**—trees with one split. Its fit_boosted_stumps routine accepts optional sample weights, fits residual corrections, and returns point predictions. It does not fit depth-two interactions or quantile cutoffs. The investment-domain candidate builder imports that routine as a gradient_boost family; the domain adapter is responsible for making inputs eligible at the forecast deadline. Source: timber/common/learning/boost.py and oak-domain-investments/oak_domain_investments/adapt/competition_models.py in the current local checkout. This is implementation evidence, not proof of a deployed or successful trading forecast.
+
+The [current ML implementation plan](../../../../ML_IMPLEMENTATION_PLAN.md) proposes comparing explicit interactions and bounded depth-two trees, then direct quantile boosting and distributional challengers such as NGBoost. Those are proposed experiments, not capabilities of the Timber stump learner. The plan’s preserved synthetic probe found that its stumps missed a pure cross-feature interaction; that test says nothing about market skill.
+
+For a fair comparison, OakQuant would train each candidate only on information available before each issue time, choose depth and other settings on earlier validation dates, and compare matched forecasts after outcomes settle. Shifting a filing to after the issue deadline should remove it from the inputs. A missing feed should be masked to test whether the apparent split depends on a vendor outage. User portfolio records are not training examples for a shared market model.
+
+## Where it is used elsewhere
+
+Shihao Gu, Bryan Kelly, and Dacheng Xiu compared machine-learning methods for **monthly stock risk-premium prediction** using a long historical U.S. equity panel. Their published study reports gains from tree and neural-network methods and traces much of the benefit to nonlinear predictor interactions. That is evidence that interactions mattered in **their** research setting; it does not establish skill for OakQuant’s horizons, inputs, or deployment. [Read the published study](https://doi.org/10.1093/rfs/hhaa009).
+
+## Alternatives and tradeoffs
+
+| Approach | Useful when | What it gives up; failure to watch |
+|---|---|---|
+| Ridge regression | Effects are roughly additive, data is limited, or a strong baseline is needed | Fixed linear effects miss thresholds and interactions unless features are supplied. |
+| Ridge plus named interactions | A few conditional relationships have a clear rationale | The analyst must choose pairs; many speculative pairs can overfit. |
+| Boosted stumps | Separate nonlinear effects are plausible and a bounded model is enough | No cross-feature interaction from raw inputs alone; greedy fitting can miss a pure interaction. |
+| Deeper boosted trees | Conditional paths are plausible and there is enough dated evidence | More capacity to memorize rare episodes; poor extrapolation beyond training ranges. |
+| Quantile boosting or NGBoost | A tail cutoff or fitted distribution is needed | Quantiles may cross or leave gaps; a distribution family can misstate tails. Check calibration on later dates. |
+
+## People, libraries, and further reading
+
+Leo Breiman, Jerome Friedman, Richard Olshen, and Charles Stone developed the CART framework in [*Classification and Regression Trees*](https://www.routledge.com/Classification-and-Regression-Trees/Breiman-Friedman-Stone-Olshen/p/book/9780412048418/). Friedman’s [gradient-boosting paper](https://doi.org/10.1214/aos/1013203451) is the deeper source for stagewise fitting. For probabilistic boosting, start with [Duan and colleagues’ NGBoost paper](https://proceedings.mlr.press/v119/duan20a.html).
+
+For a practical first stop, [scikit-learn’s histogram gradient-boosting regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html) documents depth controls, missing-value handling, and quantile loss. [XGBoost’s tree tutorial](https://xgboost.readthedocs.io/en/stable/tutorials/model.html) explains additive training and split gain. [LightGBM’s parameter reference](https://lightgbm.readthedocs.io/en/stable/Parameters.html) documents its quantile objective. These are public learning tools, not a list of packages used by OakQuant.
