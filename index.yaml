@@ -101,9 +101,9 @@ articles:
   - forecasting
   cover: ''
   author: Pumulo Sikaneta
-  category: oakquant-machine-intelligence
+  category: machine-intelligence
   published_at: '2026-11-11T06:05:36+00:00'
-  updated_at: '2026-11-11T17:02:48+00:00'
+  updated_at: '2026-11-11T17:03:09+00:00'
 - slug: brain-combining-and-calibrating
   title: Combining forecasts and calibrating confidence
   summary: How specialist forecasts become one distribution, and why event probability,
