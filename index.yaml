@@ -1,4 +1,17 @@
 articles:
+- slug: brain-combining-and-calibrating
+  title: Combining forecasts and calibrating confidence
+  summary: How specialist forecasts become one distribution, and why event probability,
+    return ranges, and historical skill need separate evidence.
+  tags:
+  - machine-learning
+  - calibration
+  - forecasting
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-11T06:05:18+00:00'
+  updated_at: '2026-11-11T06:05:18+00:00'
 - slug: brain-learning-from-outcomes
   title: Learning from outcomes
   summary: How forecasts become evidence, why labels arrive late, and how a learning
