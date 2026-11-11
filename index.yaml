@@ -88,9 +88,9 @@ articles:
   - forecasting
   cover: ''
   author: Pumulo Sikaneta
-  category: oakquant-machine-intelligence
+  category: machine-intelligence
   published_at: '2026-11-11T06:05:55+00:00'
-  updated_at: '2026-11-11T17:02:09+00:00'
+  updated_at: '2026-11-11T17:02:26+00:00'
 - slug: brain-energy-and-relationships
   title: Energy models and relationships
   summary: How small energy models test joint market states, and how hidden factors
