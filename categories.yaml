@@ -28,15 +28,15 @@ categories:
   name: Professional
   description: Articles tied to authors professional career
   order: 7
+- slug: oakquant
+  name: OakQuant
+  description: My implementation of ai applied to investments and more
+  order: 8
 - slug: satire
   name: Satire
   description: Satirical articles meant to create discussion about sensitive topics
     without picking a side.
   order: 8
-- slug: oakquant
-  name: OakQuant
-  description: My implementation of ai applied to investments and more
-  order: 9
 - slug: recipes
   name: Recipes
   description: My favorite recipes
