@@ -9,9 +9,9 @@ articles:
   - time-series
   cover: ''
   author: Pumulo Sikaneta
-  category: technology
+  category: machine-intelligence
   published_at: '2026-11-11T06:07:40+00:00'
-  updated_at: '2026-11-11T06:07:40+00:00'
+  updated_at: '2026-11-11T06:07:50+00:00'
 - slug: brain-point-in-time-memory
   title: Point-in-time memory
   summary: How vintages, as-of joins, and time-ordered tests let us replay a forecast
