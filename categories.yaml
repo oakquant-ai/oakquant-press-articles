@@ -40,7 +40,7 @@ categories:
 - slug: recipes
   name: Recipes
   description: My favorite recipes
-  order: 9
+  order: 10
 - slug: machine-intelligence
   name: OakQuant Machine Intelligence
   description: Deterministic, statistical and generative intelligence
