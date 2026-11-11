@@ -1,0 +1,12 @@
+title: Point-in-time memory
+summary: How vintages, as-of joins, and time-ordered tests let us replay a forecast
+  with the evidence available when it was made.
+tags:
+- machine-learning
+- forecasting
+- market-data
+- validation
+author: Pumulo Sikaneta
+category: technology
+published_at: '2026-11-11T06:07:23+00:00'
+updated_at: '2026-11-11T06:07:23+00:00'
