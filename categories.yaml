@@ -31,7 +31,7 @@ categories:
 - slug: professional
   name: Professional
   description: Articles tied to authors professional career
-  order: 7
+  order: 8
 - slug: satire
   name: Satire
   description: Satirical articles meant to create discussion about sensitive topics
