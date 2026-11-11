@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" role="img" aria-labelledby="title desc">
+<title id="title">Order changes what a causal filter sees</title>
+<desc id="desc">Two four-step sequences both sum to zero and end at plus two. Their adjacent-difference filter outputs differ: A gives plus one, plus two, plus one; B gives minus two, minus one, plus four.</desc>
+<rect width="760" height="300" rx="14" fill="#f8fafc"/>
+<text x="26" y="38" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#142b46">Same summary, different path</text>
+<text x="26" y="81" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#142b46">Path A</text>
+<text x="26" y="168" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#142b46">Path B</text>
+<g font-family="Arial,sans-serif" font-size="16" text-anchor="middle" fill="#142b46">
+<g fill="#dceaf6" stroke="#42749c" stroke-width="2"><rect x="125" y="58" width="68" height="42" rx="6"/><rect x="213" y="58" width="68" height="42" rx="6"/><rect x="301" y="58" width="68" height="42" rx="6"/><rect x="389" y="58" width="68" height="42" rx="6"/><rect x="125" y="145" width="68" height="42" rx="6"/><rect x="213" y="145" width="68" height="42" rx="6"/><rect x="301" y="145" width="68" height="42" rx="6"/><rect x="389" y="145" width="68" height="42" rx="6"/></g>
+<text x="159" y="85">−2</text><text x="247" y="85">−1</text><text x="335" y="85">+1</text><text x="423" y="85">+2</text>
+<text x="159" y="172">+1</text><text x="247" y="172">−1</text><text x="335" y="172">−2</text><text x="423" y="172">+2</text>
+<text x="573" y="84" fill="#145c49">Δ: +1, +2, +1</text><text x="573" y="171" fill="#9a451e">Δ: −2, −1, +4</text>
+</g>
+<g stroke="#486581" stroke-width="2" fill="none"><path d="M468 79h36"/><path d="M468 166h36"/></g><g fill="#486581"><path d="M504 79l-8-5v10z"/><path d="M504 166l-8-5v10z"/></g>
+<path d="M26 213h708" stroke="#cbd5e1"/>
+<text x="26" y="244" font-family="Arial,sans-serif" font-size="15" fill="#142b46">Both paths: sum = 0; final value = +2. Causal filter: current − previous.</text>
+<text x="26" y="272" font-family="Arial,sans-serif" font-size="13" fill="#486581">Synthetic daily changes in percentage points. Δ values begin at the second observation.</text>
+</svg>
