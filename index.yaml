@@ -40,18 +40,18 @@ articles:
   published_at: '2026-11-11T06:07:23+00:00'
   updated_at: '2026-11-11T16:58:17+00:00'
 - slug: brain-rules-engine
-  title: Why a learning brain needs rules
-  summary: Explicit rules give a learning system clear constraints, repeatable decisions,
-    and reasons that can be checked.
+  title: 'Rules engines: decisions you can replay'
+  summary: Explicit rules turn a request and a policy version into a repeatable decision,
+    while exposing conflicts and missing facts.
   tags:
   - machine-learning
   - rules
   - decision-systems
   cover: ''
   author: Pumulo Sikaneta
-  category: machine-intelligence
+  category: oakquant-machine-intelligence
   published_at: '2026-11-11T06:06:57+00:00'
-  updated_at: '2026-11-11T06:07:09+00:00'
+  updated_at: '2026-11-11T17:00:03+00:00'
 - slug: brain-baselines-and-adaptive-gradients
   title: Baselines and adaptive gradients
   summary: How simple forecasts set the standard, and how small supervised updates
