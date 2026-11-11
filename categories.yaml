@@ -12,14 +12,14 @@ categories:
   name: Current Events
   description: "Where the headlines actually go \u2014 context, not coverage."
   order: 3
+- slug: oakquant
+  name: OakQuant
+  description: My implementation of ai applied to investments and more
+  order: 4
 - slug: philosophy
   name: Philosophy
   description: How to think about what we are doing, and why.
   order: 4
-- slug: oakquant
-  name: OakQuant
-  description: My implementation of ai applied to investments and more
-  order: 5
 - slug: inspirational
   name: Inspirational
   description: Stories and ideas worth carrying with you.
