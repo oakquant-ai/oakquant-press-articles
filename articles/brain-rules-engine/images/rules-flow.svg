@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 270" role="img" aria-labelledby="title desc">
+<title id="title">Forecast policy gates</title>
+<desc id="desc">A request moves through authorization, target validity, and approved-source checks. Each failed gate yields a named stop; only a request passing all three runs the forecast.</desc>
+<rect width="940" height="270" rx="18" fill="#f4f7f5"/>
+<g font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#132b2b">
+<rect x="24" y="70" width="130" height="62" rx="10" fill="#dcebea" stroke="#316b68" stroke-width="2"/><text x="89" y="108">Request</text>
+<rect x="190" y="70" width="155" height="62" rx="10" fill="#fff" stroke="#316b68" stroke-width="2"/><text x="267" y="108">Authorized?</text>
+<rect x="383" y="70" width="150" height="62" rx="10" fill="#fff" stroke="#316b68" stroke-width="2"/><text x="458" y="108">Valid target?</text>
+<rect x="570" y="70" width="170" height="62" rx="10" fill="#fff" stroke="#316b68" stroke-width="2"/><text x="655" y="98">Approved source</text><text x="655" y="119">and model?</text>
+<rect x="777" y="70" width="140" height="62" rx="10" fill="#c5e5d0" stroke="#28724d" stroke-width="2"/><text x="847" y="108">Run forecast</text>
+<g stroke="#316b68" stroke-width="2" fill="none"><path d="M154 101h36m155 0h38m150 0h37m170 0h37"/><path d="M267 132v50m191-50v50m197-50v50"/></g>
+<g fill="#316b68"><path d="m186 96 8 5-8 5m193-10 8 5-8 5m183-10 8 5-8 5m203-10 8 5-8 5"/><path d="m262 177 5 8 5-8m181 0 5 8 5-8m192 0 5 8 5-8"/></g>
+<text x="267" y="210" fill="#8a3434">Block access</text><text x="458" y="210" fill="#8a3434">Request correction</text><text x="655" y="210" fill="#8a3434">Report gap</text>
+</g>
+</svg>
