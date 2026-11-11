@@ -33,14 +33,14 @@ categories:
   description: Satirical articles meant to create discussion about sensitive topics
     without picking a side.
   order: 8
+- slug: oakquant
+  name: OakQuant
+  description: My implementation of ai applied to investments and more
+  order: 9
 - slug: recipes
   name: Recipes
   description: My favorite recipes
   order: 9
-- slug: oakquant
-  name: OakQuant
-  description: My implementation of ai applied to investments and more
-  order: 10
 - slug: machine-intelligence
   name: OakQuant Machine Intelligence
   description: Deterministic, statistical and generative intelligence
