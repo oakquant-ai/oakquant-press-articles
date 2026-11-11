@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">Three clocks and a forecast cutoff</title>
+  <desc id="desc">A March quarter ends before its May filing. The filing is public at 3:58 p.m., a forecast is issued at 4:00 p.m., and the system receives the filing at 4:03 p.m. A system replay excludes the filing. A July correction forms a later version.</desc>
+  <rect width="960" height="480" fill="#f7f8f5"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #17313a; }
+    .label { font-size: 20px; font-weight: 700; }
+    .small { font-size: 16px; }
+    .tiny { font-size: 14px; }
+    .line { stroke: #37545b; stroke-width: 3; }
+  </style>
+  <text x="46" y="49" font-size="27" font-weight="700">One fact, three clocks</text>
+  <text x="46" y="79" class="small">Synthetic quarterly earnings example · times shown on the release day</text>
+  <text x="46" y="139" class="label">Observation</text>
+  <line x1="240" y1="132" x2="904" y2="132" class="line"/>
+  <circle cx="304" cy="132" r="8" fill="#277087"/>
+  <text x="260" y="114" class="small">Mar 31</text>
+  <text x="337" y="139" class="small">Quarter ends; the figure describes this period</text>
+  <text x="46" y="234" class="label">Public release</text>
+  <line x1="240" y1="225" x2="904" y2="225" class="line"/>
+  <circle cx="463" cy="225" r="9" fill="#1c7a69"/>
+  <text x="395" y="206" class="small">May 8 · 3:58</text>
+  <text x="492" y="232" class="small">Version A is public</text>
+  <text x="46" y="330" class="label">System receipt</text>
+  <line x1="240" y1="321" x2="904" y2="321" class="line"/>
+  <circle cx="686" cy="321" r="9" fill="#a65229"/>
+  <text x="620" y="301" class="small">May 8 · 4:03</text>
+  <text x="717" y="328" class="small">Version A usable</text>
+  <line x1="568" y1="177" x2="568" y2="354" stroke="#b63542" stroke-width="3" stroke-dasharray="7 6"/>
+  <rect x="464" y="354" width="209" height="52" rx="7" fill="#f7e9e8" stroke="#b63542" stroke-width="2"/>
+  <text x="484" y="377" class="small" font-weight="700">4:00 forecast cutoff</text>
+  <text x="485" y="395" class="tiny">receipt has not occurred</text>
+  <text x="47" y="447" class="small">July correction → new version and new times; March observation period stays the same.</text>
+</svg>
