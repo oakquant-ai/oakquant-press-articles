@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 330" role="img" aria-labelledby="title desc">
+<title id="title">A predictive mixture retains disagreement</title>
+<desc id="desc">Two narrow forecast curves centered at minus two and plus two percent combine into a wider two-peaked curve. Settled outcomes feed future weighting and calibration.</desc>
+<rect width="840" height="330" fill="#f7f9fc"/>
+<g font-family="Arial, sans-serif" fill="#17243a"><text x="32" y="39" font-size="21" font-weight="700">Two forecasts, one honest distribution</text><text x="32" y="68" font-size="14">Illustrative returns; each member has equal weight</text></g>
+<path d="M55 255H790" stroke="#36465e" stroke-width="2"/><g font-family="Arial, sans-serif" fill="#36465e" font-size="14"><text x="95" y="280">−4%</text><text x="285" y="280">−2%</text><text x="485" y="280">0%</text><text x="670" y="280">+2%</text></g>
+<path d="M65 254 C160 254 195 246 220 175 C241 115 260 99 284 175 C310 246 347 254 430 254" fill="none" stroke="#187f78" stroke-width="3"/>
+<path d="M420 254 C502 254 538 246 563 175 C585 99 604 115 628 175 C654 246 692 254 780 254" fill="none" stroke="#bf641e" stroke-width="3"/>
+<path d="M65 254 C160 254 195 250 220 213 C241 183 260 176 284 213 C310 250 347 254 430 254 C502 254 538 250 563 213 C585 176 604 183 628 213 C654 250 692 254 780 254" fill="none" stroke="#533c9b" stroke-width="5"/>
+<g font-family="Arial, sans-serif" font-size="14" font-weight="700"><text x="100" y="110" fill="#187f78">Specialist A</text><text x="624" y="110" fill="#bf641e">Specialist B</text><text x="352" y="170" fill="#533c9b">50/50 mixture</text></g>
+<text x="32" y="313" fill="#36465e" font-family="Arial, sans-serif" font-size="13">Later outcomes → score matched forecasts → update weights and calibrate probabilities</text>
+</svg>
