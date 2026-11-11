@@ -643,9 +643,9 @@ articles:
   - systems-design
   cover: cambium_architecture_diagram.svg
   author: Pumulo Sikaneta
-  category: architecture-and-design
+  category: oakquant
   published_at: '2026-05-17T16:00:00Z'
-  updated_at: '2026-05-18T00:39:27+00:00'
+  updated_at: '2026-11-11T06:14:10+00:00'
 - slug: the-dinner-that-almost-went-wrong
   title: 'The Dinner That Almost Went Wrong: An Architectural Question Hiding in Plain
     Sight'
