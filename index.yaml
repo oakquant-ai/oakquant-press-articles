@@ -36,9 +36,9 @@ articles:
   - validation
   cover: ''
   author: Pumulo Sikaneta
-  category: oakquant-machine-intelligence
+  category: machine-intelligence
   published_at: '2026-11-11T06:07:23+00:00'
-  updated_at: '2026-11-11T16:58:04+00:00'
+  updated_at: '2026-11-11T16:58:17+00:00'
 - slug: brain-rules-engine
   title: Why a learning brain needs rules
   summary: Explicit rules give a learning system clear constraints, repeatable decisions,
