@@ -130,15 +130,15 @@ Back in the kitchen that evening, Maleena pins her card to the calendar and draw
 
 *Maleena and Maple Freight are fictional illustrations used to explain OakQuant’s system architecture. Explore the technical deep dives for each component below:*
 
-- [Giving the brain good senses](data-and-cost.md) — Data provenance, deduplication, and cost-aware routing with Timber and Cambium.
-- [Point-in-time memory](point-in-time-memory.md) — Vintages, as-of joins, and tests that respect what was known at each cutoff.
-- [Baselines and adaptive gradients](baselines-and-adaptive-gradients.md) — Establishing naive yardsticks, regularization, and gradient-based fitting.
-- [Bayesian hierarchies](bayesian-hierarchies.md) — Partial pooling and propagating uncertainty across market, sector, and company levels.
-- [Trees and interactions](trees-and-interactions.md) — Conditional feature interactions and gradient-boosted decision trees.
-- [Clustering and regimes](clustering-and-regimes.md) — Identifying volatility regimes, peer groups, and correlated model errors.
-- [Temporal deep learning](temporal-deep-learning.md) — Capturing event sequences and lead-lag relationships in time-series data.
-- [Energy and relationships](energy-and-relationships.md) — Graph networks and energy-based models for supply-chain and cross-asset links.
-- [Combining and calibrating](combining-and-calibrating.md) — Predictive mixtures, performance weighting, and probability calibration.
-- [Learning from outcomes](learning-from-outcomes.md) — Proper scoring rules, delayed settlement, and handling concept drift.
-- [The rules engine](rules-engine.md) — Deterministic guardrails, fallback logic, and auditable decision logs.
-- [Generative capability](generative-capability.md) — Hypothesis generation, scenario framing, and grounded plain-language synthesis.
+- [Giving the brain good senses](https://press.oakquant.ai/public/articles/brain-data-and-cost) — Data provenance, deduplication, and cost-aware routing with Timber and Cambium.
+- [Point-in-time memory](https://press.oakquant.ai/public/articles/brain-point-in-time-memory) — Vintages, as-of joins, and tests that respect what was known at each cutoff.
+- [Baselines and adaptive gradients](https://press.oakquant.ai/public/articles/brain-baselines-and-adaptive-gradients) — Establishing naive yardsticks, regularization, and gradient-based fitting.
+- [Bayesian hierarchies](https://press.oakquant.ai/public/articles/brain-bayesian-hierarchies) — Partial pooling and propagating uncertainty across market, sector, and company levels.
+- [Trees and interactions](https://press.oakquant.ai/public/articles/brain-trees-and-interactions) — Conditional feature interactions and gradient-boosted decision trees.
+- [Clustering and regimes](https://press.oakquant.ai/public/articles/brain-clustering-and-regimes) — Identifying volatility regimes, peer groups, and correlated model errors.
+- [Temporal deep learning](https://press.oakquant.ai/public/articles/brain-temporal-deep-learning) — Capturing event sequences and lead-lag relationships in time-series data.
+- [Energy and relationships](https://press.oakquant.ai/public/articles/brain-energy-and-relationships) — Graph networks and energy-based models for supply-chain and cross-asset links.
+- [Combining and calibrating](https://press.oakquant.ai/public/articles/brain-combining-and-calibrating) — Predictive mixtures, performance weighting, and probability calibration.
+- [Learning from outcomes](https://press.oakquant.ai/public/articles/brain-learning-from-outcomes) — Proper scoring rules, delayed settlement, and handling concept drift.
+- [The rules engine](https://press.oakquant.ai/public/articles/brain-rules-engine) — Deterministic guardrails, fallback logic, and auditable decision logs.
+- [Generative capability](https://press.oakquant.ai/public/articles/brain-generative-capability) — Hypothesis generation, scenario framing, and grounded plain-language synthesis.

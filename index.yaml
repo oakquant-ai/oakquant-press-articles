@@ -171,9 +171,9 @@ articles:
   - system-design
   cover: ''
   author: Pumulo Sikaneta
-  category: oakquant
+  category: technology
   published_at: '2026-11-11T05:38:43+00:00'
-  updated_at: '2026-11-11T06:02:01+00:00'
+  updated_at: '2026-11-11T06:11:33+00:00'
 - slug: when-ai-improves-the-machine
   title: When AI Improves the Machine
   summary: A small AI model kept looping until a larger one edited the weights inside
