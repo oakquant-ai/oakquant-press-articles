@@ -10,9 +10,9 @@ articles:
   - evaluation
   cover: ''
   author: Pumulo Sikaneta
-  category: technology
+  category: machine-intelligence
   published_at: '2026-11-11T06:04:58+00:00'
-  updated_at: '2026-11-11T06:04:58+00:00'
+  updated_at: '2026-11-11T06:05:08+00:00'
 - slug: brain-data-and-cost
   title: Giving the brain good senses
   summary: How a learning system gathers facts from disparate sources, preserves their
