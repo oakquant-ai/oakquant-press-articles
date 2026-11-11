@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">Why a one-split tree misses a two-input interaction</title>
+  <desc id="desc">On the left, splitting the four synthetic cases by earnings beat or prior rally gives zero mean return in either group. On the right, a two-level tree asks both questions and separates returns of minus two, plus two, plus two and minus two percentage points.</desc>
+  <rect width="960" height="480" rx="20" fill="#f7f9fc"/>
+  <text x="36" y="44" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#10243a">One question is not enough</text>
+  <text x="36" y="72" font-family="Arial, sans-serif" font-size="15" fill="#405368">Four equally frequent synthetic cases · later return in percentage points</text>
+  <rect x="25" y="94" width="424" height="349" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <rect x="467" y="94" width="468" height="349" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="45" y="126" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10243a">One-split trees</text>
+  <text x="487" y="126" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10243a">Two questions on each path</text>
+  <text x="45" y="159" font-family="Arial, sans-serif" font-size="15" fill="#405368">Split on earnings beat</text>
+  <rect x="45" y="174" width="180" height="58" rx="9" fill="#e8f1fa" stroke="#8aa9c9"/>
+  <rect x="244" y="174" width="180" height="58" rx="9" fill="#e8f1fa" stroke="#8aa9c9"/>
+  <text x="59" y="197" font-family="Arial, sans-serif" font-size="14" fill="#10243a">No: −2, +2</text>
+  <text x="59" y="218" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#10243a">Mean 0</text>
+  <text x="258" y="197" font-family="Arial, sans-serif" font-size="14" fill="#10243a">Yes: +2, −2</text>
+  <text x="258" y="218" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#10243a">Mean 0</text>
+  <text x="45" y="272" font-family="Arial, sans-serif" font-size="15" fill="#405368">Split on prior rally</text>
+  <rect x="45" y="287" width="180" height="58" rx="9" fill="#e8f1fa" stroke="#8aa9c9"/>
+  <rect x="244" y="287" width="180" height="58" rx="9" fill="#e8f1fa" stroke="#8aa9c9"/>
+  <text x="59" y="310" font-family="Arial, sans-serif" font-size="14" fill="#10243a">No: −2, +2</text>
+  <text x="59" y="331" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#10243a">Mean 0</text>
+  <text x="258" y="310" font-family="Arial, sans-serif" font-size="14" fill="#10243a">Yes: +2, −2</text>
+  <text x="258" y="331" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#10243a">Mean 0</text>
+  <text x="45" y="398" font-family="Arial, sans-serif" font-size="14" fill="#a23b3b">No first split reduces squared error.</text>
+  <rect x="629" y="145" width="144" height="44" rx="9" fill="#10243a"/>
+  <text x="649" y="173" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Earnings beat?</text>
+  <path d="M665 189 L575 218 M737 189 L827 218" fill="none" stroke="#52677c" stroke-width="2"/>
+  <text x="586" y="211" font-family="Arial, sans-serif" font-size="13" fill="#405368">No</text>
+  <text x="794" y="211" font-family="Arial, sans-serif" font-size="13" fill="#405368">Yes</text>
+  <rect x="501" y="220" width="149" height="43" rx="9" fill="#e8f1fa" stroke="#8aa9c9"/>
+  <rect x="753" y="220" width="149" height="43" rx="9" fill="#e8f1fa" stroke="#8aa9c9"/>
+  <text x="518" y="247" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#10243a">Prior rally?</text>
+  <text x="770" y="247" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#10243a">Prior rally?</text>
+  <path d="M539 263 L523 302 M612 263 L645 302 M791 263 L777 302 M865 263 L890 302" fill="none" stroke="#52677c" stroke-width="2"/>
+  <text x="492" y="293" font-family="Arial, sans-serif" font-size="12" fill="#405368">No</text>
+  <text x="627" y="293" font-family="Arial, sans-serif" font-size="12" fill="#405368">Yes</text>
+  <text x="750" y="293" font-family="Arial, sans-serif" font-size="12" fill="#405368">No</text>
+  <text x="873" y="293" font-family="Arial, sans-serif" font-size="12" fill="#405368">Yes</text>
+  <rect x="487" y="305" width="72" height="48" rx="8" fill="#f9e4e4" stroke="#c76f6f"/>
+  <rect x="609" y="305" width="72" height="48" rx="8" fill="#def2e9" stroke="#56a37c"/>
+  <rect x="741" y="305" width="72" height="48" rx="8" fill="#def2e9" stroke="#56a37c"/>
+  <rect x="857" y="305" width="72" height="48" rx="8" fill="#f9e4e4" stroke="#c76f6f"/>
+  <text x="505" y="335" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#862e2e">−2</text>
+  <text x="627" y="335" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#21694b">+2</text>
+  <text x="759" y="335" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#21694b">+2</text>
+  <text x="875" y="335" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#862e2e">−2</text>
+  <text x="487" y="398" font-family="Arial, sans-serif" font-size="14" fill="#405368">Can express the pattern; greedy training may still stop early.</text>
+</svg>
