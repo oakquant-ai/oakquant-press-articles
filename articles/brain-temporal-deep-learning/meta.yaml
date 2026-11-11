@@ -1,11 +1,11 @@
-title: Temporal learning and the order of events
-summary: How sequence models read the order of events, test lead-lag signals, and
-  keep future information out of a forecast.
+title: 'Temporal deep learning: when order carries the signal'
+summary: How sequence models read ordered histories, what they can learn that a summary
+  loses, and how to test them without future leakage.
 tags:
 - machine-learning
 - deep-learning
 - time-series
 author: Pumulo Sikaneta
-category: machine-intelligence
+category: oakquant-machine-intelligence
 published_at: '2026-11-11T06:07:40+00:00'
-updated_at: '2026-11-11T06:07:50+00:00'
+updated_at: '2026-11-11T16:57:18+00:00'
