@@ -49,9 +49,9 @@ articles:
   - decision-systems
   cover: ''
   author: Pumulo Sikaneta
-  category: recipes
+  category: machine-intelligence
   published_at: '2026-11-11T06:06:57+00:00'
-  updated_at: '2026-11-11T17:00:48+00:00'
+  updated_at: '2026-11-11T17:00:52+00:00'
 - slug: brain-baselines-and-adaptive-gradients
   title: Baselines and adaptive gradients
   summary: How simple forecasts set the standard, and how small supervised updates
