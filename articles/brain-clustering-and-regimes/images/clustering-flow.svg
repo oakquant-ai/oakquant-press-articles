@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 310" role="img" aria-labelledby="title desc">
+  <title id="title">From observations to a tested forecast</title>
+  <desc id="desc">Four stages: date-stamped market observations become scaled feature vectors; the vectors receive uncertain memberships in calm and stressed states; conditional forecasts are weighted by those memberships; the resulting forecast is compared with outcomes on later dates.</desc>
+  <rect width="960" height="310" rx="18" fill="#f6f7f3"/>
+  <text x="34" y="44" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#183b3b">From resemblance to evidence</text>
+  <g font-family="Arial,sans-serif" fill="#183b3b">
+    <rect x="30" y="78" width="196" height="170" rx="12" fill="#ffffff" stroke="#507c78" stroke-width="2"/>
+    <text x="46" y="111" font-size="16" font-weight="700">1  Dated inputs</text>
+    <text x="46" y="147" font-size="14">Volatility</text><text x="46" y="172" font-size="14">Credit spreads</text><text x="46" y="197" font-size="14">Market breadth</text>
+    <text x="46" y="229" font-size="12" fill="#375b58">Known by cutoff</text>
+    <rect x="265" y="78" width="196" height="170" rx="12" fill="#ffffff" stroke="#507c78" stroke-width="2"/>
+    <text x="281" y="111" font-size="16" font-weight="700">2  Scale and fit</text>
+    <text x="281" y="151" font-size="14">Earlier dates only</text>
+    <text x="281" y="181" font-size="14">Compare like units</text>
+    <text x="281" y="229" font-size="12" fill="#375b58">Save fitted version</text>
+    <rect x="500" y="78" width="196" height="170" rx="12" fill="#ffffff" stroke="#507c78" stroke-width="2"/>
+    <text x="516" y="111" font-size="16" font-weight="700">3  Soft states</text>
+    <rect x="516" y="138" width="114" height="22" rx="4" fill="#e2a148"/><rect x="630" y="138" width="49" height="22" rx="4" fill="#386c89"/>
+    <text x="516" y="184" font-size="14">Calm 70%</text>
+    <text x="516" y="207" font-size="14">Stress 30%</text>
+    <rect x="735" y="78" width="196" height="170" rx="12" fill="#ffffff" stroke="#507c78" stroke-width="2"/>
+    <text x="751" y="111" font-size="16" font-weight="700">4  Test later</text>
+    <text x="751" y="150" font-size="14">Weighted forecast</text>
+    <text x="751" y="180" font-size="14">Same cases as baseline</text>
+    <text x="751" y="229" font-size="12" fill="#375b58">Does it add value?</text>
+    <text x="236" y="172" font-size="25" font-weight="700">→</text><text x="471" y="172" font-size="25" font-weight="700">→</text><text x="706" y="172" font-size="25" font-weight="700">→</text>
+  </g>
+</svg>
