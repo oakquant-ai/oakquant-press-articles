@@ -1,4 +1,17 @@
 articles:
+- slug: brain-temporal-deep-learning
+  title: Temporal learning and the order of events
+  summary: How sequence models read the order of events, test lead-lag signals, and
+    keep future information out of a forecast.
+  tags:
+  - machine-learning
+  - deep-learning
+  - time-series
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-11T06:07:40+00:00'
+  updated_at: '2026-11-11T06:07:40+00:00'
 - slug: brain-point-in-time-memory
   title: Point-in-time memory
   summary: How vintages, as-of joins, and time-ordered tests let us replay a forecast
