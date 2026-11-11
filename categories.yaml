@@ -20,14 +20,14 @@ categories:
   name: Inspirational
   description: Stories and ideas worth carrying with you.
   order: 5
+- slug: oakquant
+  name: OakQuant
+  description: My implementation of ai applied to investments and more
+  order: 6
 - slug: personal
   name: Personal
   description: Notes from the studio. Less argument, more witness.
   order: 6
-- slug: oakquant
-  name: OakQuant
-  description: My implementation of ai applied to investments and more
-  order: 7
 - slug: professional
   name: Professional
   description: Articles tied to authors professional career
