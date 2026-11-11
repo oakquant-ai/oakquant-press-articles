@@ -1,8 +1,8 @@
-On an ordinary Tuesday, a jump in trading volume may mean little. On a morning when credit spreads widen and market breadth collapses, the same jump arrives in a different setting. A forecast that treats those mornings as interchangeable may miss the distinction that matters.
+A stock's trading volume jumps while credit spreads widen and fewer stocks rise. On another date, the same jump follows an earnings report. A forecast that treats these two events alike may miss the conditions that give the volume its meaning.
 
 Clustering finds observations that resemble one another before deciding whether that resemblance helps predict anything. It can suggest market states, company peers, or forecasters with a shared blind spot. The group itself is a description, never a forecast.
 
-![Dated market observations become scaled feature vectors, receive uncertain calm and stressed state memberships, then feed a forecast tested on later dates.](clustering-flow.svg)
+![Dated market observations become scaled feature vectors, receive uncertain calm and stressed state memberships, then feed a forecast tested on later dates.](images/clustering-flow.svg)
 
 *A useful cluster earns its place by improving a later decision, not by acquiring a persuasive name.*
 
@@ -20,7 +20,7 @@ If a formal sector, a volatility threshold, or the original features in a simple
 
 ## How it works
 
-Imagine a fictional lender's stock on a day when credit spreads widen. A team asks whether that day's five-session gain forecast should change because it resembles past stressed markets. First it fixes the **cutoff**: the instant at which the forecast would be issued. It builds one feature vector for each historical date from facts available by its cutoff. It fits feature scaling on earlier dates only; otherwise the feature with the largest units can dominate the distance.
+Take a fictional lender's stock on a day when credit spreads widen. A team asks whether that day's five-session gain forecast should change because it resembles past stressed markets. First it fixes the **cutoff**: the instant at which the forecast would be issued. It builds one feature vector for each historical date from facts available by its cutoff. It fits feature scaling on earlier dates only; otherwise the feature with the largest units can dominate the distance.
 
 Next it fits a grouping on the training window. **K-means** assigns the current date to its nearest fitted centre. A **Gaussian mixture** gives a share for each fitted component. Those shares are estimates under a model, not proof that markets contain literal hidden labels. The [scikit-learn clustering guide](https://scikit-learn.org/stable/modules/clustering.html) describes distance-based methods; its [mixture guide](https://scikit-learn.org/stable/modules/mixture.html) describes probabilistic component assignments.
 
