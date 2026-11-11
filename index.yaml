@@ -1,4 +1,18 @@
 articles:
+- slug: brain-generative-capability
+  title: Giving the brain imagination and words
+  summary: Generative AI supplies ideas, scenarios, and language. Predictive models
+    and explicit checks test what those ideas can support.
+  tags:
+  - machine-learning
+  - language-models
+  - forecasting
+  - explanation
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-11T06:02:22+00:00'
+  updated_at: '2026-11-11T06:02:22+00:00'
 - slug: building-a-brain
   title: Building a Brain
   summary: "A child\u2019s weather notebook opens a conversation about how OakQuant\
