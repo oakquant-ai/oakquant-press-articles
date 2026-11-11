@@ -132,9 +132,9 @@ articles:
   published_at: '2026-11-11T06:04:58+00:00'
   updated_at: '2026-11-11T17:04:15+00:00'
 - slug: brain-data-and-cost
-  title: Giving the brain good senses
-  summary: How a learning system gathers facts from disparate sources, preserves their
-    point-in-time meaning, and budgets for the data and compute a question requires.
+  title: 'Data provenance and cost: What did we know, and what did it cost?'
+  summary: How source records, receipt times, and cost-aware routing keep financial
+    research reproducible without buying or computing more than a question needs.
   tags:
   - machine-learning
   - market-data
@@ -142,9 +142,9 @@ articles:
   - cost-control
   cover: ''
   author: Pumulo Sikaneta
-  category: machine-intelligence
+  category: oakquant-machine-intelligence
   published_at: '2026-11-11T06:04:37+00:00'
-  updated_at: '2026-11-11T06:04:47+00:00'
+  updated_at: '2026-11-11T17:06:04+00:00'
 - slug: brain-generative-capability
   title: Giving the brain imagination and words
   summary: Generative AI supplies ideas, scenarios, and language. Predictive models
