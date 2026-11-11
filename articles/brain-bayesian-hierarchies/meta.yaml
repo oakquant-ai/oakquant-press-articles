@@ -1,11 +1,11 @@
-title: Bayesian hierarchies and borrowed evidence
-summary: How a model learns company differences while sharing evidence across industries,
-  sectors, and the market.
+title: Bayesian hierarchies and the value of a peer group
+summary: How partial pooling combines a thin company record with broader evidence
+  without hiding uncertainty.
 tags:
 - machine-learning
 - bayesian-models
 - forecasting
 author: Pumulo Sikaneta
-category: machine-intelligence
+category: oakquant-machine-intelligence
 published_at: '2026-11-11T06:06:18+00:00'
-updated_at: '2026-11-11T06:06:28+00:00'
+updated_at: '2026-11-11T17:01:21+00:00'
