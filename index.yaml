@@ -1,4 +1,18 @@
 articles:
+- slug: brain-learning-from-outcomes
+  title: Learning from outcomes
+  summary: How forecasts become evidence, why labels arrive late, and how a learning
+    system changes without losing its memory.
+  tags:
+  - machine-learning
+  - online-learning
+  - forecasting
+  - evaluation
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-11T06:04:58+00:00'
+  updated_at: '2026-11-11T06:04:58+00:00'
 - slug: brain-data-and-cost
   title: Giving the brain good senses
   summary: How a learning system gathers facts from disparate sources, preserves their
