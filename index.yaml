@@ -1,4 +1,17 @@
 articles:
+- slug: brain-bayesian-hierarchies
+  title: Bayesian hierarchies and borrowed evidence
+  summary: How a model learns company differences while sharing evidence across industries,
+    sectors, and the market.
+  tags:
+  - machine-learning
+  - bayesian-models
+  - forecasting
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-11T06:06:18+00:00'
+  updated_at: '2026-11-11T06:06:18+00:00'
 - slug: brain-trees-and-interactions
   title: Trees and the conditions that change an answer
   summary: How small trees learn thresholds and interactions, and how quantile trees
