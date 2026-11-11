@@ -62,9 +62,9 @@ articles:
   - adaptive-learning
   cover: ''
   author: Pumulo Sikaneta
-  category: machine-intelligence
+  category: oakquant-machine-intelligence
   published_at: '2026-11-11T06:06:40+00:00'
-  updated_at: '2026-11-11T06:06:47+00:00'
+  updated_at: '2026-11-11T17:00:38+00:00'
 - slug: brain-bayesian-hierarchies
   title: Bayesian hierarchies and borrowed evidence
   summary: How a model learns company differences while sharing evidence across industries,
