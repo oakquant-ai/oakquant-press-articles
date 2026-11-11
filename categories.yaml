@@ -37,3 +37,7 @@ categories:
   name: Recipes
   description: My favorite recipes
   order: 9
+- slug: oakquant
+  name: OakQuant
+  description: My implementation of ai applied to investments and more
+  order: 10
