@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="390" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
+  <title id="title">Fair baseline comparison and delayed learning</title>
+  <desc id="desc">Top: baseline and candidate predictions are scored against the same three settled cases. Bottom: a prediction is issued and sealed, its outcome arrives later, then a bounded update changes only future predictions.</desc>
+  <rect width="960" height="390" rx="18" fill="#f8fafc"/>
+  <text x="34" y="43" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#102a43">Compare on the same cases</text>
+  <text x="35" y="76" font-family="Arial, sans-serif" font-size="15" fill="#334e68">One target • one cutoff • one scoring rule</text>
+  <g font-family="Arial, sans-serif" font-size="15" fill="#102a43">
+    <text x="35" y="132">Cases</text><text x="35" y="180">Baseline</text><text x="35" y="228">Candidate</text>
+  </g>
+  <g fill="#d9e2ec" stroke="#486581" stroke-width="1.5">
+    <rect x="170" y="105" width="195" height="38" rx="7"/><rect x="389" y="105" width="195" height="38" rx="7"/><rect x="608" y="105" width="195" height="38" rx="7"/>
+  </g>
+  <g fill="#e1f5ee" stroke="#167b65" stroke-width="1.5">
+    <rect x="170" y="153" width="195" height="38" rx="7"/><rect x="389" y="153" width="195" height="38" rx="7"/><rect x="608" y="153" width="195" height="38" rx="7"/>
+  </g>
+  <g fill="#e8edff" stroke="#4257a6" stroke-width="1.5">
+    <rect x="170" y="201" width="195" height="38" rx="7"/><rect x="389" y="201" width="195" height="38" rx="7"/><rect x="608" y="201" width="195" height="38" rx="7"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#102a43">
+    <text x="267" y="130">Date A</text><text x="486" y="130">Date B</text><text x="705" y="130">Date C</text>
+    <text x="267" y="178">score A</text><text x="486" y="178">score B</text><text x="705" y="178">score C</text>
+    <text x="267" y="226">score A</text><text x="486" y="226">score B</text><text x="705" y="226">score C</text>
+  </g>
+  <line x1="35" y1="263" x2="925" y2="263" stroke="#bcccdc" stroke-width="2"/>
+  <text x="35" y="297" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#102a43">Learn only after settlement</text>
+  <g font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#102a43">
+    <rect x="35" y="318" width="205" height="46" rx="8" fill="#e8edff" stroke="#4257a6" stroke-width="1.5"/><text x="137" y="347">Issue + save prediction</text>
+    <rect x="355" y="318" width="205" height="46" rx="8" fill="#d9e2ec" stroke="#486581" stroke-width="1.5"/><text x="457" y="347">Wait for outcome</text>
+    <rect x="675" y="318" width="250" height="46" rx="8" fill="#e1f5ee" stroke="#167b65" stroke-width="1.5"/><text x="800" y="347">Update future weights once</text>
+  </g>
+  <g stroke="#334e68" stroke-width="2.5" fill="none"><path d="M245 341 H345"/><path d="M560 341 H665"/></g>
+  <g fill="#334e68"><path d="M345 341 l-9 -6 v12 z"/><path d="M665 341 l-9 -6 v12 z"/></g>
+</svg>
