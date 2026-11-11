@@ -6,7 +6,7 @@ Five-year-old Maleena comes down to breakfast in her yellow rain boots. Through 
 
 Then her father opens the back door and points to the neighbor’s garden hose, which has been left trickling across the concrete beneath a cloudless sky. The puddle is real, and Maleena steps into it anyway. But as a piece of evidence about the weather, it is a trap.
 
-Over supper that evening, a bigger question comes up. Her aunt and cousins are visiting for a picnic in two Saturdays, and Maleena wants to know whether they will be able to spread their blanket on the grass beside the swings or whether they will be forced under the park shelter. When her father tells her it is too early to say, she pulls a wooden stool up to the kitchen calendar. Every morning for the next two weeks, she will draw a guess on the left side of the square. Every evening at supper, they will record what actually happened on the right.
+Over supper that evening, a bigger question comes up. Her aunt and cousins are visiting for a picnic in two Saturdays, and Maleena wants to know whether they will be able to spread their blanket on the grass beside the swings or whether they will be forced under the park shelter. When her father tells her it is too early to say, she pulls a wooden stool up to the kitchen calendar. Until the picnic, she’ll practice by forecasting one day at a time. Every morning for the next two weeks, she will draw a guess on the left side of the square. Every evening at supper, they will record what actually happened on the right.
 
 The calendar enforces a distinction that memory easily blurs: what she thought before the rain, and what she knew afterward. What Maleena is building at the kitchen table is what a forecasting engine has to build at scale. In financial AI, a persuasive explanation of a past price move can conceal a poor forecast, an impressive historical backtest can depend on data that was unavailable at the time, and relationships that once predicted returns can fade as markets shift.
 
@@ -74,7 +74,9 @@ A temporal neural network reads the exact chronological order of trading, distin
 
 *A company’s forecast draws on the businesses and infrastructure it depends on. The connections identify exposures; their effects are learned from evidence.*
 
-An energy-based model scores which combinations of signals—such as shifting freight rates, fuel costs, and volatility—fit the joint patterns learned from historical data. Together, these models give us several ways to examine the same company: one captures a broad market move, another a company event, and another the supply-chain context around both. The next task is deciding how much influence each deserves.
+An energy-based model scores which combinations of signals—such as shifting freight rates, fuel costs, and volatility—fit the joint patterns learned from historical data.
+
+Maple’s history and its peers give the forecast a starting point. Market conditions and the order of events help us judge what today’s news adds. Ports, suppliers, and customers show where other changes might reach the company. How much weight each model gets depends on how well it has forecast comparable cases.
 
 ## 5. The biscuit tin: Ensembles, calibration, and honest scoring
 
@@ -128,14 +130,15 @@ Back in the kitchen that evening, Maleena pins her card to the calendar and draw
 
 *Maleena and Maple Freight are fictional illustrations used to explain OakQuant’s system architecture. Explore the technical deep dives for each component below:*
 
-- [Giving the brain good senses](../data-and-cost.md) — Data provenance, deduplication, and cost-aware routing with Timber and Cambium.
-- [Baselines and adaptive gradients](../baselines-and-adaptive-gradients.md) — Establishing naive yardsticks, regularization, and gradient-based fitting.
-- [Bayesian hierarchies](../bayesian-hierarchies.md) — Partial pooling and propagating uncertainty across market, sector, and company levels.
-- [Trees and interactions](../trees-and-interactions.md) — Conditional feature interactions and gradient-boosted decision trees.
-- [Clustering and regimes](../clustering-and-regimes.md) — Identifying volatility regimes, peer groups, and correlated model errors.
-- [Temporal deep learning](../temporal-deep-learning.md) — Capturing event sequences and lead-lag relationships in time-series data.
-- [Energy and relationships](../energy-and-relationships.md) — Graph networks and energy-based models for supply-chain and cross-asset links.
-- [Combining and calibrating](../combining-and-calibrating.md) — Predictive mixtures, performance weighting, and probability calibration.
-- [Learning from outcomes](../learning-from-outcomes.md) — Proper scoring rules, delayed settlement, and handling concept drift.
-- [The rules engine](../rules-engine.md) — Deterministic guardrails, fallback logic, and auditable decision logs.
-- [Generative capability](../generative-capability.md) — Hypothesis generation, scenario framing, and grounded plain-language synthesis.
+- [Giving the brain good senses](data-and-cost.md) — Data provenance, deduplication, and cost-aware routing with Timber and Cambium.
+- [Point-in-time memory](point-in-time-memory.md) — Vintages, as-of joins, and tests that respect what was known at each cutoff.
+- [Baselines and adaptive gradients](baselines-and-adaptive-gradients.md) — Establishing naive yardsticks, regularization, and gradient-based fitting.
+- [Bayesian hierarchies](bayesian-hierarchies.md) — Partial pooling and propagating uncertainty across market, sector, and company levels.
+- [Trees and interactions](trees-and-interactions.md) — Conditional feature interactions and gradient-boosted decision trees.
+- [Clustering and regimes](clustering-and-regimes.md) — Identifying volatility regimes, peer groups, and correlated model errors.
+- [Temporal deep learning](temporal-deep-learning.md) — Capturing event sequences and lead-lag relationships in time-series data.
+- [Energy and relationships](energy-and-relationships.md) — Graph networks and energy-based models for supply-chain and cross-asset links.
+- [Combining and calibrating](combining-and-calibrating.md) — Predictive mixtures, performance weighting, and probability calibration.
+- [Learning from outcomes](learning-from-outcomes.md) — Proper scoring rules, delayed settlement, and handling concept drift.
+- [The rules engine](rules-engine.md) — Deterministic guardrails, fallback logic, and auditable decision logs.
+- [Generative capability](generative-capability.md) — Hypothesis generation, scenario framing, and grounded plain-language synthesis.
