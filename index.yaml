@@ -1,4 +1,17 @@
 articles:
+- slug: brain-trees-and-interactions
+  title: Trees and the conditions that change an answer
+  summary: How small trees learn thresholds and interactions, and how quantile trees
+    describe a spread of possible returns.
+  tags:
+  - machine-learning
+  - decision-trees
+  - forecasting
+  cover: ''
+  author: Pumulo Sikaneta
+  category: technology
+  published_at: '2026-11-11T06:05:55+00:00'
+  updated_at: '2026-11-11T06:05:55+00:00'
 - slug: brain-energy-and-relationships
   title: Energy models and relationships
   summary: How small energy models test joint market states, and how hidden factors
