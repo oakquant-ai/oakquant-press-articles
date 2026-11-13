@@ -1,4 +1,20 @@
 articles:
+- slug: the-fall-of-a-keeper
+  title: The Fall of a Keeper
+  summary: 'Jensen Huang''s fall raises questions beyond Nvidia: who shapes the AI
+    future, what happens when a powerful political voice disappears, and why reliable
+    institutions cannot depend on a single keeper.'
+  tags:
+  - Artificial Intelligence
+  - Leadership
+  - Governance
+  - Geopolitics
+  - AI Policy
+  cover: ''
+  author: Pumulo Sikaneta
+  category: professional
+  published_at: '2026-11-13T02:43:41+00:00'
+  updated_at: '2026-11-13T02:43:41+00:00'
 - slug: brain-clustering-and-regimes
   title: Clustering, peers, and changing regimes
   summary: How to group similar observations, carry uncertainty about market states,
