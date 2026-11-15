@@ -6,17 +6,17 @@ This document records decisions, not hardware alternatives.
 
 > **Missing record.** The previously selected monitor's model and price have not been recovered in this conversation. That is a missing record, not an undecided purchase. The priced subtotal below excludes that monitor and is not an all-in total.
 
-![Before and after infrastructure: today production runs on DigitalOcean and development on a laptop; by April 2027 production runs on an isolated Mac Studio behind a UPS, with a Mac mini for development and staging, on AT&T fiber with 5G backup](https://press.oakquant.ai/images/powering-the-brain/infrastructure-before-after.svg)
+![infrastructure-before-after](images/infrastructure-before-after.svg)
 
-*Before and after. Production moves from a shared cloud bill to a dedicated, isolated Mac Studio behind a UPS with local and off-site backups. The Mac mini takes over development and staging, and the laptop stays for interactive work.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/infrastructure-before-after.png))
+*Before and after. Production moves from a shared cloud bill to a dedicated, isolated Mac Studio behind a UPS with local and off-site backups. The Mac mini takes over development and staging, and the laptop stays for interactive work.* ([PNG](images/infrastructure-before-after.png))
 
 ## Target timeline
 
 Dates are targets. Procurement lead times and acceptance tests control cutover.
 
-![Timeline from December 2026 to May 2027: development setup, staging migration, production hardware, AT&T activation, cutovers and DigitalOcean retirement](https://press.oakquant.ai/images/powering-the-brain/timeline.svg)
+![timeline](images/timeline.svg)
 
-*December 2026 to May 2027. Bar length is to scale by calendar day.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/timeline.png))
+*December 2026 to May 2027. Bar length is to scale by calendar day.* ([PNG](images/timeline.png))
 
 | Date | Milestone |
 |---|---|
@@ -66,9 +66,9 @@ The monthly-equivalent column divides purchase cost over 12 months; rounded figu
 
 ### Purchase timing and cash requirements
 
-![Outright hardware cash needed: December 2026 is the Mac mini at $3,699.00 plus a monitor whose price is not recorded; March 2027 is $6,448.90 for the Mac Studio, UPS and backup drive](https://press.oakquant.ai/images/powering-the-brain/hardware-cash.svg)
+![hardware-cash](images/hardware-cash.svg)
 
-*Outright cash by purchase window. The hatched block marks the monitor, whose price is not recorded. Its width carries no value.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/hardware-cash.png))
+*Outright cash by purchase window. The hatched block marks the monitor, whose price is not recorded. Its width carries no value.* ([PNG](images/hardware-cash.png))
 
 | Purchase window | Outright hardware cash requirement |
 |---|---:|
@@ -101,9 +101,9 @@ No all-in operating total or payback period is asserted before these costs and t
 
 ## Timber software changes
 
-![Timber before and after: heavy ML and vector dependencies bundled in one install, versus a thin client calling independently deployed services through a scoped, versioned contract](https://press.oakquant.ai/images/powering-the-brain/timber-before-after.svg)
+![timber-before-after](images/timber-before-after.svg)
 
-*Before and after. Heavy tokenization, embedding, vector and ML code leaves the mandatory install. A thin client calls independently deployed services over a scoped, versioned contract.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/timber-before-after.png))
+*Before and after. Heavy tokenization, embedding, vector and ML code leaves the mandatory install. A thin client calls independently deployed services over a scoped, versioned contract.* ([PNG](images/timber-before-after.png))
 
 - Preserve existing application-facing calls.
 - Keep configuration and thin remote adapters inside Timber. No separate Links package.
