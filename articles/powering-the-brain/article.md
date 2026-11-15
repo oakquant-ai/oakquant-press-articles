@@ -4,8 +4,6 @@ Purchase the development server and monitor in mid-December 2026. Purchase the i
 
 This document records decisions, not hardware alternatives.
 
-> **Missing record.** The previously selected monitor's model and price have not been recovered in this conversation. That is a missing record, not an undecided purchase. The priced subtotal below excludes that monitor and is not an all-in total.
-
 ![infrastructure-before-after](images/infrastructure-before-after.svg)
 
 *Before and after. Production moves from a shared cloud bill to a dedicated, isolated Mac Studio behind a UPS with local and off-site backups. The Mac mini takes over development and staging, and the laptop stays for interactive work.* ([PNG](images/infrastructure-before-after.png))
@@ -42,7 +40,7 @@ Delay dependent milestones if delivery or validation slips. Do not combine inter
 | Role | Selected hardware | Purchase target |
 |---|---|---|
 | Development and staging | Mac mini, M5 Pro, 18-core CPU, 20-core GPU, 16-core Neural Engine, 64GB unified memory, 2TB SSD, 2.5 Gigabit Ethernet | December 15, 2026 |
-| Monitor | Previously selected monitor; original model and price still to be restored to this record | December 15, 2026 |
+| Monitor | Apple Studio Display, standard glass, tilt-adjustable stand | December 15, 2026 |
 | Production | Mac Studio, M5 Ultra, 30-core CPU, 64-core GPU, 32-core Neural Engine, 96GB unified memory, 2TB SSD, 10 Gigabit Ethernet | March 1, 2027 |
 | Production power protection | CyberPower CP1500PFCLCD, 1500VA / 1000W, sine-wave UPS | March 1, 2027 |
 | Local production backup | LaCie Mobile Drive Secure USB-C 4TB with Rescue | March 1, 2027 |
@@ -51,32 +49,32 @@ Keep the Mac mini permanently assigned to development and staging. Keep the exis
 
 ## Hardware budget
 
-Prices are before tax and shipping. Recheck when ordering. The Mac mini price is carried forward from this discussion; the Mac Studio price comes from the uploaded Apple configuration. UPS and backup prices were checked November 15, 2026.
+Prices are before tax and shipping. Recheck when ordering. The Mac mini price is carried forward from this discussion; the Mac Studio price comes from the uploaded Apple configuration. The monitor price comes from the Apple Store listing, and UPS and backup prices were checked, on November 15, 2026.
 
 | Purchase | Outright cost | 12-month payment comparison |
 |---|---:|---:|
 | Mac mini | $3,699.00 | $308.25/month, calculated allocation |
-| Monitor | Original price missing from this record | Not calculable until price is restored |
+| Studio Display | $1,599.00 | Apple lists $133.25/month |
 | Mac Studio | $5,999.00 | Apple lists $499.91/month, final payment adjusted |
 | CyberPower CP1500PFCLCD | $239.95 | $20.00/month equivalent, not a financing offer |
 | LaCie 4TB backup drive | $209.95 | $17.50/month equivalent, not a financing offer |
-| **Known hardware subtotal, excluding monitor** | **$10,147.90** | **$845.66/month equivalent** |
+| **Known hardware subtotal** | **$11,746.90** | **$978.91/month equivalent** |
 
-The monthly-equivalent column divides purchase cost over 12 months; rounded figures are not exact payment schedules. It does not establish financing eligibility or lease availability for the mini or accessories. Apple's uploaded Studio configuration offers 12-month Apple Card financing at 0% APR, subject to approval and terms. Financing is not a lease. Do not label these figures as a verified 12-month lease quote.
+The monthly-equivalent column divides purchase cost over 12 months; rounded figures are not exact payment schedules. It does not establish financing eligibility or lease availability for the mini or accessories. Apple's uploaded Studio configuration and the Studio Display listing both offer 12-month Apple Card financing at 0% APR, subject to approval and terms. Financing is not a lease. Do not label these figures as a verified 12-month lease quote. The monitor listing excludes optional AppleCare+.
 
 ### Purchase timing and cash requirements
 
 ![hardware-cash](images/hardware-cash.svg)
 
-*Outright cash by purchase window. The hatched block marks the monitor, whose price is not recorded. Its width carries no value.* ([PNG](images/hardware-cash.png))
+*Outright cash by purchase window. Bar length is to scale by dollar amount.* ([PNG](images/hardware-cash.png))
 
 | Purchase window | Outright hardware cash requirement |
 |---|---:|
-| December 2026 | $3,699.00 plus selected monitor |
+| December 2026 | $5,298.00 |
 | March 2027 | $6,448.90 |
-| **Total known hardware** | **$10,147.90 plus selected monitor** |
+| **Total known hardware** | **$11,746.90** |
 
-If the two computers are paid over 12 months at 0% with no fees, the planning schedule is $308.25/month for the mini from its December purchase, plus approximately $499.92/month for the Studio from its March purchase. The overlapping computer payment allocation is $808.17/month. Pay the UPS and backup drive outright in March, totaling $449.90. This is a cash-flow model, not a selected payment method or new financing quote; actual billing start dates and final payments depend on checkout terms.
+If the two computers are paid over 12 months at 0% with no fees, the planning schedule is $308.25/month for the mini plus $133.25/month for the monitor from the December purchase ($441.50/month), plus approximately $499.92/month for the Studio from its March purchase. The overlapping computer and display payment allocation is $941.42/month. Pay the UPS and backup drive outright in March, totaling $449.90. This is a cash-flow model, not a selected payment method or new financing quote; actual billing start dates and final payments depend on checkout terms.
 
 ### Hosting baselines
 
@@ -96,8 +94,9 @@ Continue DigitalOcean during preparation and cutover. Do not count its full bill
 - Electricity and any necessary network equipment.
 - Tax and any shipping charges.
 - Any retained cloud services and applicable software licenses.
+- AppleCare+ if elected, listed at $49.99/year for the monitor.
 
-No all-in operating total or payback period is asserted before these costs and the missing monitor price are recorded.
+No all-in operating total or payback period is asserted before these costs are recorded.
 
 ## Timber software changes
 
