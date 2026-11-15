@@ -1,203 +1,160 @@
 ## Plan
 
-Prove the OakQuant stack on a dedicated Mac mini for development and staging. Purchase a separate production server in 2027. Keep production isolated. Move production from DigitalOcean after validation and activation of AT&T business connectivity.
+Purchase the development server and monitor in mid-December 2026. Purchase the isolated production server, UPS, and production backup drive in March 2027. Switch to AT&T business internet in April 2027, then migrate production and retire DigitalOcean after validation.
+
+This document records decisions, not hardware alternatives.
+
+> **Missing record.** The previously selected monitor's model and price have not been recovered in this conversation. That is a missing record, not an undecided purchase. The priced subtotal below excludes that monitor and is not an all-in total.
+
+![Before and after infrastructure: today production runs on DigitalOcean and development on a laptop; by April 2027 production runs on an isolated Mac Studio behind a UPS, with a Mac mini for development and staging, on AT&T fiber with 5G backup](https://press.oakquant.ai/images/powering-the-brain/infrastructure-before-after.svg)
+
+*Before and after. Production moves from a shared cloud bill to a dedicated, isolated Mac Studio behind a UPS with local and off-site backups. The Mac mini takes over development and staging, and the laptop stays for interactive work.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/infrastructure-before-after.png))
+
+## Target timeline
+
+Dates are targets. Procurement lead times and acceptance tests control cutover.
+
+![Timeline from December 2026 to May 2027: development setup, staging migration, production hardware, AT&T activation, cutovers and DigitalOcean retirement](https://press.oakquant.ai/images/powering-the-brain/timeline.svg)
+
+*December 2026 to May 2027. Bar length is to scale by calendar day.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/timeline.png))
+
+| Date | Milestone |
+|---|---|
+| November 22, 2026 | Complete the one-week review. Retain the December purchase schedule. |
+| December 15, 2026 | Purchase Mac mini and selected monitor. |
+| December 31, 2026 | Complete initial dev/staging setup, subject to delivery. Deploy one application, PostgreSQL, and the first real Timber service. |
+| January 31, 2027 | Complete Timber's lightweight remote execution path and migrate remaining in-scope applications into isolated staging. |
+| February 15, 2027 | Complete functional tests, measure memory/CPU/storage/model requirements, and test repeatable deployment. |
+| February 28, 2027 | Complete migration rehearsals. Confirm AT&T eligibility, hosting permission, pricing, and April installation appointment. |
+| March 1, 2027 | Purchase Mac Studio, UPS, and LaCie production backup drive. |
+| March 15, 2027 | Target hardware installation, subject to delivery. Configure isolated production, power protection, monitoring, and backups. |
+| March 31, 2027 | Complete production deployment rehearsal, restore test, and orderly UPS shutdown test. |
+| April 1-7, 2027 | Target AT&T business internet activation and network/failover validation. |
+| April 8-21, 2027 | Run isolated parallel validation over the authorized business connection. DigitalOcean remains authoritative until each application's write cutover. |
+| April 22-28, 2027 | Target application-by-application production cutovers. |
+| April 29-May 12, 2027 | Retain required DigitalOcean rollback resources. |
+| May 13, 2027 | Target retirement of unneeded DigitalOcean resources after the final successful cutover and rollback window. |
+
+Delay dependent milestones if delivery or validation slips. Do not combine internet activation, production cutover, and cloud cancellation into one event.
 
 ## Hardware
 
-### Permanent development and staging server
+| Role | Selected hardware | Purchase target |
+|---|---|---|
+| Development and staging | Mac mini, M5 Pro, 18-core CPU, 20-core GPU, 16-core Neural Engine, 64GB unified memory, 2TB SSD, 2.5 Gigabit Ethernet | December 15, 2026 |
+| Monitor | Previously selected monitor; original model and price still to be restored to this record | December 15, 2026 |
+| Production | Mac Studio, M5 Ultra, 30-core CPU, 64-core GPU, 32-core Neural Engine, 96GB unified memory, 2TB SSD, 10 Gigabit Ethernet | March 1, 2027 |
+| Production power protection | CyberPower CP1500PFCLCD, 1500VA / 1000W, sine-wave UPS | March 1, 2027 |
+| Local production backup | LaCie Mobile Drive Secure USB-C 4TB with Rescue | March 1, 2027 |
 
-- Mac mini with M5 Pro.
-- 18-core CPU.
-- 20-core GPU.
-- 16-core Neural Engine.
-- 64GB unified memory.
-- 2TB internal SSD.
-- 2.5 Gigabit Ethernet.
+Keep the Mac mini permanently assigned to development and staging. Keep the existing laptop for interactive development and administration. Production runs on the dedicated Mac Studio, with no interactive development or experimental model installations.
 
-The existing laptop remains the interactive development and administration machine. The Mac mini remains the development and staging server after production moves.
+## Hardware budget
 
-### Production server
+Prices are before tax and shipping. Recheck when ordering. The Mac mini price is carried forward from this discussion; the Mac Studio price comes from the uploaded Apple configuration. UPS and backup prices were checked November 15, 2026.
 
-Purchase a separate, dedicated production server in 2027 after proving the stack and measuring its requirements. No development or staging workloads will run on that server.
+| Purchase | Outright cost | 12-month payment comparison |
+|---|---:|---:|
+| Mac mini | $3,699.00 | $308.25/month, calculated allocation |
+| Monitor | Original price missing from this record | Not calculable until price is restored |
+| Mac Studio | $5,999.00 | Apple lists $499.91/month, final payment adjusted |
+| CyberPower CP1500PFCLCD | $239.95 | $20.00/month equivalent, not a financing offer |
+| LaCie 4TB backup drive | $209.95 | $17.50/month equivalent, not a financing offer |
+| **Known hardware subtotal, excluding monitor** | **$10,147.90** | **$845.66/month equivalent** |
 
-The production model, specifications, and purchase budget are not yet decided.
+The monthly-equivalent column divides purchase cost over 12 months; rounded figures are not exact payment schedules. It does not establish financing eligibility or lease availability for the mini or accessories. Apple's uploaded Studio configuration offers 12-month Apple Card financing at 0% APR, subject to approval and terms. Financing is not a lease. Do not label these figures as a verified 12-month lease quote.
 
-## Budget
+### Purchase timing and cash requirements
 
-### DigitalOcean: actual spend and capability budget
+![Outright hardware cash needed: December 2026 is the Mac mini at $3,699.00 plus a monitor whose price is not recorded; March 2027 is $6,448.90 for the Mac Studio, UPS and backup drive](https://press.oakquant.ai/images/powering-the-brain/hardware-cash.svg)
 
-| Cost basis | Monthly | Annualized |
+*Outright cash by purchase window. The hatched block marks the monitor, whose price is not recorded. Its width carries no value.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/hardware-cash.png))
+
+| Purchase window | Outright hardware cash requirement |
+|---|---:|
+| December 2026 | $3,699.00 plus selected monitor |
+| March 2027 | $6,448.90 |
+| **Total known hardware** | **$10,147.90 plus selected monitor** |
+
+If the two computers are paid over 12 months at 0% with no fees, the planning schedule is $308.25/month for the mini from its December purchase, plus approximately $499.92/month for the Studio from its March purchase. The overlapping computer payment allocation is $808.17/month. Pay the UPS and backup drive outright in March, totaling $449.90. This is a cash-flow model, not a selected payment method or new financing quote; actual billing start dates and final payments depend on checkout terms.
+
+### Hosting baselines
+
+| Baseline | Monthly | Annualized |
 |---|---:|---:|
 | Verified current DigitalOcean spend | $388.52 | $4,662.24 |
-| Planned capability budget | $450.00 | $5,400.00 |
-| Difference | $61.48 | $737.76 |
+| Intended capability budget | $450.00 | $5,400.00 |
 
-The $388.52 actual spend reflects a reduced running workload:
+Current spending excludes the stopped text-to-voice application, the inactive games application, and the not-yet-hosted Assist application. Use $450/month for capability planning and retain $388.52/month as verified actual spend. Annualized figures are monthly amounts multiplied by 12, not historical annual expenditure.
 
-- The text-to-voice application has been stopped.
-- The games application is not running.
-- The new Assist application is not yet hosted.
+Continue DigitalOcean during preparation and cutover. Do not count its full bill as net savings before identifying retained cloud services and new operating costs.
 
-Use $450 per month as the planning baseline for the intended capability set. It is a budget, not a measured invoice for those additional workloads. Retain $388.52 as the verified current-spend baseline.
+### Recurring and additional costs still requiring quotes
 
-Annualized figures are monthly amounts multiplied by 12, not a statement of historical annual spending.
+- AT&T Business Fiber with 5G backup, equipment, installation, and required addressing.
+- Encrypted off-site production backup storage.
+- Electricity and any necessary network equipment.
+- Tax and any shipping charges.
+- Any retained cloud services and applicable software licenses.
 
-### Mac mini: outright and 12-month payment costs
-
-| Payment basis | Upfront hardware payment | Monthly hardware payment | Total hardware cost |
-|---|---:|---:|---:|
-| Outright purchase | $3,699.00 | $0.00 | $3,699.00 |
-| 12-month payment planning basis | $0.00 | $308.25 for 12 months | $3,699.00 |
-
-The selected configuration includes the upgraded CPU/GPU. The hardware amount is the price recorded in this discussion and must be confirmed at checkout.
-
-The 12-month amount is the purchase price divided into 12 equal payments, assuming no down payment, interest, fees, or residual payment. It is not a verified lease or financing quote. Actual lease terms, ownership at the end of the term, eligibility, and charges are not yet established. No payment method has been selected.
-
-All hardware figures exclude sales tax and other unquoted charges.
-
-### Monthly cash flow during the 12-month payment period
-
-| Planning scenario | DigitalOcean monthly basis | Mac mini monthly payment | Combined monthly amount |
-|---|---:|---:|---:|
-| Overlap at verified current spend | $388.52 | $308.25 | $696.77 |
-| Overlap at planned capability budget | $450.00 | $308.25 | $758.25 |
-
-These overlap figures apply while retaining DigitalOcean and making the assumed hardware payments. They exclude AT&T, electricity, backups, production hardware, taxes, and other unquoted costs. They are not steady-state hosting totals.
-
-With an outright purchase, the $3,699 hardware payment occurs upfront and there is no monthly Mac mini payment. DigitalOcean continues during validation and migration.
-
-### Costs not yet established
-
-- Production server purchase or payment plan.
-- AT&T Business Fiber and 5G backup, including installation and equipment.
-- Sales tax.
-- Power protection and any additional networking equipment.
-- Backup storage and off-site backup services.
-- Electricity.
-- Any remaining cloud services after migration.
-
-Retire DigitalOcean resources individually after successful migration. Do not treat either DigitalOcean baseline as guaranteed net savings. No payback period is committed.
-
-## Timing
-
-| Period | Action |
-|---|---|
-| November 15-22, 2026 | One-week cooling-off period. Hold the hardware purchase and review the plan. |
-| November 22, 2026 | Review before ordering. Confirm the final hardware price, payment terms, and delivery. |
-| December 2026, subject to delivery | Set up the Mac mini. Prove one application, its database, and a real Timber service end to end. |
-| December 2026 into early 2027 | Deploy remaining in-scope applications to staging, measure resources, and rehearse deployment, migration, and restoration. |
-| 2027 | Purchase and configure the separate production server after validation. |
-| Before production cutover | Activate AT&T business connectivity and validate the actual production hardware and network. |
-| Migration period | Move one application at a time, targeting a couple of weeks of parallel validation. |
-| After successful cutovers | Complete the rollback window, then retire unneeded DigitalOcean resources. |
-
-The delivery estimate displayed on November 15 was December 1-4. Reconfirm when ordering. Internet activation, production cutover, and DigitalOcean retirement are separate gates.
-
-## Environment layout
-
-### During validation
-
-- Existing laptop: interactive development and administration.
-- Mac mini: separate development and staging environments.
-- DigitalOcean: authoritative production.
-
-### After migration
-
-- Existing laptop: interactive development and administration.
-- Mac mini: development and staging.
-- Dedicated production server: production only.
-- AT&T Business Fiber: production internet connectivity.
-
-Separate databases, credentials, storage, service instances, and job queues by environment where applicable. Limit nonproduction resource consumption. Restrict production network and deployment access. Do not perform interactive development or experimental model installation on production.
-
-The two servers will still share their physical location and may share power and connectivity. This is not full infrastructure redundancy.
-
-## Production parity
-
-Maintain shared deployment definitions with environment-specific configuration. Staging will use the intended production application and Timber versions, runtime and dependencies, PostgreSQL version and extensions, database migrations, service implementations, API contracts, tokenizers, embedding models, and vector dimensions.
-
-Keep endpoints, secrets, permissions, data, and resource allocations separate. Use real service implementations for acceptance tests. Promote versioned deployment artifacts and validate the final production machine before moving users.
-
-The container runtime and deployment tooling have not yet been selected.
+No all-in operating total or payback period is asserted before these costs and the missing monitor price are recorded.
 
 ## Timber software changes
 
-### Lightweight core and adapters
+![Timber before and after: heavy ML and vector dependencies bundled in one install, versus a thin client calling independently deployed services through a scoped, versioned contract](https://press.oakquant.ai/images/powering-the-brain/timber-before-after.svg)
 
-- Preserve existing application-facing Timber calls.
-- Keep configuration and thin remote adapters inside Timber.
-- Do not create a separate Links package.
-- Remove heavyweight ML/vector dependencies from mandatory Timber dependencies.
-- Keep local implementations in optional extras or separate implementation packages.
-- Avoid eager imports of heavyweight libraries.
-- Keep server implementation code outside the lightweight client import path.
+*Before and after. Heavy tokenization, embedding, vector and ML code leaves the mandatory install. A thin client calls independently deployed services over a scoped, versioned contract.* ([PNG](https://press.oakquant.ai/images/powering-the-brain/timber-before-after.png))
 
-### Independent capability services
+- Preserve existing application-facing calls.
+- Keep configuration and thin remote adapters inside Timber. No separate Links package.
+- Remove heavy ML/vector dependencies from mandatory Timber dependencies.
+- Put local implementations in optional extras or separate implementation packages; avoid eager imports.
+- Keep client imports independent of service implementation code.
+- Independently deploy knowledge/vector and ML services, moving heavyweight tokenization, embedding, vector operations, and ML execution behind the appropriate boundaries.
+- Start with one pilot application and one capability, then extend.
+- Use scoped authentication, versioned contracts, bounded retries/timeouts, and clear errors.
+- Use asynchronous job APIs where required for long-running work.
+- Keep disabled/local/remote selection explicit. No silent paid fallback or data transfer.
+- Defer a standalone SDK and public paid-service rollout.
 
-- Deploy heavyweight knowledge/vector and ML execution independently.
-- Move embedding, tokenization, vector operations, and ML execution behind the appropriate service boundaries.
-- Begin with one capability and one pilot application.
-- Use explicit disabled, local, or remote execution selection.
-- Use versioned API contracts, scoped authentication, bounded timeouts/retries, and clear errors.
-- Use job submission, status, cancellation, and results for long-running operations where required.
-- Do not silently switch providers, transmit data elsewhere, or invoke paid fallbacks.
-- Keep a standalone SDK, public billing, and paid-service rollout outside this phase.
+### Enabled configuration contract
 
-### Required configuration
+Disabled capabilities do not initialize clients, make capability-specific network calls, or import optional heavy implementations.
 
-When disabled, do not initialize the capability, make its network calls, or import optional heavyweight implementations.
+Enabled capabilities require explicit provider selection and valid provider-specific configuration. Remote execution requires an endpoint and the configured authentication material. Local execution requires the installed implementation and its settings. Validate timeout values and resolve secret references. Collect configuration errors without exposing secrets.
 
-When enabled:
+Keep configuration validation separate from service connectivity/readiness. Keep secrets out of GitHub.
 
-- Require explicit provider selection.
-- Validate provider-specific settings at initialization.
-- Require the remote endpoint and configured authentication material for remote execution.
-- Validate timeout values.
-- Require the relevant installed implementation and settings for local execution.
-- Resolve required secret references.
-- Report configuration errors together without exposing secrets.
+## Development and staging
 
-Keep configuration validity separate from service connectivity and readiness. Keep secrets out of GitHub. Exact configuration field names remain implementation work.
+Run separate logical environments on the mini, with separate data, credentials, service instances, and queues where applicable. Limit their resource consumption.
+
+Use GitHub for code, migrations, seed scripts, and deployment definitions. Use iCloud for documents and planning files. Push work-in-progress code regularly; accept that unpushed local-only work is not protected by GitHub.
+
+Development and staging databases are disposable. Rebuild them from migrations and seed data. Do not purchase an external backup drive or implement database backups for these disposable databases.
+
+Match production's service implementations, runtime versions, dependency versions, database extensions, tokenizer, embedding model, and vector dimensions. Keep environment-specific settings and data separate. Use real capabilities for acceptance tests and versioned deployment artifacts.
+
+## Production backups and power
+
+Dedicate the LaCie to the production Mac Studio. Automate encrypted local backups and database-consistent PostgreSQL backups. Maintain independent encrypted off-site copies and test restoration. Keep production backup credentials inaccessible to development workloads.
+
+Use the UPS for the production Mac Studio and essential network equipment, including the gateway/ONT where separately powered and physically reachable. Connect the bus-powered LaCie to the protected Studio. Configure and test orderly automatic shutdown. Verify actual runtime at measured load; do not assume extended outage operation.
+
+Separate machines do not provide separate location, power, or internet redundancy. The UPS handles brief interruptions and shutdown time, not indefinite operation.
 
 ## Internet: AT&T
 
-Use AT&T Business Fiber with 5G backup.
+Switch to AT&T Business Fiber with 5G backup in April 2027.
 
-Before activation:
+Confirm address availability, hosting permission for applications and API/ML services, contract terms, price, installation, inbound addressing, and backup behavior before activation. Test inbound access, failover, and recovery. Do not assume 5G preserves inbound hosting automatically.
 
-- Confirm availability, installation timing, pricing, equipment, and contract terms at the address.
-- Confirm permission for the intended application hosting and API/ML services.
-- Establish inbound access and addressing requirements.
-- Confirm and test failover, including the behavior of inbound connections over backup connectivity.
+Keep existing connectivity during preparation. Do not expose commercial staging or production services through residential connectivity without authorization. Complete local preparation first; perform externally accessible commercial validation only on authorized connectivity.
 
-Keep existing connectivity during preparation. Do not assume residential terms authorize commercial staging or production hosting. Activate authorized business connectivity before production cutover, separately from DigitalOcean retirement.
+## Cutover and retirement
 
-## Backups and recovery
+Keep DigitalOcean authoritative during staging validation. Isolate copied data and disable or sandbox payments, notifications, and side-effecting jobs outside production.
 
-- Keep code and deployment definitions in GitHub.
-- Implement database-consistent backups.
-- Maintain encrypted off-site copies.
-- Test restoration before production cutover.
-- Document restart and recovery procedures.
+For each application, define synchronization, write cutover, verification, and rollback. Preserve writes made after cutover if rollback is required. Confirm traffic, data, background jobs, monitoring, and backup restoration before retiring resources.
 
-## Migration
-
-- Keep DigitalOcean authoritative while validating staging.
-- Use isolated staging data, sanitized where required.
-- Disable or sandbox payments, notifications, and side-effecting jobs outside production.
-- Define final synchronization, write cutover, and rollback for each application.
-- Account for writes accepted after cutover when rolling back.
-- Move one application at a time.
-- Retain required DigitalOcean resources through a defined rollback window.
-- Retire resources only after confirming traffic, data, jobs, and backups have moved successfully.
-
-## Validation before production purchase
-
-- [ ] All in-scope applications work in staging.
-- [ ] Real Timber capabilities work without heavyweight application dependencies.
-- [ ] Clean installation, build time, and artifact size are measured.
-- [ ] Database migration and restoration are tested.
-- [ ] CPU, memory, storage, and model requirements are recorded.
-- [ ] Deployment and configuration are reproducible.
-- [ ] AT&T availability, hosting permission, costs, and installation timing are confirmed.
-- [ ] Production specifications and budget are established from measurements.
+Production is ring-fenced with separate credentials, data, restricted network access, and controlled releases. Retain rollback resources through May 12 if the final cutover succeeds April 28; move the retirement date if cutover slips.

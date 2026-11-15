@@ -1,19 +1,18 @@
 articles:
 - slug: powering-the-brain
   title: Powering the Brain
-  summary: The decided OakQuant hardware, budget, timing, Timber changes, AT&T connectivity,
-    and production migration plan.
+  summary: OakQuant hardware, budget, Timber architecture, backup policy, and migration
+    timeline from December 2026 through April 2027.
   tags:
   - OakQuant
   - Infrastructure
   - Timber
   - Self-hosting
-  - Apple Silicon
   cover: ''
   author: Pumulo Sikaneta
   category: professional
   published_at: '2026-11-15T13:07:00-05:00'
-  updated_at: '2026-11-15T18:26:16+00:00'
+  updated_at: '2026-11-15T19:04:00+00:00'
 - slug: the-fall-of-a-keeper
   title: The Fall of a Keeper
   summary: 'Jensen Huang''s fall raises questions beyond Nvidia: who shapes the AI
